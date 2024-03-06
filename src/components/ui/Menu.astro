@@ -1,0 +1,38 @@
+---
+import Nav from "./Nav.astro";
+
+const activeClass =
+  "[.active&]:opacity-100 [.active&]:translate-x-0 [.active&]:pointer-events-auto";
+---
+
+<div
+  class:list={[
+    "transition opacity-0 translate-x-full pointer-events-none fixed w-full max-w-96 h-[calc(100vh-80px)] right-0 top-20 lg:hidden z-50 bg-secondary-950/80 backdrop-blur-2xl overflow-y-auto touch-scroll pb-10",
+    activeClass,
+  ]}
+  id="menu"
+>
+  <Nav />
+</div>
+
+<script>
+  const menu = document.querySelector("#menu");
+  const buttonsMenu = document.querySelectorAll(".button-menu");
+
+  console.log(menu);
+
+  menu?.classList.remove("active");
+
+  buttonsMenu.forEach((button) => {
+    button.classList.remove("active");
+    button.addEventListener("click", () => {
+      if (button.role === "button") {
+        button.classList.toggle("active");
+      }
+
+      menu?.classList.toggle("active");
+    });
+  });
+  // document.addEventListener("astro:page-load", () => {
+  // });
+</script>

@@ -1,0 +1,58 @@
+---
+import type { NavItem } from "../../constants/types";
+
+const { pathname } = Astro.url;
+
+const { children } = Astro.props;
+
+const isThisPage = (pageUrl = "", currentPath = "") => {
+  const paths = currentPath.replace("/", "").split("/");
+  const [current] = paths;
+  return pageUrl === `/${current}`;
+};
+---
+
+<ul
+  class:list={[
+    "p-2",
+    "mb-4",
+    "lg:absolute",
+    "lg:invisible",
+    "backdrop-blur-2xl",
+    "bg-secondary-950/10",
+    "lg:bg-secondary-950/80",
+    "lg:delay-100",
+    "lg:group-hover:opacity-100",
+    "lg:group-hover:translate-y-0",
+    "lg:group-hover:visible",
+    "lg:min-w-48",
+    "lg:opacity-0",
+    "lg:px-0",
+    "lg:py-4",
+    "lg:top-[90%]",
+    "lg:left-1/2",
+    "lg:rounded-2xl",
+    "lg:transition",
+    "lg:translate-y-2",
+    "lg:-translate-x-1/2",
+  ]}
+>
+  {
+    children?.map(({ href = "", label }: NavItem) => {
+      const isActive = isThisPage(href, pathname);
+
+      return (
+        <li>
+          <a
+            href={href}
+            class={`flex text-white transition-colors hover:text-primary-300 px-4 pl-8 py-3 lg:pl-4 lg:py-2 leading-4 ${
+              isActive ? "text-primary-400" : ""
+            }`}
+          >
+            {label}
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>

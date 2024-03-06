@@ -1,0 +1,14 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+html {
+  scroll-timeline-name: --mainTimeline;
+}
+
+body {
+    scrollbar-gutter: stable both-edges;
+    min-height: 100dvh;
+  }
