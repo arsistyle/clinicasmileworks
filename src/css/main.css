@@ -5,10 +5,10 @@
 @import "tailwindcss/utilities";
 
 html {
-  scroll-timeline-name: --mainTimeline;
+	scroll-timeline-name: --mainTimeline;
 }
 
 body {
-    scrollbar-gutter: stable both-edges;
-    min-height: 100dvh;
-  }
+	scrollbar-gutter: stable both-edges;
+	min-height: 100dvh;
+}
