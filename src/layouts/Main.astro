@@ -1,53 +1,54 @@
 ---
-import "@fontsource-variable/plus-jakarta-sans";
-import { SEO } from "astro-seo";
+import "@fontsource-variable/plus-jakarta-sans"
+import { SEO } from "astro-seo"
 
-import '../css/styles.css';
-import Header from '../components/shared/Header.astro';
+import "../css/styles.css"
+import Header from "../components/shared/Header.astro"
+
 // import Footer from '../components/shared/Footer.astro';
 
 interface Props {
-  title: string;
-  description?: string;
-  og_image?: string;
-  og_title?: string;
-  og_type?: string;
+	title: string
+	description?: string
+	og_image?: string
+	og_title?: string
+	og_type?: string
 }
 
-const { props } = Astro;
+const { props } = Astro
 
 const {
-  title,
-  description,
-  og_image = "/assets/og_default.jpg",
-  og_title,
-  og_type = "website",
-} = props;
+	title,
+	description,
+	og_image = "/assets/og_default.jpg",
+	og_title,
+	og_type = "website",
+} = props
 ---
 
 <!doctype html>
 <html lang="es-CL">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <SEO
-      title={title}
-      description={description}
-      openGraph={{
-        basic: {
-          title: og_title || title,
-          image: og_image,
-          type: og_type,
-        },
-      }}
-    />
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<SEO
+			title={title}
+			description={description}
+			openGraph={{
+				basic: {
+					title: og_title || title,
+					image: og_image,
+					type: og_type,
+				},
+			}}
+		/>
+	</head>
 
-  <body class="bg-woodsmoke-50">
-    <Header />
-    <slot />
-    <!-- <Footer /> -->
-  </body>
+	<body class="bg-woodsmoke-50">
+		<Header />
+		<slot />
+		<!-- <Footer /> -->
+	</body>
 </html>
