@@ -16,7 +16,7 @@ const isThisPage = (pageUrl = "", currentPath = "") => {
 }
 ---
 
-<ul class="flex h-full flex-col lg:flex-row lg:gap-6">
+<ul class="flex h-full flex-col lg:flex-row">
 	{
 		NAV_ITEMS?.map(({ href = "", label, children }: NavItem) => {
 			const isActive = isThisPage(href, pathname)
@@ -27,7 +27,7 @@ const isThisPage = (pageUrl = "", currentPath = "") => {
 					<a
 						href={href}
 						class:list={[
-							"flex items-center justify-between gap-2 px-6 py-3 text-center transition-colors hover:text-primary-300 lg:h-full lg:justify-start lg:p-0",
+							"flex items-center justify-between gap-2 bg-transparent px-6 py-3 text-center transition-colors group-hover:bg-secondary-900 group-hover:text-primary-300 lg:h-full lg:justify-start lg:px-3 lg:py-0",
 							isActive ? "text-primary-400" : "text-white",
 						]}
 					>
