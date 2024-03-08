@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets"
+import Breadcrumbs from "./Breadcrumbs.astro"
+
+const { title, breadcrumbs } = Astro.props
+---
+
+<section class="relative overflow-clip bg-secondary-950 px-6 py-12 lg:h-[500px] lg:py-24">
+	<div class="container mx-auto grid h-full grid-cols-12 items-end">
+		<div class="relative z-10 col-span-12 lg:col-span-8">
+			<div class="flex flex-col gap-6">
+				<Breadcrumbs breadcrumbs={breadcrumbs} />
+				<h1 class="text-4xl font-semibold text-white lg:text-6xl">{title}</h1>
+			</div>
+		</div>
+		<div class="col-span-12 lg:relative lg:col-span-4">
+			<div
+				class="absolute right-0 top-0 h-full w-full object-cover opacity-10 lg:-bottom-36 lg:top-auto lg:aspect-square lg:h-[600px] lg:w-[600px] lg:rotate-12 lg:opacity-75"
+			>
+				<Image
+					src="/assets/img/defaults/banner-01.jpg"
+					alt={title}
+					width={1920}
+					height={1080}
+					class="h-full w-full object-cover lg:rounded-2xl"
+				/>
+			</div>
+		</div>
+	</div>
+</section>
