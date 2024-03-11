@@ -1,0 +1,39 @@
+.h1 {
+	@apply text-[clamp(2.4rem,6vw,3.813rem)] font-semibold;
+}
+.h1.heading {
+	@apply break-words text-[clamp(2.8rem,8vw,5rem)] font-bold sm:break-normal;
+}
+
+.h2 {
+	@apply text-[clamp(1.9rem,3.75vw,3.063rem)] font-semibold;
+}
+
+.h3 {
+	@apply text-[clamp(1.7rem,3vw,2.438rem)] font-semibold;
+}
+
+.h4 {
+	@apply text-[clamp(1.5rem,2.25vw,1.938rem)] font-medium;
+}
+.h5 {
+	@apply text-[clamp(1.3rem,2vw,1.563rem)] font-medium;
+}
+
+.h6 {
+	@apply text-[clamp(1.2rem,1.7vw,1.4.5rem)] font-medium;
+}
+
+.p.highlight {
+	@apply text-[clamp(1.1rem,1.6vw,1.4rem)] leading-7;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.p {
+	@apply leading-[1em];
+}

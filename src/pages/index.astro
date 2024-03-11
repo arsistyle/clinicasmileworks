@@ -1,5 +1,6 @@
 ---
 import HeaderPage from "@/components/core/HeaderPage.astro"
+import Typography from "@/components/core/Typography/index.astro"
 import Main from "@/layouts/Main.astro"
 
 // import Main from "../layouts/Main.astro"
@@ -7,4 +8,21 @@ import Main from "@/layouts/Main.astro"
 
 <Main title="Clínica Smile Works">
 	<HeaderPage title="Default page" />
+	<section class="content bg-white px-4 py-24">
+		<div class="container mx-auto">
+			<Typography type="h1">h1- Im a title on this website</Typography>
+			<Typography type="h2">h2- Im a title on this website</Typography>
+			<Typography type="h3">h3- Im a title on this website</Typography>
+			<Typography type="h4">h4- Im a title on this website</Typography>
+			<Typography type="h5">h5- Im a title on this website</Typography>
+			<Typography type="p" class="highlight"
+				>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto libero reprehenderit
+				maiores non assumenda neque exercitationem quod corporis mollitia repellendus!</Typography
+			>
+			<Typography
+				>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto libero reprehenderit
+				maiores non assumenda neque exercitationem quod corporis mollitia repellendus!</Typography
+			>
+		</div>
+	</section>
 </Main>
