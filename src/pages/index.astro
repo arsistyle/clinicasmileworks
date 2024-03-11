@@ -1,5 +1,6 @@
 ---
 import HeaderPage from "@/components/core/HeaderPage.astro"
+import Section from "@/components/core/Section.astro"
 import Typography from "@/components/core/Typography/index.astro"
 import Main from "@/layouts/Main.astro"
 
@@ -8,8 +9,8 @@ import Main from "@/layouts/Main.astro"
 
 <Main title="Clínica Smile Works">
 	<HeaderPage title="Default page" />
-	<section class="content bg-white px-4 py-24">
-		<div class="container mx-auto">
+	<Section class="content bg-white" containerProps={{ class: "gap-y-8 lg:gap-12" }}>
+		<Fragment slot="fullContentTop">
 			<Typography type="h1">h1- Im a title on this website</Typography>
 			<Typography type="h2">h2- Im a title on this website</Typography>
 			<Typography type="h3">h3- Im a title on this website</Typography>
@@ -23,6 +24,88 @@ import Main from "@/layouts/Main.astro"
 				>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto libero reprehenderit
 				maiores non assumenda neque exercitationem quod corporis mollitia repellendus!</Typography
 			>
-		</div>
-	</section>
+		</Fragment>
+		<Fragment slot="leftContent">
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+		</Fragment>
+		<Fragment slot="rightContent">
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+		</Fragment>
+	</Section>
+	<Section
+		class="content bg-secondary-50"
+		containerProps={{ class: "gap-y-8 lg:gap-12" }}
+		slotProps={{
+			leftContent: {
+				class: "hidden md:block",
+			},
+		}}
+		backgroundUrl="/assets/img/smile-man.jpg"
+	>
+		<Fragment slot="leftContent"></Fragment>
+
+		<Fragment slot="rightContent">
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+		</Fragment>
+	</Section>
+	<Section
+		class="content bg-primary-100"
+		containerProps={{ class: "gap-y-8 lg:gap-12" }}
+		backgroundUrl="/assets/img/irene-miriam.png"
+	>
+		<Fragment slot="leftContent">
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+		</Fragment>
+	</Section>
 </Main>

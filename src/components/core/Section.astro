@@ -1,0 +1,74 @@
+---
+const { fullContentTop, fullContentBottom, leftContent, rightContent } = Astro.slots
+
+const {
+	class: className = "",
+	slotProps = {},
+	containerProps = {},
+	backgroundUrl = "",
+} = Astro.props
+
+const {
+	fullContentTop: fullContentTopProps,
+	fullContentBottom: fullContentBottomProps,
+	leftContent: leftContentProps,
+	rightContent: rightContentProps,
+} = slotProps
+---
+
+<section class:list={["relative p-6 py-12 lg:py-24", className]}>
+	{
+		backgroundUrl && (
+			<div
+				class="absolute inset-0 -z-0 h-full w-full bg-cover bg-center bg-no-repeat opacity-40 blur-md md:opacity-100 md:blur-none"
+				style={`background-image: url("${backgroundUrl}")`}
+			/>
+		)
+	}
+	<div
+		class:list={["container mx-auto grid grid-cols-12", containerProps?.class]}
+		{...containerProps}
+	>
+		{
+			fullContentTop && (
+				<div class:list={["col-span-12", fullContentTopProps?.class]} {...fullContentTopProps}>
+					<slot name="fullContentTop" />
+				</div>
+			)
+		}
+		{
+			leftContent && (
+				<div
+					class:list={["col-span-12 md:col-span-6", leftContentProps?.class]}
+					{...leftContentProps}
+				>
+					<div class="sticky top-24">
+						<slot name="leftContent" />
+					</div>
+				</div>
+			)
+		}
+		{
+			rightContent && (
+				<div
+					class:list={["col-span-12 md:col-span-6", rightContentProps?.class]}
+					{...rightContentProps}
+				>
+					<div class="sticky top-24">
+						<slot name="rightContent" />
+					</div>
+				</div>
+			)
+		}
+		{
+			fullContentBottom && (
+				<div
+					class:list={["col-span-12", fullContentBottomProps?.class]}
+					{...fullContentBottomProps}
+				>
+					<slot name="fullContentBottom" />
+				</div>
+			)
+		}
+	</div>
+</section>
