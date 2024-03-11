@@ -6,6 +6,7 @@
 
 html {
 	scroll-timeline-name: --mainTimeline;
+	overflow-x: hidden;
 }
 
 body {
