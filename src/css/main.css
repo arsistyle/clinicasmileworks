@@ -12,3 +12,12 @@ body {
 	scrollbar-gutter: stable both-edges;
 	min-height: 100dvh;
 }
+
+.content .h2,
+.content .h3,
+.content .h4,
+.content .h5,
+.content .h6,
+.content .p {
+	@apply my-[.75em];
+}
