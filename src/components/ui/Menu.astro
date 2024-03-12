@@ -1,14 +1,15 @@
 ---
+import { twMerge } from "tailwind-merge"
 import Nav from "./Nav.astro"
 
 const activeClass = "[.active&]:opacity-100 [.active&]:translate-x-0 [.active&]:pointer-events-auto"
 ---
 
 <div
-	class:list={[
+	class:list={twMerge(
 		"touch-scroll pointer-events-none fixed right-0 top-20 z-50 h-[calc(100vh-80px)] w-full max-w-96 translate-x-full overflow-y-auto bg-secondary-950/80 pb-10 opacity-0 backdrop-blur-2xl transition lg:hidden",
-		activeClass,
-	]}
+		activeClass
+	)}
 	id="menu"
 >
 	<Nav />

@@ -1,4 +1,5 @@
 ---
+import { twMerge } from "tailwind-merge"
 import "./styles.css"
 
 interface TypographyProps {
@@ -24,6 +25,6 @@ const TAGS = {
 const Tag = TAGS[type] || "p"
 ---
 
-<Tag class:list={`${className} ${type || ""}`} {...props}>
+<Tag class:list={twMerge(className, type)} {...props}>
 	<slot />
 </Tag>
