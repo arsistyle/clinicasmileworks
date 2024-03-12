@@ -14,7 +14,7 @@ const isThisPage = (pageUrl = "", currentPath = "") => {
 ---
 
 <ul
-	class="mb-4 bg-secondary-950/10 p-2 backdrop-blur-2xl lg:invisible lg:absolute lg:right-0 lg:top-[90%] lg:min-w-48 lg:translate-y-2 lg:rounded-2xl lg:bg-secondary-950/90 lg:px-0 lg:py-4 lg:opacity-0 lg:transition lg:delay-100 lg:group-hover:visible lg:group-hover:translate-y-0 lg:group-hover:opacity-100"
+	class="mb-4 bg-secondary-950/10 p-2 backdrop-blur-2xl lg:invisible lg:absolute lg:right-0 lg:top-[90%] lg:w-screen lg:min-w-48 lg:max-w-56 lg:translate-y-2 lg:rounded-2xl lg:bg-secondary-950/90 lg:px-0 lg:py-4 lg:opacity-0 lg:transition lg:delay-100 lg:group-hover:visible lg:group-hover:translate-y-0 lg:group-hover:opacity-100"
 >
 	{
 		children?.map(({ href = "", label }: NavItem) => {

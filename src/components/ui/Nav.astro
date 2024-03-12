@@ -6,7 +6,7 @@ import type { NavItem } from "../../constants/types"
 
 import { NAV_ITEMS } from "../../constants"
 
-import ChildrenNav from "./ChildrenNav.astro"
+import NavChildrens from "./NavChildrens.astro"
 
 const { pathname } = Astro.url
 
@@ -28,7 +28,7 @@ const isThisPage = (pageUrl = "", currentPath = "") => {
 					<a
 						href={href}
 						class:list={twMerge(
-							"flex items-center justify-between gap-2 bg-transparent px-6 py-3 text-center transition-colors group-hover:bg-secondary-900/15 group-hover:text-primary-300 lg:h-full lg:justify-start lg:px-3 lg:py-0",
+							"flex items-center justify-between gap-2 bg-transparent px-6 py-3 text-center transition-colors group-hover:bg-primary-900/20 group-hover:text-primary-300 lg:h-full lg:justify-start lg:px-3 lg:py-0",
 							isActive ? "text-primary-400" : "text-white"
 						)}
 					>
@@ -39,7 +39,7 @@ const isThisPage = (pageUrl = "", currentPath = "") => {
 							</div>
 						)}
 					</a>
-					{hasChildren && <ChildrenNav children={children} />}
+					{hasChildren && <NavChildrens children={children} />}
 				</li>
 			)
 		})

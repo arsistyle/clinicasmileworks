@@ -1,0 +1,23 @@
+---
+import { twMerge } from "tailwind-merge"
+import type { NavItem } from "../../constants/types"
+
+const { children } = Astro.props
+---
+
+<ul class="flex flex-col gap-2 pt-4">
+	{
+		children?.map(({ href = "", label }: NavItem) => {
+			return (
+				<li class="group">
+					<a
+						href={href}
+						class:list={twMerge("text-secondary-400 transition-opacity hover:opacity-60")}
+					>
+						<span>{label}</span>
+					</a>
+				</li>
+			)
+		})
+	}
+</ul>
