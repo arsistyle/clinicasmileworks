@@ -4,8 +4,7 @@ import { SEO } from "astro-seo"
 
 import "../css/styles.css"
 import Header from "../components/shared/Header.astro"
-
-// import Footer from '../components/shared/Footer.astro';
+import Footer from "../components/shared/Footer.astro"
 
 interface Props {
 	title: string
@@ -46,9 +45,11 @@ const {
 		/>
 	</head>
 
-	<body class="bg-secondary-950">
-		<Header />
-		<slot />
-		<!-- <Footer /> -->
+	<body>
+		<main class="relative z-10 bg-secondary-950">
+			<Header />
+			<slot />
+		</main>
+		<Footer />
 	</body>
 </html>

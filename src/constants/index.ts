@@ -15,6 +15,10 @@ import type { NavItem } from "./types"
     - Sedación
     - Fisioterapia
   - Ortodoncia Invisible
+    - ¿Qué es la Ortodoncia Invisible?
+	- Cuidados Ortodoncia Invisible
+	- Ortodoncia acelerada
+	- Tu primera visita
   - Casos
     - Testimonios
     - Identifica tu caso
@@ -80,6 +84,28 @@ export const NAV_ITEMS: NavItem[] = [
 		name: "ortodoncia-invisible",
 		label: "Ortodoncia Invisible",
 		href: "/ortodoncia-invisible",
+		children: [
+			{
+				name: "que-es-la-ortodoncia-invisible",
+				label: "¿Qué es la Ortodoncia Invisible?",
+				href: "/ortodoncia-invisible#ortodoncia-invisible",
+			},
+			{
+				name: "cuidados-ortodoncia-invisible",
+				label: "Cuidados Ortodoncia Invisible",
+				href: "/ortodoncia-invisible#cuidados-ortodoncia-invisible",
+			},
+			{
+				name: "ortodoncia-acelerada",
+				label: "Ortodoncia acelerada",
+				href: "/ortodoncia-invisible#ortodoncia-acelerada",
+			},
+			{
+				name: "tu-primera-visita",
+				label: "Tu primera visita",
+				href: "/ortodoncia-invisible#tu-primera-visita",
+			},
+		],
 	},
 	{
 		name: "casos",

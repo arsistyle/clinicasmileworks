@@ -28,6 +28,10 @@
 	@apply text-[clamp(1.1rem,1.6vw,1.4rem)] leading-7;
 }
 
+.p.small {
+	@apply text-[0.813rem] leading-7;
+}
+
 .h1,
 .h2,
 .h3,

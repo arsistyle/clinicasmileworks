@@ -1,0 +1,53 @@
+---
+import { TbBrandFacebook, TbBrandInstagram } from "react-icons/tb"
+
+import InforCard from "../ui/InfoCard.astro"
+import NavColumns from "../ui/NavColumns.astro"
+import Typography from "../core/Typography/index.astro"
+import Logo from "../ui/Logo.astro"
+---
+
+<footer class="sticky bottom-0 z-0 bg-secondary-950 px-8">
+	<div class="container mx-auto grid grid-cols-12 gap-y-4 py-10 lg:gap-10 lg:py-16">
+		<div class="col-span-12 lg:col-span-4">
+			<InforCard />
+		</div>
+
+		<nav class="col-span-12 hidden lg:col-span-8 lg:block">
+			<NavColumns />
+		</nav>
+	</div>
+	<div
+		class="container mx-auto flex flex-col items-center gap-y-4 py-4 sm:flex-row sm:justify-between lg:gap-10"
+	>
+		<div class="w-64 text-2xl text-white">
+			<Logo />
+		</div>
+		<div class="flex items-center gap-3">
+			<a
+				href="www.google.cl"
+				class="aspect-square w-8 text-secondary-400 transition-opacity hover:opacity-60"
+				target="_blank"
+				rel="noreferrer"
+			>
+				<TbBrandFacebook className="h-full w-full" />
+			</a>
+			<a
+				href="www.google.cl"
+				class="aspect-square w-8 text-secondary-400 transition-opacity hover:opacity-60"
+				target="_blank"
+				rel="noreferrer"
+			>
+				<TbBrandInstagram className="h-full w-full" />
+			</a>
+		</div>
+	</div>
+
+	<div
+		class="container mx-auto border-t border-t-secondary-900 py-2 text-center text-secondary-400"
+	>
+		<Typography type="p" class="small"
+			>© Clínica Susana Palma. Todos los derechos reservados.</Typography
+		>
+	</div>
+</footer>
