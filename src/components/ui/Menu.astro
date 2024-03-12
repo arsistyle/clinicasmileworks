@@ -16,10 +16,13 @@ const activeClass = "[.active&]:opacity-100 [.active&]:translate-x-0 [.active&]:
 </div>
 
 <script>
+	const html = document.querySelector("html")
 	const menu = document.querySelector("#menu")
 	const buttonsMenu = document.querySelectorAll(".button-menu")
+	const buttonIcons = document.querySelectorAll(".button-menu__icon")
 
 	menu?.classList.remove("active")
+	html?.classList.remove("menu-active")
 
 	buttonsMenu.forEach((button) => {
 		button.classList.remove("active")
@@ -28,7 +31,12 @@ const activeClass = "[.active&]:opacity-100 [.active&]:translate-x-0 [.active&]:
 				button.classList.toggle("active")
 			}
 
+			buttonIcons.forEach((icon) => {
+				icon.classList.toggle("hidden")
+			})
+
 			menu?.classList.toggle("active")
+			html?.classList.toggle("menu-active")
 		})
 	})
 	// document.addEventListener("astro:page-load", () => {
