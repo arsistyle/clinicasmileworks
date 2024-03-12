@@ -1,12 +1,15 @@
 ---
-import { TbMenu } from "react-icons/tb"
+import { TbMenu2, TbX } from "react-icons/tb"
 ---
 
 <div
-	class="button-menu flex aspect-square h-10 w-10 cursor-pointer items-center justify-center rounded-full p-1 text-white transition hover:bg-white/10"
+	class="button-menu flex aspect-square h-10 w-10 cursor-pointer items-center justify-center rounded-full p-2 text-white transition hover:bg-white/10"
 	role="button"
 >
-	<div class="block"><TbMenu /></div>
+	<div class="block h-full w-full">
+		<TbMenu2 className="button-menu__icon h-full w-full" />
+		<TbX className="button-menu__icon hidden h-full w-full" />
+	</div>
 </div>
 
 <style>

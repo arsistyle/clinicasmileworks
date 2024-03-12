@@ -7,10 +7,15 @@
 html {
 	scroll-timeline-name: --mainTimeline;
 	overflow-x: hidden;
+	scrollbar-gutter: stable;
+}
+
+html.menu-active {
+	overflow: hidden;
 }
 
 body {
-	scrollbar-gutter: stable both-edges;
+	scrollbar-gutter: stable;
 	min-height: 100dvh;
 }
 

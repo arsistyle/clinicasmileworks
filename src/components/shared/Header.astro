@@ -5,30 +5,32 @@ import Nav from "../ui/Nav.astro"
 import ButtonMenu from "../ui/ButtonMenu.astro"
 ---
 
-<header
-	class="sticky top-0 z-50 flex h-20 w-full justify-center bg-secondary-950/80 px-4 backdrop-blur-2xl"
->
-	<div class="container mx-auto flex h-full items-center justify-between">
-		<a href="/">
-			<Image
-				src="/assets/img/logo.svg"
-				alt="Clinica Smile Works"
-				width={258}
-				height={42}
-				class="hidden md:block"
-			/>
-			<Image
-				src="/assets/img/logo-mobile.svg"
-				alt="Clinica Smile Works"
-				width={65}
-				height={38}
-				class="md:hidden"
-			/>
-		</a>
-		<div class="ml-auto hidden h-full items-center gap-4 lg:flex">
-			<Nav />
+<Fragment>
+	<header
+		class="sticky top-0 z-50 flex h-20 w-full justify-center bg-secondary-950/80 px-4 backdrop-blur-2xl"
+	>
+		<div class="container mx-auto flex h-full items-center justify-between">
+			<a href="/">
+				<Image
+					src="/assets/img/logo.svg"
+					alt="Clinica Smile Works"
+					width={258}
+					height={42}
+					class="hidden md:block"
+				/>
+				<Image
+					src="/assets/img/logo-mobile.svg"
+					alt="Clinica Smile Works"
+					width={65}
+					height={38}
+					class="md:hidden"
+				/>
+			</a>
+			<div class="ml-auto hidden h-full items-center gap-4 lg:flex">
+				<Nav />
+			</div>
+			<div class="lg:hidden"><ButtonMenu /></div>
 		</div>
-		<Menu />
-		<div class="lg:hidden"><ButtonMenu /></div>
-	</div>
-</header>
+	</header>
+	<Menu />
+</Fragment>
