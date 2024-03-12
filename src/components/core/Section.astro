@@ -1,4 +1,6 @@
 ---
+import { twMerge } from "tailwind-merge"
+
 const { fullContentTop, fullContentBottom, leftContent, rightContent } = Astro.slots
 
 const {
@@ -16,7 +18,7 @@ const {
 } = slotProps
 ---
 
-<section class:list={["relative p-6 py-12 lg:py-24", className]}>
+<section class:list={twMerge("relative p-6 py-12 lg:py-24", className)}>
 	{
 		backgroundUrl && (
 			<div
@@ -26,12 +28,15 @@ const {
 		)
 	}
 	<div
-		class:list={["container mx-auto grid grid-cols-12", containerProps?.class]}
+		class:list={twMerge("container mx-auto grid grid-cols-12", containerProps?.class)}
 		{...containerProps}
 	>
 		{
 			fullContentTop && (
-				<div class:list={["col-span-12", fullContentTopProps?.class]} {...fullContentTopProps}>
+				<div
+					class:list={twMerge("col-span-12", fullContentTopProps?.class)}
+					{...fullContentTopProps}
+				>
 					<slot name="fullContentTop" />
 				</div>
 			)
@@ -39,7 +44,7 @@ const {
 		{
 			leftContent && (
 				<div
-					class:list={["col-span-12 md:col-span-6", leftContentProps?.class]}
+					class:list={twMerge("col-span-12 md:col-span-6", leftContentProps?.class)}
 					{...leftContentProps}
 				>
 					<div class="sticky top-24">
@@ -51,7 +56,7 @@ const {
 		{
 			rightContent && (
 				<div
-					class:list={["col-span-12 md:col-span-6", rightContentProps?.class]}
+					class:list={twMerge("col-span-12 md:col-span-6", rightContentProps?.class)}
 					{...rightContentProps}
 				>
 					<div class="sticky top-24">
@@ -63,7 +68,7 @@ const {
 		{
 			fullContentBottom && (
 				<div
-					class:list={["col-span-12", fullContentBottomProps?.class]}
+					class:list={twMerge("col-span-12", fullContentBottomProps?.class)}
 					{...fullContentBottomProps}
 				>
 					<slot name="fullContentBottom" />

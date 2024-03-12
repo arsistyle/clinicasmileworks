@@ -1,4 +1,5 @@
 ---
+import { twMerge } from "tailwind-merge"
 import type { NavItem } from "../../constants/types"
 
 const { pathname } = Astro.url
@@ -23,10 +24,10 @@ const isThisPage = (pageUrl = "", currentPath = "") => {
 				<li>
 					<a
 						href={href}
-						class:list={[
+						class:list={twMerge(
 							"flex px-4 py-3 pl-8 leading-4 text-white transition-colors hover:text-primary-300 lg:px-6 lg:py-3 lg:pl-6",
-							isActive ? "text-primary-400" : "",
-						]}
+							isActive ? "text-primary-400" : ""
+						)}
 					>
 						{label}
 					</a>
