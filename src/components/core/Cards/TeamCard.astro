@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets"
+import Typography from "../Typography/index.astro"
+
+const { name, position, description, image } = Astro.props
+---
+
+<div class="group min-h-full rounded-2xl bg-white">
+	<div
+		class="aspect-[8/10] overflow-hidden rounded-t-2xl bg-primary-100 transition-colors group-hover:bg-secondary-100"
+	>
+		<Image
+			src={image}
+			alt={name}
+			width={300}
+			height={300}
+			class="h-full w-full origin-bottom object-cover transition-transform group-hover:scale-105"
+		/>
+	</div>
+	<div class="flex flex-col gap-4 rounded-b-2xl px-4 py-8 text-center">
+		{name && <Typography type="h5">{name}</Typography>}
+		{
+			position && (
+				<Typography type="p" class="highlight text-primary-400">
+					{position}
+				</Typography>
+			)
+		}
+		{
+			description && (
+				<Typography type="p" class="leading-5 text-secondary-400">
+					{description}
+				</Typography>
+			)
+		}
+	</div>
+</div>
