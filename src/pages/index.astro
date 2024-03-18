@@ -8,6 +8,7 @@ import Main from "@/layouts/Main.astro"
 import SectionTeam from "@/components/sections/SectionTeam.astro"
 import Button from "@/components/core/Button/index.astro"
 import Video from "@/components/core/Video.astro"
+import Blockquote from "@/components/core/Blockquote.astro"
 
 // import Main from "../layouts/Main.astro"
 ---
@@ -88,12 +89,6 @@ import Video from "@/components/core/Video.astro"
 					><TbCalendarStats slot="iconLeft" /> Cita online</Button
 				>
 			</div>
-			<div class="py-6">
-				<Video
-					url="https://www.youtube.com/watch?v=kIgbWzKQH_o"
-					image="/assets/img/testimonials/demo.png"
-				/>
-			</div>
 		</Fragment>
 		<Fragment slot="leftContent">
 			<p>
@@ -133,6 +128,38 @@ import Video from "@/components/core/Video.astro"
 				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
 				recusandae, est commodi quo hic! Saepe!
 			</p>
+		</Fragment>
+	</Section>
+	<Section class="content bg-white" containerProps={{ class: "items-center gap-y-8 lg:gap-24" }}>
+		<Fragment slot="leftContent">
+			<Video
+				url="https://www.youtube.com/watch?v=kIgbWzKQH_o"
+				image="/assets/img/testimonials/demo.png"
+			/>
+		</Fragment>
+		<Fragment slot="rightContent">
+			<Blockquote
+				text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto libero reprehenderit"
+				author="John Doe"
+			/>
+		</Fragment>
+	</Section>
+	<Section
+		class="content bg-white"
+		containerProps={{ class: "items-center gap-y-8 lg:gap-24" }}
+		slotProps={{ leftContent: { class: "order-1" }, rightContent: { class: "order-0 md:order-2" } }}
+	>
+		<Fragment slot="rightContent">
+			<Video
+				url="https://www.youtube.com/watch?v=kIgbWzKQH_o"
+				image="/assets/img/testimonials/demo.png"
+			/>
+		</Fragment>
+		<Fragment slot="leftContent">
+			<Blockquote
+				text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto libero reprehenderit"
+				author="John Doe"
+			/>
 		</Fragment>
 	</Section>
 	<Section
