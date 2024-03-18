@@ -1,9 +1,12 @@
 ---
+import { TbBrandWhatsapp, TbCalendarStats, TbChevronRight } from "react-icons/tb"
+
 import HeaderPage from "@/components/core/HeaderPage.astro"
 import Section from "@/components/core/Section.astro"
 import Typography from "@/components/core/Typography/index.astro"
 import Main from "@/layouts/Main.astro"
 import SectionTeam from "@/components/sections/SectionTeam.astro"
+import Button from "@/components/core/Button/index.astro"
 
 // import Main from "../layouts/Main.astro"
 ---
@@ -25,6 +28,65 @@ import SectionTeam from "@/components/sections/SectionTeam.astro"
 				>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto libero reprehenderit
 				maiores non assumenda neque exercitationem quod corporis mollitia repellendus!</Typography
 			>
+			<div class="flex flex-wrap gap-4 py-2">
+				<Button>Default</Button>
+				<Button color="primary">Primary</Button>
+				<Button color="secondary">Secondary</Button>
+				<Button color="dark">Dark</Button>
+			</div>
+			<div class="flex flex-wrap gap-4 py-2">
+				<Button variant="outlined">Default</Button>
+				<Button color="primary" variant="outlined">Primary</Button>
+				<Button color="secondary" variant="outlined">Secondary</Button>
+				<Button color="dark" variant="outlined">Dark</Button>
+			</div>
+			<div class="flex flex-wrap gap-4 py-2">
+				<Button variant="filled">Default</Button>
+				<Button color="primary" variant="filled">Primary</Button>
+				<Button color="secondary" variant="filled">Secondary</Button>
+				<Button color="dark" variant="filled">Dark</Button>
+			</div>
+			<div class="flex flex-wrap gap-4 py-2">
+				<Button variant="filled" disabled>Default</Button>
+				<Button color="primary" variant="filled" disabled>Primary</Button>
+				<Button color="secondary" variant="filled" disabled>Secondary</Button>
+				<Button color="dark" variant="filled" disabled>Dark</Button>
+			</div>
+			<div class="flex flex-wrap gap-4 py-2">
+				<Button variant="filled" size="xs">Default</Button>
+				<Button color="primary" variant="filled" size="xs">Primary</Button>
+				<Button color="secondary" variant="filled" size="xs">Secondary</Button>
+				<Button color="dark" variant="filled" size="xs">Dark</Button>
+			</div>
+			<div class="flex flex-wrap gap-4 py-2">
+				<Button variant="filled" size="sm">Default</Button>
+				<Button color="primary" variant="filled" size="sm">Primary</Button>
+				<Button color="secondary" variant="filled" size="sm">Secondary</Button>
+				<Button color="dark" variant="filled" size="sm">Dark</Button>
+			</div>
+			<div class="flex flex-wrap gap-4 py-2">
+				<Button variant="filled" size="lg">Default</Button>
+				<Button color="primary" variant="filled" size="lg">Primary</Button>
+				<Button color="secondary" variant="filled" size="lg">Secondary</Button>
+				<Button color="dark" variant="filled" size="lg">Dark</Button>
+			</div>
+			<div class="flex flex-wrap gap-4 py-2">
+				<Button variant="filled" size="xl">Default</Button>
+				<Button color="primary" variant="filled" size="xl">Primary</Button>
+				<Button color="secondary" variant="filled" size="xl">Secondary</Button>
+				<Button color="dark" variant="filled" size="xl">Dark</Button>
+			</div>
+			<div class="flex flex-wrap gap-4 py-2">
+				<Button color="dark" variant="filled"
+					>Conoce al equipo <TbChevronRight slot="iconRight" /></Button
+				>
+				<Button color="whatsapp" variant="filled"
+					><TbBrandWhatsapp slot="iconLeft" />Cita telefónica</Button
+				>
+				<Button color="primary" variant="filled"
+					><TbCalendarStats slot="iconLeft" /> Cita online</Button
+				>
+			</div>
 		</Fragment>
 		<Fragment slot="leftContent">
 			<p>
