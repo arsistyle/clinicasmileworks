@@ -1,0 +1,12 @@
+---
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa"
+
+const { text, author } = Astro.props
+---
+
+<blockquote class="flex flex-col gap-4 text-dark">
+	<FaQuoteLeft className="h-4 w-4 md:h-6 md:w-6" />
+	{text && <div class="text-xl leading-normal md:text-3xl">{text}</div>}
+	<FaQuoteRight className="h-4 w-4 md:h-6 md:w-6" />
+	{author && <div class="text-primary-400">{author}</div>}
+</blockquote>
