@@ -240,4 +240,14 @@ import SimpleCard from "@/components/core/Cards/SimpleCard.astro"
 		</Fragment>
 	</Section>
 	<SectionTeam />
+	<Fragment slot="header">
+		<script>
+			// console.log("hola, este script se carga despues del Header en el mainLayout")
+		</script>
+	</Fragment>
+	<Fragment slot="footer">
+		<script>
+			// console.log("hola, este script se carga despues del footer en el mainLayout")
+		</script>
+	</Fragment>
 </Main>
