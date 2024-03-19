@@ -1,0 +1,36 @@
+---
+import "lightgallery/css/lightgallery.css"
+import "lightgallery/css/lg-zoom.css"
+import "lightgallery/css/lg-thumbnail.css"
+
+import HeaderPage from "@/components/core/HeaderPage.astro"
+import Main from "@/layouts/Main.astro"
+import Section from "@/components/core/Section.astro"
+
+import { Gallery as ReactGallery } from "@/components/core/Gallery"
+---
+
+<Main title="Clínica Smile Works">
+	<HeaderPage title="Gallery" />
+	<Section class="bg-white">
+		<Fragment slot="fullContentTop">
+			<ReactGallery
+				client:load
+				images={[
+					{
+						url: "/assets/img/defaults/banner-01.jpg",
+						title: "Demo 1",
+					},
+					{
+						url: "/assets/img/defaults/banner-02.jpg",
+						title: "Demo 2",
+					},
+					{
+						url: "/assets/img/defaults/banner-03.jpg",
+						title: "Demo 3",
+					},
+				]}
+			/>
+		</Fragment>
+	</Section>
+</Main>
