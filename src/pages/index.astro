@@ -9,6 +9,7 @@ import SectionTeam from "@/components/sections/SectionTeam.astro"
 import Button from "@/components/core/Button/index.astro"
 import Video from "@/components/core/Video.astro"
 import Blockquote from "@/components/core/Blockquote.astro"
+import SimpleCard from "@/components/core/Cards/SimpleCard.astro"
 
 // import Main from "../layouts/Main.astro"
 ---
@@ -130,11 +131,44 @@ import Blockquote from "@/components/core/Blockquote.astro"
 			</p>
 		</Fragment>
 	</Section>
-	<Section class="content bg-white" containerProps={{ class: "items-center gap-y-8 lg:gap-24" }}>
+	<Section class="bg-white" containerProps={{ class: "gap-y-8 lg:gap-4" }}>
+		<Fragment slot="leftContent">
+			<div class="flex flex-col gap-6">
+				<SimpleCard title="Simple Card" url="#" seeMore={false} class="text-center" titleTag="h5" />
+				<SimpleCard
+					title="Invisible"
+					description="Prácticamente no se ve."
+					icon={TbCalendarStats}
+					seeMore={false}
+				/>
+				<SimpleCard url="#" image="/assets/img/demo/treatment.png" imageAsCover={false}>
+					<Fragment slot="title">
+						<div>Ortodoncia</div>
+						<div>(niños y adultos)</div>
+					</Fragment>
+				</SimpleCard>
+				<SimpleCard
+					title="Odontopediatría"
+					url="#"
+					image="/assets/img/demo/treatment2.png"
+					imageAsCover={false}
+				/>
+				<SimpleCard
+					title="Simple Card"
+					description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+					url="#"
+					direction="column"
+					image="/assets/img/demo/treatment.png"
+				/>
+			</div>
+		</Fragment>
+		<Fragment slot="rightContent"> </Fragment>
+	</Section>
+	<Section class="bg-white" containerProps={{ class: "items-center gap-y-8 md:gap-12 lg:gap-24" }}>
 		<Fragment slot="leftContent">
 			<Video
 				url="https://www.youtube.com/watch?v=kIgbWzKQH_o"
-				image="/assets/img/testimonials/demo.png"
+				image="/assets/img/demo/testimonials.png"
 			/>
 		</Fragment>
 		<Fragment slot="rightContent">
@@ -145,14 +179,14 @@ import Blockquote from "@/components/core/Blockquote.astro"
 		</Fragment>
 	</Section>
 	<Section
-		class="content bg-white"
-		containerProps={{ class: "items-center gap-y-8 lg:gap-24" }}
+		class="bg-white"
+		containerProps={{ class: "items-center gap-y-8 md:gap-12 lg:gap-24" }}
 		slotProps={{ leftContent: { class: "order-1" }, rightContent: { class: "order-0 md:order-2" } }}
 	>
 		<Fragment slot="rightContent">
 			<Video
 				url="https://www.youtube.com/watch?v=kIgbWzKQH_o"
-				image="/assets/img/testimonials/demo.png"
+				image="/assets/img/demo/testimonials.png"
 			/>
 		</Fragment>
 		<Fragment slot="leftContent">
