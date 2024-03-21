@@ -1,0 +1,36 @@
+---
+import HeaderPage from "@/components/core/HeaderPage.astro"
+import WithImageCompare from "@/layouts/WithImageCompare.astro"
+import Section from "@/components/core/Section.astro"
+import ImageCompare from "@/components/core/ImageCompare.astro"
+---
+
+<WithImageCompare title="Clínica Smile Works">
+	<HeaderPage title="Gallery" />
+	<Section class="bg-white">
+		<Fragment slot="fullContentTop">
+			<div class="grid grid-cols-12 gap-5 xl:px-[calc(100%/12-20px)]">
+				<div class="col-span-12 md:col-span-6">
+					<ImageCompare
+						title="Demo 1"
+						description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto libero reprehenderit"
+						images={{
+							before: "/assets/img/demo/compare-1.jpg",
+							after: "/assets/img/demo/compare-2.jpg",
+						}}
+					/>
+				</div>
+				<div class="col-span-12 md:col-span-6">
+					<ImageCompare
+						title="Demo 2"
+						description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+						images={{
+							before: "/assets/img/demo/compare-3.jpg",
+							after: "/assets/img/demo/compare-4.jpg",
+						}}
+					/>
+				</div>
+			</div>
+		</Fragment>
+	</Section>
+</WithImageCompare>
