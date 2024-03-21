@@ -2,7 +2,7 @@
 import { twMerge } from "tailwind-merge"
 import "./styles.css"
 
-interface Props {
+export interface ButtonProps {
 	tag?: "button" | "a" | "span"
 	variant?: "filled" | "outlined"
 	size?: "xs" | "sm" | "md" | "lg" | "xl"
@@ -11,7 +11,11 @@ interface Props {
 	disabled?: boolean
 	href?: string
 	type?: "button" | "submit" | "reset" | undefined | null
+	target?: "_blank" | "_self" | "_parent" | "_top" | "framename"
+	rel?: string
 }
+
+type Props = ButtonProps
 
 const {
 	tag = "button",
@@ -22,6 +26,8 @@ const {
 	class: className,
 	href,
 	type,
+	target,
+	rel,
 } = Astro.props
 const Tag = tag
 ---
@@ -38,6 +44,8 @@ const Tag = tag
 	type={type}
 	disabled={disabled}
 	href={!disabled ? href : undefined}
+	target={target}
+	rel={rel}
 >
 	<slot name="iconLeft" />
 	<slot />

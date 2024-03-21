@@ -47,7 +47,7 @@ const {
 					class:list={twMerge("col-span-12 md:col-span-6", leftContentProps?.class)}
 					{...leftContentProps}
 				>
-					<div class="sticky top-24">
+					<div class:list={twMerge("sticky top-24", leftContentProps?.child?.class)}>
 						<slot name="leftContent" />
 					</div>
 				</div>
@@ -59,7 +59,7 @@ const {
 					class:list={twMerge("col-span-12 md:col-span-6", rightContentProps?.class)}
 					{...rightContentProps}
 				>
-					<div class="sticky top-24">
+					<div class:list={twMerge("sticky top-24", rightContentProps?.child?.class)}>
 						<slot name="rightContent" />
 					</div>
 				</div>
