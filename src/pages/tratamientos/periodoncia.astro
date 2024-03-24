@@ -1,0 +1,37 @@
+---
+import "lightgallery/css/lightgallery.css"
+import "lightgallery/css/lg-zoom.css"
+import "lightgallery/css/lg-thumbnail.css"
+
+import HeaderPage from "@/components/core/HeaderPage.astro"
+import Main from "@/layouts/Main.astro"
+import Section from "@/components/core/Section.astro"
+
+const title = "Periodoncia"
+const slug = "periodoncia"
+
+const breadcrumb = [
+	{
+		name: "Home",
+		url: "/",
+		type: "link",
+	},
+	{
+		name: "Tratamientos",
+		url: "/tratamientos",
+		type: "link",
+	},
+	{
+		name: title,
+		url: `/tratamientos/${slug}`,
+		type: "current",
+	},
+]
+---
+
+<Main title={`Clínica Smile Works | Tratamientos - ${title}`}>
+	<HeaderPage title={title} breadcrumbs={breadcrumb} />
+	<Section class="min-h-[500px] bg-white">
+		<Fragment slot="fullContentTop"> This is a content of this page </Fragment>
+	</Section>
+</Main>
