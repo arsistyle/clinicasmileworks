@@ -1,0 +1,74 @@
+---
+import { TbChevronRight } from "react-icons/tb"
+
+import SimpleCard from "../core/Cards/SimpleCard.astro"
+import Section from "../core/Section.astro"
+import Typography from "../core/Typography/index.astro"
+import Button from "../core/Button/index.astro"
+---
+
+<Section class="bg-secondary-50">
+	<Fragment slot="fullContentTop">
+		<div class="mb-12 flex flex-col gap-4 text-center">
+			<Typography type="h2"
+				>Siéntete bien, <span class="block sm:inline">¿qué necesitas?</span></Typography
+			>
+			<Typography type="h4" class="text-primary-400"
+				>Todas las especialidades en un mismo lugar</Typography
+			>
+		</div>
+		<div class="grid grid-cols-12 gap-5">
+			<div class="col-span-12 md:col-span-6">
+				<SimpleCard
+					url="#"
+					image="/assets/img/pages/home/treatments-1.png"
+					imageAsCover={false}
+					class="h-full"
+				>
+					<Fragment slot="title">
+						<div>Ortodoncia</div>
+						<div>(niños y adultos)</div>
+					</Fragment>
+				</SimpleCard>
+			</div>
+			<div class="col-span-12 md:col-span-6">
+				<SimpleCard
+					title="Odontopediatría"
+					url="#"
+					image="/assets/img/pages/home/treatments-2.png"
+					class="h-full"
+				/>
+			</div>
+			<div class="col-span-12 md:col-span-4">
+				<SimpleCard
+					title="⁠Estética facial"
+					url="#"
+					seeMore={false}
+					class="h-full items-center text-center"
+					titleTag="h5"
+				/>
+			</div>
+			<div class="col-span-12 md:col-span-4">
+				<SimpleCard
+					title="Kinesiología cabeza/cuello"
+					url="#"
+					seeMore={false}
+					class="h-full items-center text-center"
+					titleTag="h5"
+				/>
+			</div>
+			<div class="col-span-12 md:col-span-4">
+				<SimpleCard
+					title="Rehabilitación oral/estética dental"
+					url="#"
+					seeMore={false}
+					class="h-full items-center text-center"
+					titleTag="h5"
+				/>
+			</div>
+			<div class="col-span-12 text-right">
+				<Button href="#">Ver todos los tratamientos <TbChevronRight slot="iconRight" /></Button>
+			</div>
+		</div>
+	</Fragment>
+</Section>

@@ -1,25 +1,10 @@
 ---
-import Section from "@/components/core/Section.astro"
 import Main from "@/layouts/Main.astro"
-import Video from "@/components/core/Video.astro"
-import Blockquote from "@/components/core/Blockquote.astro"
 import SectionHero from "@/components/sections/SectionHero.astro"
+import SectionTreatments from "@/components/sections/SectionTreatments.astro"
 ---
 
 <Main title="Clínica Smile Works">
 	<SectionHero />
-	<Section class="bg-white" containerProps={{ class: "items-center gap-y-8 md:gap-12 lg:gap-24" }}>
-		<Fragment slot="leftContent">
-			<Video
-				url="https://www.youtube.com/watch?v=kIgbWzKQH_o"
-				image="/assets/img/demo/testimonials.png"
-			/>
-		</Fragment>
-		<Fragment slot="rightContent">
-			<Blockquote
-				text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto libero reprehenderit"
-				author="John Doe"
-			/>
-		</Fragment>
-	</Section>
+	<SectionTreatments />
 </Main>
