@@ -6,6 +6,7 @@ import { Image } from "astro:assets"
 import Button, { type ButtonProps } from "@/components/core/Button/index.astro"
 import Section from "@/components/core/Section.astro"
 import Typography from "@/components/core/Typography/index.astro"
+import { DATING_URL } from "@/constants"
 
 interface HeroButtons {
 	iconLeft?: any
@@ -36,7 +37,7 @@ const data: DataProps = {
 			props: {
 				color: "primary",
 				variant: "filled",
-				href: "https://www.google.com",
+				href: DATING_URL,
 			},
 		},
 		{

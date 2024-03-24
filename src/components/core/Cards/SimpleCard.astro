@@ -16,6 +16,7 @@ interface Props {
 	direction?: "row" | "column"
 	class?: string
 	imageAsCover?: boolean
+	externalUrl?: boolean
 }
 
 const {
@@ -30,6 +31,7 @@ const {
 	class: className = "",
 	titleTag = "h4",
 	imageAsCover = true,
+	externalUrl = false,
 } = Astro.props
 
 const { title: slotTile } = Astro.slots
@@ -80,7 +82,7 @@ const { root: _root, info: _info, graphic: _graphic, image: _image, icon: _icon 
 <Tag
 	href={url}
 	class:list={twMerge(_root.main, _root.direction[direction], className)}
-	{...url && { target: "_blank", rel: "noreferrer" }}
+	{...externalUrl && url && { target: "_blank", rel: "noreferrer" }}
 >
 	<div class:list={twMerge(_info.main, _info.direction[direction], _info.size[size])}>
 		{

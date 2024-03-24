@@ -5,6 +5,7 @@ import { Image } from "astro:assets"
 import Section from "../core/Section.astro"
 import Typography from "../core/Typography/index.astro"
 import Button from "../core/Button/index.astro"
+import { DATING_URL } from "@/constants"
 
 const itemList: string[] = [
 	"Te hacemos un scanner 3D intraoral.",
@@ -50,7 +51,14 @@ const itemList: string[] = [
 				))
 			}
 		</div>
-		<Button href="#" tag="a" variant="filled" color="primary">
+		<Button
+			href={DATING_URL}
+			tag="a"
+			variant="filled"
+			color="primary"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
 			<TbCalendarTime slot="iconLeft" />
 			Pide cita ahora
 		</Button>
