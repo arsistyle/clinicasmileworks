@@ -1,7 +1,7 @@
 import type { NavItem } from "./types"
 
 export const DATING_URL = "https://ff.healthatom.io/I1FQmD"
-export const DATING_NUMBER = "+56950413044"
+export const DATING_NUMBER = "56950413044"
 
 /*
   - Inicio
