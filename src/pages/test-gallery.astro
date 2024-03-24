@@ -1,0 +1,26 @@
+---
+import HeaderPage from "@/components/core/HeaderPage.astro"
+import Main from "@/layouts/Main.astro"
+import Section from "@/components/core/Section.astro"
+
+import Gallery from "@/components/core/Gallery/index.astro"
+
+const galleryPhotos = await Astro.glob("../content/gallery/clinic/*.jpg")
+
+const galleryData = galleryPhotos.map(({ default: { src, width, height } }) => {
+	return {
+		src,
+		width,
+		height,
+	}
+})
+---
+
+<Main title="Clínica Smile Works">
+	<HeaderPage title="Gallery" />
+	<Section class="bg-white">
+		<Fragment slot="fullContentTop">
+			<Gallery images={galleryData} />
+		</Fragment>
+	</Section>
+</Main>

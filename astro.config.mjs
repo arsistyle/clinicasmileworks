@@ -6,8 +6,8 @@ import react from "@astrojs/react"
 export default defineConfig({
 	integrations: [tailwind(), react()],
 	redirects: {
-		casos: "/casos/testimonios",
-    tratamientos: "/tratamientos/ortodoncia",
-    "la-clinica": "/la-clinica/el-equipo",
+		"casos": "/casos/testimonios",
+		"tratamientos": "/tratamientos/ortodoncia",
+		"la-clinica": "/la-clinica/el-equipo",
 	},
 })
