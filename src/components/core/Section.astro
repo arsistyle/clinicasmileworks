@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets"
 import { twMerge } from "tailwind-merge"
 
 const { fullContentTop, fullContentBottom, leftContent, rightContent } = Astro.slots
@@ -21,10 +22,16 @@ const {
 <section class:list={twMerge("relative p-6 py-12 lg:py-24", className)}>
 	{
 		backgroundUrl && (
-			<div
-				class="absolute inset-0 -z-0 h-full w-full bg-cover bg-center bg-no-repeat opacity-40 blur-md md:opacity-100 md:blur-none"
-				style={`background-image: url("${backgroundUrl}")`}
-			/>
+			<div class="user-select-none pointer-events-none absolute inset-0 -z-0  h-full w-full opacity-40 blur-md md:opacity-100 md:blur-none">
+				<Image
+					src={backgroundUrl}
+					alt="Section Background"
+					width={1920}
+					height={1080}
+					loading="lazy"
+					class="h-full w-full object-cover"
+				/>
+			</div>
 		)
 	}
 	<div

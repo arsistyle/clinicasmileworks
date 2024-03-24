@@ -1,28 +1,37 @@
 ---
-import type { CollectionEntry } from "astro:content"
+import { TbChevronRight } from "react-icons/tb"
 
-import { getCollection } from "astro:content"
-
-import TeamCard from "../core/Cards/TeamCard.astro"
+import { Image } from "astro:assets"
 import Section from "../core/Section.astro"
-
-type TeamProps = CollectionEntry<"team">["data"]
-
-const teamData = await getCollection("team", ({ data }: { data: TeamProps }) => {
-	return data.visible
-})
+import Typography from "../core/Typography/index.astro"
+import Button from "../core/Button/index.astro"
 ---
 
-<Section class="bg-secondary-50">
-	<Fragment slot="fullContentTop">
-		<div class="flex flex-wrap justify-center gap-4">
-			{
-				teamData.map(({ data: { name, position, description, image } }: { data: TeamProps }) => (
-					<div class="w-full md:w-[calc(100%/2-16px)] lg:w-[calc(100%/3-16px)]">
-						<TeamCard name={name} position={position} description={description} image={image} />
-					</div>
-				))
-			}
+<Section
+	class="bg-primary-100"
+	containerProps={{ class: "gap-y-8 lg:gap-12 items-center min-h-96" }}
+	backgroundUrl="/assets/img/pages/home/section--team.jpg"
+>
+	<Fragment slot="leftContent">
+		<Image
+			src="/assets/img/pages/home/section--team-m.jpg"
+			class="mb-12 block rounded-2xl md:hidden"
+			alt="Team"
+			width={700}
+			height={467}
+			loading={"lazy"}
+		/>
+		<div class="mb-12 flex flex-col gap-4">
+			<Typography type="h2" class="h3">Solo grandes profesionales</Typography>
+			<Typography type="h4" class="text-primary-400">A tu entera disposición</Typography>
+			<Typography type="p"
+				>Contamos con un equipo de profesionales formados, cada uno en su ámbito para dar un
+				servicio integral en una clínica multidisciplinar con todos los tratamientos.</Typography
+			>
 		</div>
+		<Button href="#" tag="a" variant="filled" color="dark">
+			<TbChevronRight slot="iconRight" />
+			Conoce al equipo
+		</Button>
 	</Fragment>
 </Section>
