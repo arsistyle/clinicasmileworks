@@ -1,0 +1,49 @@
+---
+import { TbCalendarTime, TbCheck } from "react-icons/tb"
+
+import Section from "../core/Section.astro"
+import Typography from "../core/Typography/index.astro"
+import Button from "../core/Button/index.astro"
+
+const itemList: string[] = [
+	"Te hacemos un scanner 3D intraoral.",
+	"Te mostramos el antes/después de tu sonrisa.",
+	"Un doctor te hace un pronóstico.",
+	"Te damos un presupuesto sin compromiso.",
+]
+---
+
+<Section
+	class="bg-secondary-100"
+	containerProps={{ class: "gap-y-8 lg:gap-12" }}
+	slotProps={{
+		leftContent: {
+			class: "hidden md:block",
+		},
+	}}
+	backgroundUrl="/assets/img/smile-man.jpg"
+>
+	<Fragment slot="leftContent"></Fragment>
+
+	<Fragment slot="rightContent">
+		<div class="mb-12 flex flex-col gap-4">
+			<Typography type="h2" class="h3">¿Cómo será mi primera visita?</Typography>
+			<Typography type="h4" class="text-primary-400 md:pl-10"> Totalmente gratuita</Typography>
+		</div>
+
+		<div class="mb-12 flex flex-col gap-2">
+			{
+				itemList.map((item) => (
+					<div class="flex items-center gap-4">
+						<TbCheck className="text-primary-400 w-6 h-6" />
+						<Typography type="p">{item}</Typography>
+					</div>
+				))
+			}
+		</div>
+		<Button href="#" tag="a" variant="filled" color="primary">
+			<TbCalendarTime slot="iconLeft" />
+			Pide cita ahora
+		</Button>
+	</Fragment>
+</Section>
