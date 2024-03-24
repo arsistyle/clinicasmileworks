@@ -1,5 +1,47 @@
 ---
+import { TbBrandWhatsapp, TbCalendarTime } from "react-icons/tb"
+
 import Typography from "../core/Typography/index.astro"
+import Button from "../core/Button/index.astro"
+import type { ButtonProps } from "@/components/core/Button/index.astro"
+import { DATING_NUMBER, DATING_URL } from "@/constants"
+
+interface ButtonsProps {
+	name: string
+	label: string
+	iconLeft?: any
+	iconRight?: any
+	props?: ButtonProps
+}
+
+const buttons: ButtonsProps[] = [
+	{
+		name: "whatsapp",
+		label: "Cita vía WhatsApp",
+		iconLeft: TbBrandWhatsapp,
+		props: {
+			color: "whatsapp",
+			variant: "filled",
+			href: `https://wa.me/${DATING_NUMBER}`,
+			target: "_blank",
+			rel: "noopener noreferrer",
+			tag: "a",
+		},
+	},
+	{
+		name: "call",
+		label: "Cita online",
+		iconLeft: TbCalendarTime,
+		props: {
+			color: "primary",
+			variant: "filled",
+			href: DATING_URL,
+			target: "_blank",
+			rel: "noopener noreferrer",
+			tag: "a",
+		},
+	},
+]
 ---
 
 <div class="rounded-2xl bg-white p-8">
@@ -9,9 +51,16 @@ import Typography from "../core/Typography/index.astro"
 			En la clínica dental de Smile Works, ubicada en Av. las Condes 11380, Vitacura, te atenderá un
 			equipo con los mejores profesionales en odontología y ortodoncia.
 		</Typography>
-		<div class="flex gap-4">
-			<span>Button 1</span>
-			<span>Button 2</span>
+		<div class="flex flex-wrap gap-4">
+			{
+				buttons.map(({ label, iconLeft: Left, iconRight: Right, props }) => (
+					<Button {...props}>
+						{Left && <Left slot="iconLeft" className="w-5 h-5" />}
+						{label}
+						{Right && <Right slot="iconRight" className="w-5 h-5" />}
+					</Button>
+				))
+			}
 		</div>
 	</div>
 </div>
