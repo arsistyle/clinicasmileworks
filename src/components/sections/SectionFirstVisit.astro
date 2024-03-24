@@ -1,6 +1,7 @@
 ---
 import { TbCalendarTime, TbCheck } from "react-icons/tb"
 
+import { Image } from "astro:assets"
 import Section from "../core/Section.astro"
 import Typography from "../core/Typography/index.astro"
 import Button from "../core/Button/index.astro"
@@ -15,7 +16,7 @@ const itemList: string[] = [
 
 <Section
 	class="bg-secondary-100"
-	containerProps={{ class: "gap-y-8 lg:gap-12" }}
+	containerProps={{ class: "gap-y-8 lg:gap-12 items-center min-h-96" }}
 	slotProps={{
 		leftContent: {
 			class: "hidden md:block",
@@ -26,6 +27,14 @@ const itemList: string[] = [
 	<Fragment slot="leftContent"></Fragment>
 
 	<Fragment slot="rightContent">
+		<Image
+			src="/assets/img/pages/home/section--first-visit-m.jpg"
+			class="mb-12 block rounded-2xl md:hidden"
+			alt="Team"
+			width={700}
+			height={467}
+			loading={"lazy"}
+		/>
 		<div class="mb-12 flex flex-col gap-4">
 			<Typography type="h2" class="h3">¿Cómo será mi primera visita?</Typography>
 			<Typography type="h4" class="text-primary-400 md:pl-10"> Totalmente gratuita</Typography>
