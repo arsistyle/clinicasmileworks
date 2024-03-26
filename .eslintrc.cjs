@@ -16,6 +16,7 @@ module.exports = {
 		sourceType: "module",
 	},
 	rules: {
+		"no-new": "off",
 		"eol-last": "off",
 		"jsx-quotes": ["warn", "prefer-double"],
 		"quotes": ["warn", "double"],
