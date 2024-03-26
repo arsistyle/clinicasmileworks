@@ -27,3 +27,11 @@ body {
 .content .p {
 	@apply my-[.75em];
 }
+
+.swiper .swiper-pagination--custom {
+	@apply relative pt-4;
+}
+
+.swiper .swiper-pagination--custom .swiper-pagination-bullet-active {
+	@apply bg-primary-400;
+}
