@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section class="content bg-white" containerProps={{ class: "gap-y-8 lg:gap-12" }}>
+	<Fragment slot="rightContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image
+				src="/assets/img/defaults/banner-02.jpg"
+				alt="Blanqueamiento dental"
+				width={700}
+				height={700}
+			/>
+		</div>
+	</Fragment>
+	<Fragment slot="leftContent">
+		<Typography type="h3" class="text-dark">2. Carillas dentales</Typography>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Las carillas dentales son finas láminas de porcelana o resina compuesta que se adhieren a la
+			superficie de los dientes para mejorar su apariencia. Las carillas pueden utilizarse para
+			corregir dientes manchados, descoloridos, desalineados, desgastados o con espacios entre
+			ellos, proporcionando una solución estética rápida y duradera.</Typography
+		>
+	</Fragment>
+</Section>

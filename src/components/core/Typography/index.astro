@@ -25,6 +25,6 @@ const TAGS = {
 const Tag = TAGS[type] || "p"
 ---
 
-<Tag class:list={twMerge(className, type)} {...props}>
+<Tag {...props} class:list={twMerge(type, className)}>
 	<slot />
 </Tag>
