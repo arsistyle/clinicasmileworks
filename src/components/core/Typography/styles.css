@@ -37,7 +37,10 @@
 .h3,
 .h4,
 .h5,
-.h6,
-.p {
+.h6 {
 	@apply leading-[1em];
+}
+
+.p {
+	@apply leading-6;
 }

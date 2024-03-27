@@ -1,10 +1,12 @@
 ---
 import HeaderPage from "@/components/core/HeaderPage.astro"
 import Main from "@/layouts/Main.astro"
-import Section from "@/components/core/Section.astro"
 
-const title = "Estética"
-const slug = "estetica"
+const sections: any[] = await Astro.glob(
+	"../../content/pages/tratamientos/estetica-dental--rehabilitacion-oral/*.astro"
+)
+
+const title = "Estética Dental & Rehabilitación Oral"
 
 const breadcrumb = [
 	{
@@ -19,7 +21,6 @@ const breadcrumb = [
 	},
 	{
 		name: title,
-		url: `/tratamientos/${slug}`,
 		type: "current",
 	},
 ]
@@ -27,7 +28,5 @@ const breadcrumb = [
 
 <Main title={`Clínica Smile Works | Tratamientos - ${title}`}>
 	<HeaderPage title={title} breadcrumbs={breadcrumb} />
-	<Section class="min-h-[500px] bg-white">
-		<Fragment slot="fullContentTop"> This is a content of this page </Fragment>
-	</Section>
+	{sections.map((component: any) => <component.default />)}
 </Main>

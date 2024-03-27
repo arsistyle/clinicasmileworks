@@ -25,7 +25,7 @@ const {
 	{
 		backgroundUrl && (
 			<div
-				class={twMerge(
+				class:list={twMerge(
 					"user-select-none pointer-events-none absolute inset-0 -z-0 h-full  w-full overflow-hidden opacity-40 md:opacity-100 ",
 					backgroundBlurMobile && "blur-md md:blur-none"
 				)}
@@ -36,7 +36,7 @@ const {
 					width={1920}
 					height={1080}
 					loading="lazy"
-					class={twMerge(
+					class:list={twMerge(
 						"h-full w-full object-cover",
 						backgroundHover && "transition-transform duration-[2000ms] group-hover:scale-105"
 					)}

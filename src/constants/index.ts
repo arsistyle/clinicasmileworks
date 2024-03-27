@@ -7,7 +7,7 @@ export const DATING_NUMBER = "56950413044"
   - Inicio
   - Tratamientos
     - Ortodoncia
-    - Estética
+    - Estética dental / Rehabilitación oral
     - Periodoncia
     - Implantes dentales
     - Implantes carga inmediata
@@ -47,9 +47,9 @@ export const NAV_ITEMS: NavItem[] = [
 				href: "/tratamientos/ortodoncia",
 			},
 			{
-				name: "estetica",
-				label: "Estética",
-				href: "/tratamientos/estetica",
+				name: "estetica-dental--rehabilitacion-oral",
+				label: "Estética dental / Rehabilitación oral",
+				href: "/tratamientos/estetica-dental--rehabilitacion-oral",
 			},
 			{
 				name: "periodoncia",

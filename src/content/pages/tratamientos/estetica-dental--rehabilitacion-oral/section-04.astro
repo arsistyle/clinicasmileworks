@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section class="content bg-secondary-400" containerProps={{ class: "gap-y-8 lg:gap-12" }}>
+	<Fragment slot="leftContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image
+				src="/assets/img/defaults/banner-03.jpg"
+				alt="Blanqueamiento dental"
+				width={700}
+				height={700}
+			/>
+		</div>
+	</Fragment>
+	<Fragment slot="rightContent">
+		<Typography type="h3" class="text-dark">3. Coronas dentales estéticas</Typography>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Las coronas dentales estéticas son fundas que se colocan sobre los dientes dañados o
+			desfigurados para restaurar su forma, tamaño, fuerza y apariencia estética. Estas coronas
+			están hechas de materiales como porcelana o cerámica, que imitan el aspecto natural de los
+			dientes.</Typography
+		>
+	</Fragment>
+</Section>
