@@ -9,6 +9,8 @@ const {
 	slotProps = {},
 	containerProps = {},
 	backgroundUrl = "",
+	backgroundBlurMobile = true,
+	backgroundHover = false,
 } = Astro.props
 
 const {
@@ -19,23 +21,31 @@ const {
 } = slotProps
 ---
 
-<section class:list={twMerge("relative p-6 py-12 lg:py-24", className)}>
+<section class:list={twMerge("group relative p-6 py-12 lg:py-24", className)}>
 	{
 		backgroundUrl && (
-			<div class="user-select-none pointer-events-none absolute inset-0 -z-0  h-full w-full opacity-40 blur-md md:opacity-100 md:blur-none">
+			<div
+				class={twMerge(
+					"user-select-none pointer-events-none absolute inset-0 -z-0 h-full  w-full overflow-hidden opacity-40 md:opacity-100 ",
+					backgroundBlurMobile && "blur-md md:blur-none"
+				)}
+			>
 				<Image
 					src={backgroundUrl}
 					alt="Section Background"
 					width={1920}
 					height={1080}
 					loading="lazy"
-					class="h-full w-full object-cover"
+					class={twMerge(
+						"h-full w-full object-cover",
+						backgroundHover && "transition-transform duration-[2000ms] group-hover:scale-105"
+					)}
 				/>
 			</div>
 		)
 	}
 	<div
-		class:list={twMerge("container mx-auto grid grid-cols-12", containerProps?.class)}
+		class:list={twMerge("container relative mx-auto grid grid-cols-12", containerProps?.class)}
 		{...containerProps}
 	>
 		{
@@ -51,7 +61,7 @@ const {
 		{
 			leftContent && (
 				<div
-					class:list={twMerge("col-span-12 md:col-span-6", leftContentProps?.class)}
+					class:list={twMerge("relative col-span-12 md:col-span-6", leftContentProps?.class)}
 					{...leftContentProps}
 				>
 					<div class:list={twMerge("sticky top-24", leftContentProps?.child?.class)}>
@@ -63,7 +73,7 @@ const {
 		{
 			rightContent && (
 				<div
-					class:list={twMerge("col-span-12 md:col-span-6", rightContentProps?.class)}
+					class:list={twMerge("relative col-span-12 md:col-span-6", rightContentProps?.class)}
 					{...rightContentProps}
 				>
 					<div class:list={twMerge("sticky top-24", rightContentProps?.child?.class)}>
@@ -75,7 +85,7 @@ const {
 		{
 			fullContentBottom && (
 				<div
-					class:list={twMerge("col-span-12", fullContentBottomProps?.class)}
+					class:list={twMerge("relative col-span-12", fullContentBottomProps?.class)}
 					{...fullContentBottomProps}
 				>
 					<slot name="fullContentBottom" />
