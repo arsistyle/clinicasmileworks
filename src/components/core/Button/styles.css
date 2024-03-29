@@ -1,7 +1,7 @@
 /* Default */
 
 .btn {
-	@apply inline-flex max-w-full origin-bottom select-none items-center justify-center gap-2 overflow-clip text-ellipsis whitespace-nowrap rounded-md border border-transparent font-semibold text-dark transition hover:scale-105 dark:text-white;
+	@apply inline-flex max-w-full origin-bottom select-none items-center justify-center gap-2 overflow-clip text-ellipsis whitespace-nowrap border border-transparent font-semibold text-dark transition hover:scale-105 dark:text-white;
 }
 
 /* Sizes */
@@ -103,4 +103,14 @@
 
 .btn--outlined.btn--whatsapp {
 	@apply border-whatsapp text-whatsapp;
+}
+
+/* Shape */
+
+.btn--circle {
+	@apply aspect-square h-14 w-14 items-center justify-center rounded-full p-0;
+}
+
+.btn--rounded {
+	@apply rounded-md;
 }

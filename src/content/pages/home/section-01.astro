@@ -3,10 +3,11 @@ import { TbCalendarStats, TbChevronRight } from "react-icons/tb"
 
 import { twMerge } from "tailwind-merge"
 import { Image } from "astro:assets"
-import Button, { type ButtonProps } from "@/components/core/Button/index.astro"
+import Button from "@/components/core/Button/index.astro"
 import Section from "@/components/core/Section.astro"
 import Typography from "@/components/core/Typography/index.astro"
 import { DATING_URL } from "@/constants"
+import type { ButtonProps } from "@/components/core/Button/types"
 
 interface HeroButtons {
 	iconLeft?: any

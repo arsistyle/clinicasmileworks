@@ -5,6 +5,8 @@ import { SEO } from "astro-seo"
 import "../css/styles.css"
 import Header from "../components/shared/Header.astro"
 import Footer from "../components/shared/Footer.astro"
+import FloatingButtons from "@/components/shared/FloatingButtons.astro"
+import { FLOATING_BUTTONS } from "@/constants"
 
 interface Props {
 	title: string
@@ -52,6 +54,7 @@ const {
 			<slot />
 		</main>
 		<Footer />
+		<FloatingButtons buttons={FLOATING_BUTTONS} />
 		<slot name="footer" />
 	</body>
 </html>
