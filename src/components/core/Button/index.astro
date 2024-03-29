@@ -1,19 +1,7 @@
 ---
 import { twMerge } from "tailwind-merge"
 import "./styles.css"
-
-export interface ButtonProps {
-	tag?: "button" | "a" | "span"
-	variant?: "filled" | "outlined"
-	size?: "xs" | "sm" | "md" | "lg" | "xl"
-	color?: "primary" | "secondary" | "dark" | "light" | "whatsapp"
-	class?: string
-	disabled?: boolean
-	href?: string
-	type?: "button" | "submit" | "reset" | undefined | null
-	target?: "_blank" | "_self" | "_parent" | "_top" | "framename"
-	rel?: string
-}
+import type { ButtonProps } from "./types"
 
 type Props = ButtonProps
 
@@ -28,6 +16,8 @@ const {
 	type,
 	target,
 	rel,
+	shape = "rounded",
+	title = "",
 } = Astro.props
 const Tag = tag
 ---
@@ -39,6 +29,7 @@ const Tag = tag
 		size && `btn--${size}`,
 		color && `btn--${color}`,
 		disabled && "btn--disabled",
+		shape && `btn--${shape}`,
 		className
 	)}
 	type={type}
@@ -46,6 +37,7 @@ const Tag = tag
 	href={!disabled ? href : undefined}
 	target={target}
 	rel={rel}
+	title={title}
 >
 	<slot name="iconLeft" />
 	<slot />
