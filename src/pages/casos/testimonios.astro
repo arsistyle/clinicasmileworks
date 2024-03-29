@@ -1,7 +1,8 @@
 ---
 import HeaderPage from "@/components/core/HeaderPage.astro"
 import Main from "@/layouts/Main.astro"
-import Section from "@/components/core/Section.astro"
+
+const sections: any[] = await Astro.glob("@/content/pages/casos/testimonios/*.astro")
 
 const title = "Testimonios"
 const slug = "testimonios"
@@ -27,7 +28,5 @@ const breadcrumb = [
 
 <Main title={`Clínica Smile Works | Casos - ${title}`}>
 	<HeaderPage title={title} breadcrumbs={breadcrumb} />
-	<Section class="min-h-[500px] bg-white">
-		<Fragment slot="fullContentTop"> This is a content of this page </Fragment>
-	</Section>
+	{sections.map((component: any) => <component.default />)}
 </Main>
