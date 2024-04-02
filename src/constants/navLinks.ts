@@ -69,9 +69,9 @@ export const NAV_ITEMS: NavItem[] = [
 				href: "/tratamientos/odontopediatria",
 			},
 			{
-				name: "odontologia",
-				label: "Odontología",
-				href: "/tratamientos/odontologia",
+				name: "tratamientos-multidisciplinarios",
+				label: "Tratamientos multidisciplinarios",
+				href: "/tratamientos/tratamientos-multidisciplinarios",
 			},
 			{
 				name: "apnea-del-sueno",

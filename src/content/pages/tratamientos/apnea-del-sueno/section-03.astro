@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section
+	class="content bg-white"
+	containerProps={{ class: "gap-y-8 lg:gap-12" }}
+	slotProps={{
+		leftContent: {
+			class: "order-1 md:order-none",
+		},
+	}}
+>
+	<Fragment slot="rightContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image
+				src="/assets/img/defaults/banner-02.jpg"
+				alt="Blanqueamiento dental"
+				width={700}
+				height={700}
+			/>
+		</div>
+	</Fragment>
+	<Fragment slot="leftContent">
+		<Typography type="h3" class="text-dark">2. Tratamiento con dispositivos intraorales:</Typography
+		>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Los dispositivos intraorales, como los dispositivos de avance mandibular (DAM), pueden ser
+			utilizados en niños para ayudar a mantener abiertas las vías respiratorias superiores durante
+			el sueño. Estos dispositivos trabajan ajustando la posición de la mandíbula y la lengua para
+			prevenir la obstrucción.</Typography
+		>
+	</Fragment>
+</Section>

@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section
+	class="content bg-white"
+	containerProps={{ class: "gap-y-8 lg:gap-12" }}
+	slotProps={{
+		leftContent: {
+			class: "order-1 md:order-none",
+		},
+	}}
+>
+	<Fragment slot="rightContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image
+				src="/assets/img/defaults/banner-02.jpg"
+				alt="Blanqueamiento dental"
+				width={700}
+				height={700}
+			/>
+		</div>
+	</Fragment>
+	<Fragment slot="leftContent">
+		<Typography type="h3" class="text-dark">2. Utilizar Plano de Alivio Oclusal:</Typography>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>El paciente deberá utilizar un plano de alivio oclusal construido en acrílico transparente.
+			Se usa sobre los dientes inferiores para que de esta manera sea lo más cómodo posible. Debe
+			utilizarlo 24/7, y sólo retirarlo para comer, asistir a visitas periódicas con el odontólogo
+			tratante.</Typography
+		>
+	</Fragment>
+</Section>

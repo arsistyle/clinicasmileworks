@@ -2,10 +2,12 @@
 import HeaderPage from "@/components/core/HeaderPage.astro"
 import Main from "@/layouts/Main.astro"
 
-const sections: any[] = await Astro.glob("@/content/pages/tratamientos/implantes-dentales/*.astro")
+const sections: any[] = await Astro.glob(
+	"@/content/pages/tratamientos/tratamientos-multidisciplinarios/*.astro"
+)
 
-const title = "Odontología"
-const slug = "odontologia"
+const title = "Tratamientos Multidisciplinarios"
+const slug = "tratamientos-multidisciplinarios"
 
 const breadcrumb = [
 	{

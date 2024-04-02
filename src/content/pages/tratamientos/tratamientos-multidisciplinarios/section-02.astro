@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section class="content bg-secondary-100" containerProps={{ class: "gap-y-8 lg:gap-12" }}>
+	<Fragment slot="leftContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image
+				src="/assets/img/defaults/banner-01.jpg"
+				alt="Blanqueamiento dental"
+				width={700}
+				height={700}
+			/>
+		</div>
+	</Fragment>
+	<Fragment slot="rightContent">
+		<Typography type="h3" class="text-dark"
+			>1. Eliminar dolor articular o craneocervical:</Typography
+		>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>La primera fase de este tratamiento, es, una vez teniendo un examen clínico acucioso en
+			conjunto con imágenes radiológicas, entregar un diagnóstico certero seguido de una
+			planificación de tratamiento individualizada para cada paciente.</Typography
+		>
+	</Fragment>
+</Section>
