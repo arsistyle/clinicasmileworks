@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section class="content bg-secondary-100" containerProps={{ class: "gap-y-8 lg:gap-12" }}>
+	<Fragment slot="leftContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image
+				src="/assets/img/defaults/banner-01.jpg"
+				alt="Blanqueamiento dental"
+				width={700}
+				height={700}
+			/>
+		</div>
+	</Fragment>
+	<Fragment slot="rightContent">
+		<Typography type="h3" class="text-dark"
+			>1. Evaluación de la anatomía oral y maxilofacial:</Typography
+		>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Los odontólogos pueden evaluar la boca, los dientes y las estructuras faciales de un niño
+			para identificar posibles anomalías que puedan contribuir a la obstrucción de las vías
+			respiratorias durante el sueño. Esto puede incluir la evaluación de la posición de los
+			dientes, el tamaño de la mandíbula, la morfología de las amígdalas y otras características
+			anatómicas relevantes.</Typography
+		>
+	</Fragment>
+</Section>

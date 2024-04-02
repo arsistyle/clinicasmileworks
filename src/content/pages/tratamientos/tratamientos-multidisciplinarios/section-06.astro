@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section class="content bg-secondary-100" containerProps={{ class: "gap-y-8 lg:gap-12" }}>
+	<Fragment slot="leftContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image
+				src="/assets/img/defaults/banner-01.jpg"
+				alt="Blanqueamiento dental"
+				width={700}
+				height={700}
+			/>
+		</div>
+	</Fragment>
+	<Fragment slot="rightContent">
+		<Typography type="h3" class="text-dark">5. Fase de Rehabilitación Oral:</Typography>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>En esta etapa final del tratamiento, luego de haber eliminado el dolor, haber estabilizado la
+			articulación temporomandibular y haber mejorado la posición de los dientes dentro de cada
+			arcada y ambas arcadas entre sí, se procede a realizar desgastes dentarios y/o agregado a
+			estos mismos. Puede ser desde un agregado puntual de resina del mismo color del diente del
+			paciente, hasta restauraciones más complejas como coronas, pónticos o implantes dentales.</Typography
+		>
+	</Fragment>
+</Section>
