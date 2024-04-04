@@ -4,6 +4,8 @@ import type { ButtonProps } from "@/components/core/Button/types"
 export const DATING_URL = "https://ff.healthatom.io/I1FQmD"
 export const DATING_NUMBER = "56950413044"
 
+export const CDN_URL = "https://pub-7c20c4f95be84fcfa35c2ca966f8fb0d.r2.dev/clinica-smile-works"
+
 interface ButtonsProps {
 	name: string
 	label: string

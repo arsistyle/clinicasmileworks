@@ -1,8 +1,8 @@
 ---
 import { twMerge } from "tailwind-merge"
 import type { IconType } from "react-icons"
-import { Image } from "astro:assets"
 import Typography from "../Typography/index.astro"
+import Image from "@/components/core/Image/index.astro"
 
 interface Props {
 	size?: "md" | "lg"
@@ -125,7 +125,6 @@ const { root: _root, info: _info, graphic: _graphic, image: _image, icon: _icon 
 						width={300}
 						height={300}
 						class:list={twMerge(_image.main, _image.asCover(imageAsCover))}
-						loading={"lazy"}
 					/>
 				) : null}
 				{Icon && (

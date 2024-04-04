@@ -2,7 +2,7 @@
 import { TbCalendarStats, TbChevronRight } from "react-icons/tb"
 
 import { twMerge } from "tailwind-merge"
-import { Image } from "astro:assets"
+import Image from "@/components/core/Image/index.astro"
 import Button from "@/components/core/Button/index.astro"
 import Section from "@/components/core/Section.astro"
 import Typography from "@/components/core/Typography/index.astro"
@@ -53,16 +53,8 @@ const data: DataProps = {
 		},
 	],
 	images: {
-		left: [
-			"/assets/img/pages/home/hero-6.jpg",
-			"/assets/img/pages/home/hero-3.jpg",
-			"/assets/img/pages/home/hero-2.jpg",
-		],
-		right: [
-			"/assets/img/pages/home/hero-1.jpg",
-			"/assets/img/pages/home/hero-4.jpg",
-			"/assets/img/pages/home/hero-5.jpg",
-		],
+		left: ["/pages/home/hero-6.webp", "/pages/home/hero-3.webp", "/pages/home/hero-2.webp"],
+		right: ["/pages/home/hero-1.webp", "/pages/home/hero-4.webp", "/pages/home/hero-5.webp"],
 	},
 }
 

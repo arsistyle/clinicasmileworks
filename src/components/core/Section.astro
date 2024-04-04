@@ -1,6 +1,6 @@
 ---
-import { Image } from "astro:assets"
 import { twMerge } from "tailwind-merge"
+import Image from "@/components/core/Image/index.astro"
 
 const { fullContentTop, fullContentBottom, leftContent, rightContent } = Astro.slots
 
@@ -21,7 +21,7 @@ const {
 } = slotProps
 ---
 
-<section class:list={twMerge("group relative p-6 py-12 lg:py-24", className)}>
+<section class:list={twMerge("relative p-6 py-12 lg:py-24", backgroundHover && "group", className)}>
 	{
 		backgroundUrl && (
 			<div
@@ -35,7 +35,6 @@ const {
 					alt="Section Background"
 					width={1920}
 					height={1080}
-					loading="lazy"
 					class:list={twMerge(
 						"h-full w-full object-cover",
 						backgroundHover && "transition-transform duration-[2000ms] group-hover:scale-105"

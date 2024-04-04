@@ -1,7 +1,7 @@
 ---
 import { TbCalendarTime, TbCheck } from "react-icons/tb"
 
-import { Image } from "astro:assets"
+import Image from "@/components/core/Image/index.astro"
 import Section from "@/components/core/Section.astro"
 import Typography from "@/components/core/Typography/index.astro"
 import Button from "@/components/core/Button/index.astro"
@@ -23,18 +23,17 @@ const itemList: string[] = [
 			class: "hidden md:block",
 		},
 	}}
-	backgroundUrl="/assets/img/smile-man.jpg"
+	backgroundUrl="/pages/home/smile-man.webp"
 >
 	<Fragment slot="leftContent"></Fragment>
 
 	<Fragment slot="rightContent">
 		<Image
-			src="/assets/img/pages/home/section--first-visit-m.jpg"
+			src="/pages/home/section--first-visit-m.webp"
 			class="mb-12 block rounded-2xl md:hidden"
 			alt="Team"
 			width={700}
 			height={467}
-			loading={"lazy"}
 		/>
 		<div class="mb-12 flex flex-col gap-4">
 			<Typography type="h2" class="h3">¿Cómo será mi primera visita?</Typography>

@@ -10,4 +10,7 @@ export default defineConfig({
 		"tratamientos": "/tratamientos/ortodoncia",
 		"la-clinica": "/la-clinica/el-equipo",
 	},
+	images: {
+		domains: ["pub-7c20c4f95be84fcfa35c2ca966f8fb0d.r2.dev"],
+	}
 })

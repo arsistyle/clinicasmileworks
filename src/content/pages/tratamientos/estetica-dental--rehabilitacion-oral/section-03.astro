@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets"
+import Image from "@/components/core/Image/index.astro"
 import Section from "@/components/core/Section.astro"
 import Typography from "@/components/core/Typography/index.astro"
 ---
@@ -7,12 +7,7 @@ import Typography from "@/components/core/Typography/index.astro"
 <Section class="content bg-white" containerProps={{ class: "gap-y-8 lg:gap-12" }}>
 	<Fragment slot="rightContent">
 		<div class="aspect-video overflow-hidden rounded-2xl">
-			<Image
-				src="/assets/img/defaults/banner-02.jpg"
-				alt="Blanqueamiento dental"
-				width={700}
-				height={700}
-			/>
+			<Image src="/defaults/banner-02.webp" alt="Blanqueamiento dental" width={700} height={700} />
 		</div>
 	</Fragment>
 	<Fragment slot="leftContent">

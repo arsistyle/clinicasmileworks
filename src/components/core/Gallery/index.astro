@@ -1,10 +1,14 @@
 ---
+import Image from "@/components/core/Image/index.astro"
+import { CDN_URL } from "@/constants"
+import "photoswipe/style.css"
+
 interface Props {
 	images: {
 		src: string
 		width: number
 		height: number
-		title?: string
+		alt: string
 	}[]
 }
 
@@ -13,14 +17,20 @@ const { images } = Astro.props
 
 <div class="gallery grid grid-cols-6 gap-4">
 	{
-		images.map(({ src, title, width, height }) => (
+		images.map(({ src, alt, width, height }) => (
 			<a
-				href={src}
+				href={`${CDN_URL}${src}`}
 				data-pswp-width={width}
 				data-pswp-height={height}
 				class="col-span-3 aspect-[3/2] overflow-hidden rounded-2xl transition-opacity hover:opacity-75 md:col-span-2"
 			>
-				<img alt={title} src={src} class="h-full w-full object-cover" />
+				<Image
+					alt={alt}
+					width={width}
+					height={height}
+					src={src}
+					class="h-full w-full object-cover"
+				/>
 			</a>
 		))
 	}

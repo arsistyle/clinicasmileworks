@@ -1,6 +1,6 @@
 ---
 import { TbChevronRight } from "react-icons/tb"
-import { Image } from "astro:assets"
+import Image from "@/components/core/Image/index.astro"
 
 import Section from "@/components/core/Section.astro"
 import Typography from "@/components/core/Typography/index.astro"
@@ -10,16 +10,15 @@ import Button from "@/components/core/Button/index.astro"
 <Section
 	class="bg-white"
 	containerProps={{ class: "gap-y-8 lg:gap-12 items-center min-h-96" }}
-	backgroundUrl="/assets/img/pages/home/section--post-treatment.jpg"
+	backgroundUrl="/pages/home/section--post-treatment.webp"
 >
 	<Fragment slot="leftContent">
 		<Image
-			src="/assets/img/pages/home/section--post-treatment-m.jpg"
+			src="/pages/home/section--post-treatment-m.webp"
 			class="mb-12 block rounded-2xl md:hidden"
 			alt="Team"
 			width={700}
 			height={467}
-			loading={"lazy"}
 		/>
 		<div class="mb-12 flex flex-col gap-4">
 			<Typography type="h2" class="h3">Post Tratamiento</Typography>
