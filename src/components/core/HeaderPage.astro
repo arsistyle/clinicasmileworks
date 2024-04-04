@@ -1,8 +1,8 @@
 ---
-import { Image } from "astro:assets"
+import Image from "./Image/index.astro"
 import Breadcrumbs from "./Breadcrumbs.astro"
 
-const { title, breadcrumbs } = Astro.props
+const { title, breadcrumbs, image = "/defaults/banner-01.webp" } = Astro.props
 ---
 
 <section class="relative -z-10 bg-secondary-950 px-6 py-12 lg:h-[500px] lg:py-24">
@@ -18,12 +18,11 @@ const { title, breadcrumbs } = Astro.props
 				class="absolute left-0 right-0 top-0 h-full w-full object-cover opacity-10 lg:-bottom-44 lg:right-auto lg:top-auto lg:aspect-square lg:h-[600px] lg:w-[600px] lg:rotate-[18deg] lg:opacity-75"
 			>
 				<Image
-					src="/assets/img/defaults/banner-01.jpg"
+					src={image}
 					alt={title}
 					width={1920}
 					height={1080}
 					class="h-full w-full object-cover lg:rounded-2xl"
-					loading="lazy"
 				/>
 			</div>
 		</div>
