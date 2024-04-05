@@ -1,7 +1,26 @@
 ---
+import { getCollection } from "astro:content"
+import type { CollectionEntry } from "astro:content"
 import Section from "@/components/core/Section.astro"
+import ImageCompare from "@/components/core/ImageCompare.astro"
+
+type CasesProps = CollectionEntry<"clinical-cases">["data"]
+
+const cases = await getCollection("clinical-cases", ({ data }: { data: CasesProps }) => {
+	return data.visible
+})
 ---
 
 <Section class="min-h-[500px] bg-white">
-	<Fragment slot="fullContentTop"> This is a content of this page </Fragment>
+	<Fragment slot="fullContentTop">
+		<div class="grid grid-cols-12 gap-5 xl:px-[calc(100%/12-20px)]">
+			{
+				cases.map(({ data: { title, description, images } }: { data: CasesProps }) => (
+					<div class="col-span-12 md:col-span-6">
+						<ImageCompare title={title} description={description} images={images} />
+					</div>
+				))
+			}
+		</div>
+	</Fragment>
 </Section>

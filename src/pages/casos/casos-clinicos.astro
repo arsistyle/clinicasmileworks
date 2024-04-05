@@ -1,6 +1,6 @@
 ---
 import HeaderPage from "@/components/core/HeaderPage.astro"
-import Main from "@/layouts/Main.astro"
+import WithImageCompare from "@/layouts/WithImageCompare.astro"
 
 const sections: any[] = await Astro.glob("@/content/pages/casos/casos-clinicos/*.astro")
 
@@ -26,7 +26,7 @@ const breadcrumb = [
 ]
 ---
 
-<Main title={`Clínica Smile Works | Casos - ${title}`}>
+<WithImageCompare title={`Clínica Smile Works | Casos - ${title}`}>
 	<HeaderPage title={title} breadcrumbs={breadcrumb} />
 	{sections.map((component: any) => <component.default />)}
-</Main>
+</WithImageCompare>
