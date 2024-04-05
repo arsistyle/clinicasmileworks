@@ -1,7 +1,28 @@
 ---
 import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
 ---
 
-<Section class="min-h-[500px] bg-white">
-	<Fragment slot="fullContentTop"> This is a content of this page </Fragment>
+<Section class="content bg-white">
+	<Fragment slot="fullContentTop">
+		<Typography type="p"
+			>Estamos unidos en esta profesión por vocación y por ello creemos que siempre debemos estar en
+			la búsqueda de la mejora en nuestros tratamientos y servicios odontológicos. Para ello
+			contamos con cursos de formación continua y de alta especialización en todo nuestro personal,
+			tanto doctores como enfermeras, que se lleva de la mano con el trabajo diario de gestión,
+			administración y realización de tratamientos.
+		</Typography>
+		<Typography type="p"
+			>Queremos contar con su inestimable ayuda para poder seguir mejorando. Para nosotros es muy
+			importante que nuestros pacientes reciban la mejor atención y también el mejor conocimiento en
+			salud, tanto a nivel dentario como a nivel de estética facial gracias a tratamientos
+			combinados de ortodoncia y ortopedia u ortodoncia y cirugía maxilofacial.</Typography
+		>
+		<Typography type="p"
+			>Creemos que una boca saludable, correctamente restaurada puede mejorar tanto las funciones
+			propias de la dentición como la autoestima de las personas. Por todo ello bienvenidos y
+			gracias en nombre de todos los miembros de la <strong>clínica Smile Works</strong
+			>.</Typography
+		>
+	</Fragment>
 </Section>
