@@ -11,6 +11,7 @@ const {
 	backgroundUrl = "",
 	backgroundBlurMobile = true,
 	backgroundHover = false,
+	...attrs
 } = Astro.props
 
 const {
@@ -21,7 +22,10 @@ const {
 } = slotProps
 ---
 
-<section class:list={twMerge("relative p-6 py-12 lg:py-24", backgroundHover && "group", className)}>
+<section
+	class:list={twMerge("relative p-6 py-12 lg:py-24", backgroundHover && "group", className)}
+	{...attrs}
+>
 	{
 		backgroundUrl && (
 			<div

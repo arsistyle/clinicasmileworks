@@ -1,7 +1,53 @@
 ---
+import type { CollectionEntry } from "astro:content"
+import { getCollection } from "astro:content"
+
 import Section from "@/components/core/Section.astro"
+import Video from "@/components/core/Video.astro"
+import Blockquote from "@/components/core/Blockquote.astro"
+
+type TestimonialsProps = CollectionEntry<"testimonials">["data"]
+
+const testimonials = await getCollection(
+	"testimonials",
+	({ data }: { data: TestimonialsProps }) => {
+		return data.visible
+	}
+)
 ---
 
-<Section class="min-h-[500px] bg-white">
-	<Fragment slot="fullContentTop"> This is a content of this page </Fragment>
-</Section>
+<div class="flex flex-col gap-16 bg-white py-16 lg:gap-36 lg:py-36">
+	{
+		testimonials.map(
+			(
+				{
+					data: { slug, name, quote, video: { url = "", poster = "" } = {} },
+				}: {
+					data: TestimonialsProps
+				},
+				index
+			) => (
+				<Section
+					id={slug}
+					class="bg-white !py-0"
+					containerProps={{ class: "items-center gap-y-8 md:gap-12 lg:gap-24" }}
+					slotProps={{
+						leftContent:
+							index % 2 !== 0
+								? {
+										class: "order-1 md:order-none",
+									}
+								: {},
+					}}
+				>
+					<Fragment slot={index % 2 === 0 ? "leftContent" : "rightContent"}>
+						{url && poster && <Video url={url} image={poster} />}
+					</Fragment>
+					<Fragment slot={index % 2 === 0 ? "rightContent" : "leftContent"}>
+						<Blockquote text={quote} author={name} />
+					</Fragment>
+				</Section>
+			)
+		)
+	}
+</div>

@@ -3,5 +3,9 @@
   "slug": "tulio-trivino",
   "quote": "Me encanta la aplicación. La aplicación es muy buena.",
   "image": "/defaults/banner-02.webp",
+  "video": {
+    "url": "https://www.youtube.com/watch?v=kIgbWzKQH_o",
+    "poster": "/demo/testimonials.webp"
+  },
   "visible": true
 }
