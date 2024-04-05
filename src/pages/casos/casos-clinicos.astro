@@ -2,12 +2,10 @@
 import HeaderPage from "@/components/core/HeaderPage.astro"
 import Main from "@/layouts/Main.astro"
 
-const sections: any[] = await Astro.glob(
-	"@/content/pages/tratamientos/implantes-carga-inmediata/*.astro"
-)
+const sections: any[] = await Astro.glob("@/content/pages/casos/casos-clinicos/*.astro")
 
-const title = "Implantes carga inmediata"
-const slug = "implantes-carga-inmediata"
+const title = "Casos clínicos"
+const slug = "casos-clinicos"
 
 const breadcrumb = [
 	{
@@ -16,19 +14,19 @@ const breadcrumb = [
 		type: "link",
 	},
 	{
-		name: "Tratamientos",
-		url: "/tratamientos",
+		name: "Casos",
+		url: "/casos",
 		type: "link",
 	},
 	{
 		name: title,
-		url: `/tratamientos/${slug}`,
+		url: `/casos/${slug}`,
 		type: "current",
 	},
 ]
 ---
 
-<Main title={`Clínica Smile Works | Tratamientos - ${title}`}>
+<Main title={`Clínica Smile Works | Casos - ${title}`}>
 	<HeaderPage title={title} breadcrumbs={breadcrumb} />
 	{sections.map((component: any) => <component.default />)}
 </Main>

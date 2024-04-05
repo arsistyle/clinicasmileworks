@@ -1,10 +1,10 @@
 .hero__images--left {
-	animation-name: translateY200;
+	animation-name: translateY200vh;
 	animation-direction: alternate;
 	animation-timeline: --mainTimeline;
 }
 .hero__images--right {
-	animation-name: translateY-200;
+	animation-name: translateY-200vh;
 	animation-direction: alternate;
 	animation-timeline: --mainTimeline;
 }
@@ -54,6 +54,28 @@
 @keyframes translateY200 {
 	to {
 		transform: translateY(200px);
+	}
+}
+@keyframes translateY-100vh {
+	to {
+		transform: translateY(-100vh);
+	}
+}
+
+@keyframes translateY100vh {
+	to {
+		transform: translateY(100vh);
+	}
+}
+@keyframes translateY-200vh {
+	to {
+		transform: translateY(-200vh);
+	}
+}
+
+@keyframes translateY200vh {
+	to {
+		transform: translateY(200vh);
 	}
 }
 

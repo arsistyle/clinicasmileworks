@@ -6,14 +6,11 @@ import type { NavItem } from "./types"
     - Ortodoncia
     - Estética dental / Rehabilitación oral
     - Periodoncia
-    - Implantes dentales
-    - Implantes carga inmediata
-    - Odontopediatría
-    - Odontología
-    - Apnea del sueño
-    - Cirugía
-    - Sedación
-    - Fisioterapia
+    - Implantología
+	- Odontopediatría
+	- Kinesiología maxilofacial
+	- Tratamientos multidisciplinarios
+	- Apena del sueño
   - Ortodoncia Invisible
     - ¿Qué es la Ortodoncia Invisible?
 	- Cuidados Ortodoncia Invisible
@@ -21,7 +18,7 @@ import type { NavItem } from "./types"
 	- Tu primera visita
   - Casos
     - Testimonios
-    - Identifica tu caso
+    - Casos clínicos
   - La clínica
     - El equipo
     - Instalaciones
@@ -54,14 +51,9 @@ export const NAV_ITEMS: NavItem[] = [
 				href: "/tratamientos/periodoncia",
 			},
 			{
-				name: "implantes-dentales",
-				label: "Implantes dentales",
-				href: "/tratamientos/implantes-dentales",
-			},
-			{
-				name: "implantes-carga-inmediata",
-				label: "Implantes carga inmediata",
-				href: "/tratamientos/implantes-carga-inmediata",
+				name: "implantologia",
+				label: "Implantologiía",
+				href: "/tratamientos/implantologia",
 			},
 			{
 				name: "odontopediatria",
@@ -69,14 +61,19 @@ export const NAV_ITEMS: NavItem[] = [
 				href: "/tratamientos/odontopediatria",
 			},
 			{
+				name: "kinesiologia-maxilofacial",
+				label: "Kinesiologia Maxilofacial",
+				href: "/tratamientos/kinesiologia-maxilofacial",
+			},
+			{
 				name: "tratamientos-multidisciplinarios",
-				label: "Tratamientos multidisciplinarios",
+				label: "Tratamientos Multidisciplinarios",
 				href: "/tratamientos/tratamientos-multidisciplinarios",
 			},
 			{
-				name: "apnea-del-sueno",
-				label: "Apnea del sueño",
-				href: "/tratamientos/apnea-del-sueno",
+				name: "apena-del-sueno",
+				label: "Apena del sueño",
+				href: "/tratamientos/apena-del-sueno",
 			},
 		],
 	},
@@ -96,11 +93,6 @@ export const NAV_ITEMS: NavItem[] = [
 				href: "/ortodoncia-invisible#cuidados-ortodoncia-invisible",
 			},
 			{
-				name: "ortodoncia-acelerada",
-				label: "Ortodoncia acelerada",
-				href: "/ortodoncia-invisible#ortodoncia-acelerada",
-			},
-			{
 				name: "tu-primera-visita",
 				label: "Tu primera visita",
 				href: "/ortodoncia-invisible#tu-primera-visita",
@@ -118,9 +110,9 @@ export const NAV_ITEMS: NavItem[] = [
 				href: "/casos/testimonios",
 			},
 			{
-				name: "identifica-tu-caso",
-				label: "Identifica tu caso",
-				href: "/casos/identifica-tu-caso",
+				name: "casos-clinicos",
+				label: "Casos clínicos",
+				href: "/casos/casos-clinicos",
 			},
 		],
 	},
