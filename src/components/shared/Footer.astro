@@ -1,10 +1,11 @@
 ---
-import { TbBrandFacebook, TbBrandInstagram } from "react-icons/tb"
+import { TbBrandInstagram } from "react-icons/tb"
 
 import InforCard from "../ui/InfoCard.astro"
 import NavColumns from "../ui/NavColumns.astro"
 import Typography from "../core/Typography/index.astro"
 import Logo from "../ui/Logo.astro"
+import FooterBadges from "./FooterBadges.astro"
 ---
 
 <footer class="sticky bottom-0 z-0 bg-secondary-950 px-8">
@@ -18,22 +19,15 @@ import Logo from "../ui/Logo.astro"
 		</nav>
 	</div>
 	<div
-		class="container mx-auto flex flex-col items-center gap-y-4 py-4 sm:flex-row sm:justify-between lg:gap-10"
+		class="container mx-auto flex flex-col items-center gap-y-4 py-4 lg:flex-row lg:justify-between lg:gap-10"
 	>
 		<div class="w-64 text-2xl text-white">
 			<Logo />
 		</div>
+		<FooterBadges class="justify-center lg:ml-auto" />
 		<div class="flex items-center gap-3">
 			<a
-				href="www.google.cl"
-				class="aspect-square w-8 text-secondary-400 transition-opacity hover:opacity-60"
-				target="_blank"
-				rel="noreferrer"
-			>
-				<TbBrandFacebook className="h-full w-full" />
-			</a>
-			<a
-				href="www.google.cl"
+				href="https://www.instagram.com/sw.ortodoncia/"
 				class="aspect-square w-8 text-secondary-400 transition-opacity hover:opacity-60"
 				target="_blank"
 				rel="noreferrer"

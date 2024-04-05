@@ -1,0 +1,21 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section class="content bg-secondary-100" containerProps={{ class: "gap-y-8 lg:gap-12" }}>
+	<Fragment slot="leftContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image src="/defaults/banner-01.webp" alt="Blanqueamiento dental" width={700} height={700} />
+		</div>
+	</Fragment>
+	<Fragment slot="rightContent">
+		<Typography type="h3" class="text-dark">1. Evaluación del paciente:</Typography>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Los implantólogos evalúan la salud oral del paciente, incluida la calidad y cantidad de hueso
+			disponible para soportar los implantes, así como la estructura de las encías y la oclusión
+			dental.</Typography
+		>
+	</Fragment>
+</Section>
