@@ -7,6 +7,10 @@ const testimonialsCollection = defineCollection({
 		quote: z.string(),
 		image: z.string(),
 		visible: z.boolean().default(true),
+		video: z.object({
+			src: z.string(),
+			poster: z.string(),
+		}),
 	}),
 })
 

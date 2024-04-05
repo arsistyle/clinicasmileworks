@@ -14,12 +14,14 @@ import "swiper/css/pagination"
 
 type TestimonialsProps = CollectionEntry<"testimonials">["data"]
 
-const testimonialsData = await getCollection(
+const testimonials = await getCollection(
 	"testimonials",
 	({ data }: { data: TestimonialsProps }) => {
 		return data.visible
 	}
 )
+
+const testimonialsData = testimonials.slice(0, 3)
 ---
 
 <Section class="bg-primary-50">

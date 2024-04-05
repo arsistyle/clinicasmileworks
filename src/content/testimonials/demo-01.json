@@ -3,5 +3,9 @@
   "slug": "carlitos-lechuga",
   "quote": "Me encanta la atención y la atención al cliente. La atención al cliente es muy buena.",
   "image": "/defaults/banner-01.webp",
+  "video": {
+    "url": "https://www.youtube.com/watch?v=kIgbWzKQH_o",
+    "poster": "/demo/testimonials.webp"
+  },
   "visible": true
 }
