@@ -1,0 +1,10 @@
+{
+  "id": "case-01",
+  "title": "Caso 01",
+  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto libero reprehenderit",
+  "images": {
+    "before": "/demo/compare-1.webp",
+    "after": "/demo/compare-2.webp"
+  },
+  "visible": true
+}
