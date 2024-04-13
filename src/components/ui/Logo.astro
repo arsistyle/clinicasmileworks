@@ -1,9 +1,12 @@
 ---
+import { twMerge } from "tailwind-merge"
 import Typography from "../core/Typography/index.astro"
+
+const { class: className = "" } = Astro.props
 ---
 
-<div class="grid grid-cols-3 items-center gap-2 md:gap-4">
-	<div class="aspect-square p-1">
+<div class:list={twMerge("inline-flex items-center gap-2 gap-y-1 md:gap-4", className)}>
+	<div class="aspect-square h-1/6 min-h-10 w-1/6 min-w-10 p-1">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 496.67 310.67"
@@ -14,8 +17,10 @@ import Typography from "../core/Typography/index.astro"
 			></path><path style="fill:none;stroke-width:0" d="M0 0h496.67v310.67H0z"></path></svg
 		>
 	</div>
-	<div class="col-span-2 flex flex-col text-center text-white">
-		<Typography type="p" class="whitespace-nowrap text-[1em] uppercase">Smile Works</Typography>
-		<Typography type="p" class="text-[.65em]">Clínical dental</Typography>
+	<div
+		class="flex flex-col justify-center text-center font-light uppercase tracking-[.25em] text-white"
+	>
+		<Typography type="span" class="whitespace-nowrap text-[.9em]">Clínica Smile Works</Typography>
+		<Typography type="span" class="text-[.5em] leading-4">Odontología integral</Typography>
 	</div>
 </div>
