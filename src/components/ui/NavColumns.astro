@@ -6,20 +6,26 @@ import { NAV_ITEMS } from "../../constants"
 
 import NavColumnsChildrens from "./NavColumnsChildrens.astro"
 
-const MenuWithoutHome = NAV_ITEMS.filter((item) => item.href !== "/")
+const NAV_GROUP_NAME = "footer"
+const MenuWithVisibleItems = NAV_ITEMS.filter(
+	(item) => item.visible && item?.group?.includes(NAV_GROUP_NAME)
+)
 ---
 
 <ul class="flex gap-10">
 	{
-		MenuWithoutHome?.map(({ href = "", label, children }: NavItem) => {
+		MenuWithVisibleItems?.map(({ href = "", label, children }: NavItem) => {
 			const hasChildren = Array.isArray(children)
+			const childrenWithVisibleItems = hasChildren
+				? children?.filter((child) => child?.visible && child?.group?.includes(NAV_GROUP_NAME))
+				: []
 
 			return (
 				<li class="group">
 					<a href={href} class:list={twMerge("text-white transition-opacity hover:opacity-60")}>
 						<span>{label}</span>
 					</a>
-					{hasChildren && <NavColumnsChildrens children={children} />}
+					{hasChildren && <NavColumnsChildrens children={childrenWithVisibleItems} />}
 				</li>
 			)
 		})
