@@ -22,7 +22,11 @@ const MenuWithVisibleItems = NAV_ITEMS.filter(
 
 			return (
 				<li class="group">
-					<a href={href} class:list={twMerge("text-white transition-opacity hover:opacity-60")}>
+					<a
+						href={href}
+						class:list={twMerge("text-white transition-opacity hover:opacity-60")}
+						aria-label={label}
+					>
 						<span>{label}</span>
 					</a>
 					{hasChildren && <NavColumnsChildrens children={childrenWithVisibleItems} />}

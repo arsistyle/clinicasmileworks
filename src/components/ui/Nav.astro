@@ -40,6 +40,8 @@ const isThisPage = (pageUrl = "", currentPath = "") => {
 							"flex items-center justify-between gap-2 bg-transparent px-6 py-3 text-center transition-colors group-hover:bg-primary-900/20 group-hover:text-primary-300 lg:h-full lg:justify-start lg:px-3 lg:py-0",
 							isActive ? "text-primary-400" : "text-white"
 						)}
+						aria-current={isActive ? "page" : undefined}
+						aria-label={label}
 					>
 						<span>{label}</span>
 						{hasChildren && (
