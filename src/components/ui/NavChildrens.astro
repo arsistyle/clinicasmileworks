@@ -28,6 +28,8 @@ const isThisPage = (pageUrl = "", currentPath = "") => {
 							"flex px-4 py-3 pl-8 leading-5 text-white transition-colors hover:text-primary-300 lg:px-6 lg:py-3 lg:pl-6",
 							isActive ? "text-primary-400" : ""
 						)}
+						aria-current={isActive ? "page" : undefined}
+						aria-label={label}
 					>
 						{label}
 					</a>
