@@ -10,6 +10,11 @@ import NavChildrens from "./NavChildrens.astro"
 
 const { pathname } = Astro.url
 
+const MENU_GROUP_NAME = "header"
+const MenuWithVisibleItems = NAV_ITEMS.filter(
+	(item) => item.visible && item?.group?.includes(MENU_GROUP_NAME)
+)
+
 const isThisPage = (pageUrl = "", currentPath = "") => {
 	const paths = currentPath.replace("/", "").split("/")
 	const [current] = paths
@@ -19,9 +24,13 @@ const isThisPage = (pageUrl = "", currentPath = "") => {
 
 <ul class="flex h-full flex-col lg:flex-row">
 	{
-		NAV_ITEMS?.map(({ href = "", label, children }: NavItem) => {
+		MenuWithVisibleItems?.map(({ href = "", label, children }: NavItem) => {
 			const isActive = isThisPage(href, pathname)
 			const hasChildren = Array.isArray(children)
+
+			const childrenWithVisibleItems = hasChildren
+				? children?.filter((child) => child?.visible && child?.group?.includes(MENU_GROUP_NAME))
+				: []
 
 			return (
 				<li class="group relative lg:flex lg:h-full lg:items-center">
@@ -39,7 +48,7 @@ const isThisPage = (pageUrl = "", currentPath = "") => {
 							</div>
 						)}
 					</a>
-					{hasChildren && <NavChildrens children={children} />}
+					{hasChildren && <NavChildrens children={childrenWithVisibleItems} />}
 				</li>
 			)
 		})
