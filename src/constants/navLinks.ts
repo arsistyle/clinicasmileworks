@@ -10,7 +10,7 @@ import type { NavItem } from "./types"
 	- Odontopediatría
 	- Kinesiología maxilofacial
 	- Tratamientos multidisciplinarios
-	- Apena del sueño
+	- Estética facial
   - Ortodoncia Invisible
     - ¿Qué es la Ortodoncia Invisible?
 	- Cuidados Ortodoncia Invisible
@@ -89,9 +89,9 @@ export const NAV_ITEMS: NavItem[] = [
 				group: ["header", "footer"],
 			},
 			{
-				name: "apena-del-sueno",
-				label: "Apena del sueño",
-				href: "/tratamientos/apena-del-sueno",
+				name: "estetica-facial",
+				label: "Estética facial",
+				href: "/tratamientos/estetica-facial",
 				visible: true,
 				group: ["header", "footer"],
 			},
