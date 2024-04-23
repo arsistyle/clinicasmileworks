@@ -6,7 +6,7 @@ import Typography from "@/components/core/Typography/index.astro"
 
 <Section
 	class="content bg-primary-200"
-	containerProps={{ class: "gap-y-8 lg:gap-12" }}
+	containerProps={{ class: "gap-y-8 md:gap-12" }}
 	slotProps={{
 		leftContent: {
 			class: "order-1 md:order-none",
@@ -15,7 +15,12 @@ import Typography from "@/components/core/Typography/index.astro"
 >
 	<Fragment slot="rightContent">
 		<div class="aspect-video overflow-hidden rounded-2xl">
-			<Image src="/defaults/banner-02.webp" alt="Blanqueamiento dental" width={700} height={700} />
+			<Image
+				src="/pages/tratamientos/periodoncia/mantenimiento-periodontal.webp"
+				alt="Mantenimiento periodontal"
+				width={700}
+				height={700}
+			/>
 		</div>
 	</Fragment>
 	<Fragment slot="leftContent">
