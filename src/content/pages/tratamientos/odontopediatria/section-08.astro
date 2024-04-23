@@ -1,0 +1,21 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section class="content bg-secondary-100" containerProps={{ class: "gap-y-8 lg:gap-12" }}>
+	<Fragment slot="leftContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image src="/defaults/banner-01.webp" alt="Blanqueamiento dental" width={700} height={700} />
+		</div>
+	</Fragment>
+	<Fragment slot="rightContent">
+		<Typography type="h3" class="text-dark">7. Monitoreo del Crecimiento y Desarrollo:</Typography>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Los odontopediatras supervisan el crecimiento y desarrollo de los dientes, mandíbulas y
+			estructuras faciales de los niños. Evalúan problemas ortodónticos y derivan a los pacientes al
+			especialista en ortodoncia para tratamiento si fuera necesario.</Typography
+		>
+	</Fragment>
+</Section>

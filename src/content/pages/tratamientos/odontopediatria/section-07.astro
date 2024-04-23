@@ -1,0 +1,30 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section
+	class="content bg-primary-200"
+	containerProps={{ class: "gap-y-8 lg:gap-12" }}
+	slotProps={{
+		leftContent: {
+			class: "order-1 md:order-none",
+		},
+	}}
+>
+	<Fragment slot="rightContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image src="/defaults/banner-02.webp" alt="Blanqueamiento dental" width={700} height={700} />
+		</div>
+	</Fragment>
+	<Fragment slot="leftContent">
+		<Typography type="h3" class="text-dark">6. Odontología para Necesidades Especiales:</Typography>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Los odontopediatras están capacitados para brindar atención dental a niños con necesidades
+			especiales de atención médica, incluidos aquellos con discapacidades físicas, de desarrollo o
+			cognitivas. Ofrecen atención dental personalizada y adaptaciones para garantizar la comodidad
+			y seguridad de estos pacientes durante las visitas dentales.</Typography
+		>
+	</Fragment>
+</Section>

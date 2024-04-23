@@ -1,0 +1,30 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section
+	class="content bg-primary-200"
+	containerProps={{ class: "gap-y-8 lg:gap-12" }}
+	slotProps={{
+		leftContent: {
+			class: "order-1 md:order-none",
+		},
+	}}
+>
+	<Fragment slot="rightContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image src="/defaults/banner-02.webp" alt="Blanqueamiento dental" width={700} height={700} />
+		</div>
+	</Fragment>
+	<Fragment slot="leftContent">
+		<Typography type="h3" class="text-dark">4. Manejo del Comportamiento:</Typography>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Los odontopediatras tienen habilidades para manejar el comportamiento de los pacientes
+			pequeños creando una experiencia dental positiva y cómoda. Utilizan un lenguaje amigable para
+			los niños, técnicas de comunicación y estrategias de manejo del comportamiento para ayudar a
+			los niños a sentirse a cómodos durante las visitas dentales.</Typography
+		>
+	</Fragment>
+</Section>

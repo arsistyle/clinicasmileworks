@@ -1,7 +1,19 @@
 ---
 import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
 ---
 
-<Section class="min-h-[500px] bg-white">
-	<Fragment slot="fullContentTop"> This is a content of this page </Fragment>
+<Section class="content bg-white">
+	<Fragment slot="fullContentTop">
+		<Typography type="p"
+			>La odontología pediátrica, es una rama especializada de la odontología centrada en la salud
+			oral de los niños desde la infancia hasta la adolescencia.</Typography
+		>
+		<Typography type="p"
+			>Los dentistas pediátricos reciben formación adicional más allá de la escuela de odontología
+			para especializarse en las necesidades dentales y de desarrollo únicas de bebés, niños y
+			adolescentes.</Typography
+		>
+		<Typography type="p">Estos son los aspectos clave de la odontología pediátrica:</Typography>
+	</Fragment>
 </Section>
