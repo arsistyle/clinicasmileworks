@@ -10,6 +10,7 @@ import type { NavItem } from "./types"
 	- Odontopediatría
 	- Kinesiología maxilofacial
 	- Tratamientos multidisciplinarios
+	- Apnea del sueño
 	- Estética facial
   - Ortodoncia Invisible
     - ¿Qué es la Ortodoncia Invisible?
@@ -85,6 +86,13 @@ export const NAV_ITEMS: NavItem[] = [
 				name: "tratamientos-multidisciplinarios",
 				label: "Tratamientos Multidisciplinarios",
 				href: "/tratamientos/tratamientos-multidisciplinarios",
+				visible: true,
+				group: ["header", "footer"],
+			},
+			{
+				name: "apnea-del-sueno",
+				label: "Apnea del sueño",
+				href: "/tratamientos/apnea-del-sueno",
 				visible: true,
 				group: ["header", "footer"],
 			},
