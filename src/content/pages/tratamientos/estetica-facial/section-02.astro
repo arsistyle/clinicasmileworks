@@ -1,0 +1,33 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section class="content bg-secondary-100" containerProps={{ class: "gap-y-8 md:gap-12" }}>
+	<Fragment slot="leftContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image
+				src="/pages/tratamientos/estetica-facial/toxina-botulinica1.webp"
+				alt="Blanqueamiento dental"
+				width={700}
+				height={700}
+			/>
+		</div>
+	</Fragment>
+	<Fragment slot="rightContent">
+		<Typography type="h3" class="text-dark">Miomodulación con Toxina Botulínica</Typography>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>La toxina botulínica, también conocida como Botox (marca comercial), es una neurotoxina
+			producida por la bacteria Clostridium botulinum. Esta toxina tiene la capacidad de bloquear la
+			contracción muscular. Cuando se administra en cantidades controladas y adecuadas, la toxina
+			botulínica puede tener varios usos terapéuticos y estéticos.</Typography
+		>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>En odontología, la toxina botulínica se utiliza principalmente para tratar trastornos
+			relacionados con la función muscular, como el bruxismo y también puede ser utilizada en
+			procedimientos estéticos para reducir la apariencia de las líneas de expresión y arrugas
+			alrededor de la boca y en la región facial.</Typography
+		>
+	</Fragment>
+</Section>
