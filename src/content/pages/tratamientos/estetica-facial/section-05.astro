@@ -1,0 +1,42 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section class="content bg-white" containerProps={{ class: "gap-y-8 md:gap-12" }}>
+	<Fragment slot="rightContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image
+				src="/pages/tratamientos/estetica-facial/bioestimuladores.webp"
+				alt="Carillas dentales"
+				width={700}
+				height={700}
+			/>
+		</div>
+	</Fragment>
+	<Fragment slot="leftContent">
+		<Typography type="h3" class="text-dark">Bioestimuladores</Typography>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Los bioestimuladores cutáneos son sustancias que se utilizan en medicina estética para
+			estimular la producción de colágeno y mejorar la calidad de la piel. Estos productos se
+			inyectan en la piel para promover la regeneración y la remodelación del tejido dérmico.</Typography
+		>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Cuando se inyectan en la piel, los bioestimuladores provocan una reacción inflamatoria
+			controlada, lo que estimula la producción de colágeno. Con el tiempo, esta producción de
+			colágeno adicional ayuda a mejorar la firmeza, elasticidad y textura de la piel, reduciendo la
+			apariencia de arrugas, líneas finas y flacidez.</Typography
+		>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Los bioestimuladores cutáneos se utilizan para tratar una variedad de problemas de la piel,
+			incluyendo:</Typography
+		>
+		<ol class="list-decimal pl-6 leading-6 text-secondary-800">
+			<li class="mb-2">Pérdida de volumen facial</li>
+			<li class="mb-2">Líneas de expresión y arrugas</li>
+			<li class="mb-2">Flacidez cutánea</li>
+			<li class="mb-2">Textura de la piel</li>
+		</ol>
+	</Fragment>
+</Section>

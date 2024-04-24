@@ -1,0 +1,46 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section class="content bg-secondary-100" containerProps={{ class: "gap-y-8 md:gap-12" }}>
+	<Fragment slot="leftContent">
+		<Image
+			src="/pages/tratamientos/estetica-facial/vitaminas-faciales1.webp"
+			alt="Blanqueamiento dental"
+			width={700}
+			height={700}
+			class="rounded-2xl"
+		/>
+	</Fragment>
+	<Fragment slot="rightContent">
+		<Typography type="h3" class="text-dark">Vitaminas Filorga</Typography>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Los productos de Filorga pueden contener una variedad de ingredientes activos, incluidas
+			vitaminas, péptidos, ácido hialurónico y otros compuestos que ayudan a mejorar la apariencia y
+			la salud de la piel.</Typography
+		>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Las vitaminas tienen una serie de beneficios para la piel, incluidos:</Typography
+		>
+		<ol class="list-decimal pl-6 leading-6 text-secondary-800">
+			<li class="mb-2">
+				<strong>Vitamina C:</strong> Es un antioxidante potente que ayuda a proteger la piel del daño
+				causado por los radicales libres, reduce la apariencia de manchas oscuras y mejora la luminosidad
+				de la piel. También puede estimular la producción de colágeno, lo que ayuda a mantener la firmeza
+				y elasticidad de la piel.
+			</li>
+			<li class="mb-2">
+				<strong>Vitamina E:</strong> Otro antioxidante importante que ayuda a proteger la piel del daño
+				causado por los rayos ultravioleta (UV) y otros factores ambientales. También tiene propiedades
+				hidratantes y puede ayudar a reducir la inflamación.
+			</li>
+			<li class="mb-2">
+				<strong>Vitaminas del grupo B:</strong> Estas vitaminas, como la niacinamida (vitamina B3), pueden
+				ayudar a mejorar la textura de la piel, reducir la apariencia de poros dilatados, controlar la
+				producción de sebo y promover la regeneración celular.
+			</li>
+		</ol>
+	</Fragment>
+</Section>

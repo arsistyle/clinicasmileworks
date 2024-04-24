@@ -1,0 +1,44 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section class="content bg-white" containerProps={{ class: "gap-y-8 md:gap-12" }}>
+	<Fragment slot="rightContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image
+				src="/pages/tratamientos/estetica-facial/acido-hialuronico.webp"
+				alt="Carillas dentales"
+				width={700}
+				height={700}
+			/>
+		</div>
+	</Fragment>
+	<Fragment slot="leftContent">
+		<Typography type="h3" class="text-dark">Ácido Hialurónico</Typography>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>El ácido hialurónico es una sustancia que se encuentra de forma natural en el cuerpo humano,
+			especialmente en la piel, tejido conectivo y articulaciones. En estética facial, el ácido
+			hialurónico se utiliza principalmente como un relleno dérmico para corregir y mejorar la
+			apariencia de arrugas, líneas finas, pérdida de volumen y contorno facial.</Typography
+		>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Algunos de los usos más comunes del ácido hialurónico en estética facial incluyen:</Typography
+		>
+		<ol class="list-decimal pl-6 leading-6 text-secondary-800">
+			<li class="mb-2">Relleno de arrugas y líneas finas</li>
+			<li class="mb-2">Aumento de labios</li>
+			<li class="mb-2">Reposición de volumen facial</li>
+			<li class="mb-2">Hidratación y revitalización de la piel</li>
+			<li class="mb-2">Contorno facial</li>
+		</ol>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Es importante destacar que los procedimientos con ácido hialurónico deben ser realizados por
+			profesionales médicos capacitados y con experiencia en técnicas de inyección, para garantizar
+			resultados seguros y naturales. Los efectos del ácido hialurónico suelen ser temporales y
+			pueden durar entre varios meses a un año, dependiendo del producto utilizado y de la zona
+			tratada.
+		</Typography>
+	</Fragment>
+</Section>
