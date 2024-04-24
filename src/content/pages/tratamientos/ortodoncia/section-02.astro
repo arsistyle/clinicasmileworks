@@ -1,0 +1,35 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section class="content bg-secondary-100" containerProps={{ class: "gap-y-8 lg:gap-12" }}>
+	<Fragment slot="leftContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image src="/defaults/banner-01.webp" alt="Blanqueamiento dental" width={700} height={700} />
+		</div>
+	</Fragment>
+	<Fragment slot="rightContent">
+		<Typography type="h3" class="text-dark"
+			>Algunas de las condiciones que pueden ser tratadas por un ortodoncista incluyen:</Typography
+		>
+
+		<ol class="list-decimal pl-6 leading-6 text-secondary-800">
+			<li class="mb-2">
+				<strong>Maloclusión:</strong> Una mordida desalineada, como sobremordida, mordida abierta, mordida
+				cruzada o mordida profunda.
+			</li>
+			<li class="mb-2">
+				<strong>Apiñamiento dental:</strong> Cuando los dientes están apretados o superpuestosdebido
+				a la falta de espacio en las arcadas dentales.
+			</li>
+			<li class="mb-2"><strong>Diastemas:</strong> Espacios entre los dientes.</li>
+			<li class="mb-2">
+				<strong>Protrusión dental:</strong> Cuando los dientes están en una posición hacia adelante
+			</li>
+			<li class="mb-2"><strong>Malposiciones dentarias:</strong> Dientes girados o inclinados.</li>
+			<li class="mb-2">Problemas de alineación de los huesos maxilares</li>
+		</ol>
+	</Fragment>
+</Section>
