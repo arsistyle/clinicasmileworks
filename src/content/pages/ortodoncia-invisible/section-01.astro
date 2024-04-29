@@ -1,7 +1,102 @@
 ---
+import { PiEyeSlash, PiFeather, PiSmileyWink } from "react-icons/pi"
+import { LiaTeethOpenSolid } from "react-icons/lia"
 import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+import Image from "@/components/core/Image/index.astro"
+import SimpleCard from "@/components/core/Cards/SimpleCard.astro"
 ---
 
-<Section class="min-h-[500px] bg-white">
-	<Fragment slot="fullContentTop"> This is a content of this page </Fragment>
+<Section
+	class="bg-secondary-50"
+	containerProps={{ class: "gap-y-8 md:gap-12", id: "ortodoncia-invisible" }}
+>
+	<Fragment slot="leftContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image src="/defaults/banner-01.webp" alt="Blanqueamiento dental" width={700} height={700} />
+		</div>
+	</Fragment>
+	<Fragment slot="rightContent">
+		<div class="content">
+			<Typography type="p" class="leading-6 text-secondary-800"
+				>La ortodoncia invisible es una técnica de tratamiento ortodóncico que utiliza alineadores
+				transparentes para corregir la posición de los dientes y la mordida. Estos alineadores son
+				prácticamente invisibles cuando se usan, lo que los hace una opción estética popular para
+				personas que desean enderezar sus dientes sin los brackets metálicos tradicionales.</Typography
+			>
+			<Typography type="p" class="leading-6 text-secondary-800"
+				>Los alineadores transparentes están hechos de un plástico suave y flexible y están
+				diseñados a medida para cada paciente. Funcionan aplicando fuerzas suaves y graduales sobre
+				los dientes, moviéndolos hacia la posición deseada.</Typography
+			>
+		</div>
+	</Fragment>
+	<Fragment slot="fullContentBottom">
+		<div class="content">
+			<Typography type="h3" class="!mb-12 text-center"
+				>Ventajas de la Ortodoncia Invisible</Typography
+			>
+		</div>
+		<div class="grid grid-cols-12 gap-5">
+			<div class="col-span-12 lg:col-span-4">
+				<SimpleCard
+					title="⁠Estética"
+					description="Son prácticamente invisibles"
+					seeMore={false}
+					class="lg:h-full"
+					titleTag="h5"
+					icon={PiEyeSlash}
+				/>
+			</div>
+			<div class="col-span-12 lg:col-span-4">
+				<SimpleCard
+					title="Removibles"
+					description="Pueden retirarse para comer, cepillarse los dientes y usar hilo dental"
+					seeMore={false}
+					class="lg:h-full"
+					titleTag="h5"
+					icon={LiaTeethOpenSolid}
+				/>
+			</div>
+			<div class="col-span-12 lg:col-span-4">
+				<SimpleCard
+					title="Comodidad"
+					description="Son suaves y flexibles, causan menos irritación"
+					seeMore={false}
+					class="lg:h-full"
+					titleTag="h5"
+					icon={PiFeather}
+				/>
+			</div>
+			<div class="col-span-12 lg:col-span-6">
+				<SimpleCard
+					title="Menor impacto en el estilo de vida"
+					description="Permite llevar una vida normal sin restricciones en actividades cotidianas"
+					seeMore={false}
+					class="lg:h-full"
+					titleTag="h5"
+					icon={PiSmileyWink}
+				/>
+			</div>
+			<!-- <div class="col-span-12 lg:col-span-6">
+				<SimpleCard
+					title="Menor impacto en el estilo de vida"
+					description="Permite llevar una vida normal sin restricciones en actividades cotidianas"
+					seeMore={false}
+					class="lg:h-full"
+					titleTag="h5"
+					icon={PiSmiley}
+				/>
+			</div> -->
+		</div>
+		<div class="content mt-14">
+			<Typography type="p"
+				>Es importante destacar que la ortodoncia invisible puede no ser adecuada para todos los
+				casos ortodóncicos. Algunas condiciones más complejas pueden requerir el uso de brackets
+				tradicionales u otras técnicas de tratamiento. Nuestros especialistas podrán evaluar
+				cuidadosamente cada caso y recomendar el tratamiento más adecuado para las necesidades
+				individuales de cada paciente.</Typography
+			>
+		</div>
+	</Fragment>
 </Section>

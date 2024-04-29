@@ -1,0 +1,61 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section
+	class="content bg-white"
+	containerProps={{ class: "gap-y-8 md:gap-12", id: "cuidados-ortodoncia-invisible" }}
+	slotProps={{
+		leftContent: {
+			class: "order-1 md:order-none",
+		},
+	}}
+>
+	<Fragment slot="rightContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image src="/defaults/banner-02.webp" alt="Blanqueamiento dental" width={700} height={700} />
+		</div>
+	</Fragment>
+	<Fragment slot="leftContent">
+		<Typography type="h3" class="text-dark">Cuidados Durante la Ortodoncia Invisible</Typography>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Los cuidados en la ortodoncia invisible son importantes para garantizar el éxito del
+			tratamiento y mantener la salud bucal durante todo el proceso. Aquí hay algunos consejos
+			generales sobre los cuidados necesarios:</Typography
+		>
+		<ol class="list-decimal pl-6 leading-6 text-secondary-800">
+			<li class="mb-2">
+				<strong>Higiene bucal adecuada:</strong> Cepilla tus dientes después de cada comida y usa hilo
+				dental al menos una vez al día para eliminar los restos de comida y la placa bacteriana. Además,
+				asegúrate de limpiar tus alineadores antes de volver a colocarlos en la boca.
+			</li>
+			<li class="mb-2">
+				<strong>Retirar los alineadores para comer y beber:</strong> Los alineadores transparentes deben
+				retirarse antes de comer o beber cualquier cosa que no sea agua. Esto ayuda a prevenir manchas
+				en los alineadores y evita que los alimentos se queden atrapados entre los dientes y los alineadores,
+				lo que puede aumentar el riesgo de caries. boca.
+			</li>
+			<li class="mb-2">
+				<strong>Utilizar los alineadores según las indicaciones:</strong> Es importante seguir las instrucciones
+				de tu ortodoncista sobre cuánto tiempo debes usar los alineadores cada día y cuándo cambiar a
+				un nuevo set de alineadores. Esto ayudará a garantizar que tu tratamiento progrese según lo planificado.
+			</li>
+			<li class="mb-2">
+				<strong>Acudir a las citas de seguimiento:</strong> Asiste a todas las citas de seguimiento programadas
+				con tu ortodoncista. Estas citas son importantes para supervisar el progreso del tratamiento
+				y realizar ajustes si es necesario.
+			</li>
+			<li class="mb-2">
+				<strong>Almacenamiento adecuado de los alineadores:</strong> Cuando no estés usando tus alineadores,
+				guárdalos en su estuche correspondiente para protegerlos de daños y mantenerlos limpios.
+			</li>
+		</ol>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Siguiendo estos cuidados durante tu tratamiento de ortodoncia invisible, puedes ayudar a
+			asegurar que tu experiencia sea exitosa y que obtengas los resultados deseados. Si tienes
+			alguna pregunta o inquietud durante el tratamiento, no dudes en comunicarte con nosotros.</Typography
+		>
+	</Fragment>
+</Section>

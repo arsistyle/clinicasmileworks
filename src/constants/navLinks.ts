@@ -17,6 +17,7 @@ import type { NavItem } from "./types"
 	- Cuidados Ortodoncia Invisible
 	- Ortodoncia acelerada
 	- Tu primera visita
+	- Ortodoncia Interceptiva y Ortopedia Maxilofacial
   - Casos
     - Testimonios
     - Casos clínicos
@@ -130,6 +131,13 @@ export const NAV_ITEMS: NavItem[] = [
 				name: "tu-primera-visita",
 				label: "Tu primera visita",
 				href: "/ortodoncia-invisible#tu-primera-visita",
+				visible: true,
+				group: ["header", "footer"],
+			},
+			{
+				name: "ortodoncia-interceptiva-y-ortopedia-maxilofacial",
+				label: "Ortodoncia Interceptiva y Ortopedia Maxilofacial",
+				href: "/ortodoncia-invisible#ortodoncia-interceptiva-y-ortopedia-maxilofacial",
 				visible: true,
 				group: ["header", "footer"],
 			},
