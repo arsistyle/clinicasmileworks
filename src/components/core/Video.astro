@@ -1,13 +1,22 @@
 ---
 import { TbBrandYoutubeFilled } from "react-icons/tb"
+import { twMerge } from "tailwind-merge"
 import Image from "@/components/core/Image/index.astro"
 
-const { image, url } = Astro.props
+const { image, url, direction = "horizontal" } = Astro.props
+
+const directions: Record<string, string> = {
+	vertical: "aspect-[5/7]",
+	horizontal: "aspect-[16/9]",
+}
 ---
 
 <a
 	href={url}
-	class="group relative block aspect-video overflow-hidden rounded-2xl bg-secondary-900"
+	class:list={twMerge(
+		"group relative block overflow-hidden rounded-2xl bg-secondary-900",
+		directions[direction]
+	)}
 	target="_blank"
 	rel="noreferrer"
 >
@@ -16,7 +25,10 @@ const { image, url } = Astro.props
 			<Image
 				src={image}
 				alt="Demo"
-				class="h-full w-full object-cover transition-opacity group-hover:opacity-60"
+				class:list={twMerge(
+					"h-full w-full object-cover transition-opacity group-hover:opacity-60",
+					directions[direction]
+				)}
 				loading="lazy"
 				width={1920}
 				height={1080}

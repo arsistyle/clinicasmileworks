@@ -10,6 +10,7 @@ const testimonialsCollection = defineCollection({
 		video: z.object({
 			src: z.string(),
 			poster: z.string(),
+			direction: z.string().default("horizontal"),
 		}),
 	}),
 })
