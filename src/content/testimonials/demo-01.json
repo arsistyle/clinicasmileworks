@@ -1,11 +1,12 @@
 {
-  "name": "Carlitos Lechuga",
-  "slug": "carlitos-lechuga",
-  "quote": "Me encanta la atención y la atención al cliente. La atención al cliente es muy buena.",
-  "image": "/defaults/banner-01.webp",
+  "name": "",
+  "slug": "paciente-0",
+  "quote": "Todos me habían dicho que mi mordida abierta no tenía solución.",
+  "image": "/pages/the-clinic/testimonials/paciente-0.webp",
   "video": {
-    "url": "https://www.youtube.com/watch?v=kIgbWzKQH_o",
-    "poster": "/demo/testimonials.webp"
+    "url": "https://www.youtube.com/watch?v=HDHnBzCKmaM",
+    "poster": "/pages/the-clinic/testimonials/paciente-0-large.webp",
+    "direction": "vertical"
   },
   "visible": true
 }

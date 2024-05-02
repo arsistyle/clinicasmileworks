@@ -21,7 +21,7 @@ const testimonials = await getCollection(
 		testimonials.map(
 			(
 				{
-					data: { slug, name, quote, video: { url = "", poster = "" } = {} },
+					data: { slug, name, quote, video: { url = "", poster = "", direction = false } = {} },
 				}: {
 					data: TestimonialsProps
 				},
@@ -41,7 +41,7 @@ const testimonials = await getCollection(
 					}}
 				>
 					<Fragment slot={index % 2 === 0 ? "leftContent" : "rightContent"}>
-						{url && poster && <Video url={url} image={poster} />}
+						{url && poster && <Video url={url} image={poster} direction={direction} />}
 					</Fragment>
 					<Fragment slot={index % 2 === 0 ? "rightContent" : "leftContent"}>
 						<Blockquote text={quote} author={name} />

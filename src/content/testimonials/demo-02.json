@@ -1,11 +1,12 @@
 {
-  "name": "Tulio Triviño",
-  "slug": "tulio-trivino",
-  "quote": "Me encanta la aplicación. La aplicación es muy buena.",
-  "image": "/defaults/banner-02.webp",
+  "name": "",
+  "slug": "paciente-1",
+  "quote": "Ayudaron a que mis dientes estén mejor.",
+  "image": "/pages/the-clinic/testimonials/paciente-1.webp",
   "video": {
-    "url": "https://www.youtube.com/watch?v=kIgbWzKQH_o",
-    "poster": "/demo/testimonials.webp"
+    "url": "https://www.youtube.com/watch?v=OVUY9u6HLq8",
+    "poster": "/pages/the-clinic/testimonials/paciente-1-large.webp",
+    "direction": "vertical"
   },
   "visible": true
 }
