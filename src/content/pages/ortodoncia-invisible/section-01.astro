@@ -1,5 +1,5 @@
 ---
-import { PiEyeSlash, PiFeather, PiSmileyWink } from "react-icons/pi"
+import { PiEyeSlash, PiFeather, PiSmileyWink, PiWatch } from "react-icons/pi"
 import { LiaTeethOpenSolid } from "react-icons/lia"
 import Section from "@/components/core/Section.astro"
 import Typography from "@/components/core/Typography/index.astro"
@@ -13,7 +13,12 @@ import SimpleCard from "@/components/core/Cards/SimpleCard.astro"
 >
 	<Fragment slot="leftContent">
 		<div class="aspect-video overflow-hidden rounded-2xl">
-			<Image src="/defaults/banner-01.webp" alt="Blanqueamiento dental" width={700} height={700} />
+			<Image
+				src="/pages/ortodoncia-invisible/ortodoncias-alineadores1.webp"
+				alt=""
+				width={700}
+				height={700}
+			/>
 		</div>
 	</Fragment>
 	<Fragment slot="rightContent">
@@ -78,16 +83,16 @@ import SimpleCard from "@/components/core/Cards/SimpleCard.astro"
 					icon={PiSmileyWink}
 				/>
 			</div>
-			<!-- <div class="col-span-12 lg:col-span-6">
+			<div class="col-span-12 lg:col-span-6">
 				<SimpleCard
-					title="Menor impacto en el estilo de vida"
-					description="Permite llevar una vida normal sin restricciones en actividades cotidianas"
+					title="Más rápidos"
+					description="Hasta un 25 más que los tratamientos con brackets."
 					seeMore={false}
 					class="lg:h-full"
 					titleTag="h5"
-					icon={PiSmiley}
+					icon={PiWatch}
 				/>
-			</div> -->
+			</div>
 		</div>
 		<div class="content mt-14">
 			<Typography type="p"

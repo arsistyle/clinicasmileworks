@@ -22,6 +22,10 @@ const breadcrumb = [
 ---
 
 <Main title={`Clínica Smile Works | ${title}`}>
-	<HeaderPage title={title} breadcrumbs={breadcrumb} />
+	<HeaderPage
+		title={title}
+		breadcrumbs={breadcrumb}
+		image="/pages/ortodoncia-invisible/ortodoncia-invisible.webp"
+	/>
 	{sections.map((component: any) => <component.default />)}
 </Main>

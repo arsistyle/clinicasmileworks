@@ -6,9 +6,13 @@ import Image from "@/components/core/Image/index.astro"
 
 <Section class="content bg-secondary-100" containerProps={{ class: "gap-y-8 md:gap-12" }}>
 	<Fragment slot="leftContent">
-		<div class="aspect-video overflow-hidden rounded-2xl">
-			<Image src="/defaults/banner-01.webp" alt="Blanqueamiento dental" width={700} height={700} />
-		</div>
+		<Image
+			src="/pages/tratamientos/apnea-del-sueno/evaluacion.webp"
+			alt=""
+			width={700}
+			height={700}
+			class="aspect-[5/7] rounded-2xl"
+		/>
 	</Fragment>
 	<Fragment slot="rightContent">
 		<Typography type="h3" class="text-dark"
