@@ -1,10 +1,10 @@
 {
   "id": "case-01",
-  "title": "Caso 01",
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto libero reprehenderit",
+  "title": "",
+  "description": "",
   "images": {
-    "before": "/demo/compare-1.webp",
-    "after": "/demo/compare-2.webp"
+    "before": "/pages/casos/casos-clinicos/1.1.webp",
+    "after": "/pages/casos/casos-clinicos/1.2.webp"
   },
   "visible": true
 }
