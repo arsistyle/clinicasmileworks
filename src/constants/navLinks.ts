@@ -64,7 +64,7 @@ export const NAV_ITEMS: NavItem[] = [
 			},
 			{
 				name: "implantologia",
-				label: "Implantologiía",
+				label: "Implantología",
 				href: "/tratamientos/implantologia",
 				visible: true,
 				group: ["header", "footer"],
