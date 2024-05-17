@@ -1,0 +1,35 @@
+---
+import { TbChevronRight } from "react-icons/tb"
+
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+import Button from "@/components/core/Button/index.astro"
+---
+
+<Section
+	class="bg-dark"
+	containerProps={{ class: "gap-y-8 lg:gap-12 items-center min-h-96" }}
+	slotProps={{
+		leftContent: {
+			class: "hidden md:block",
+		},
+	}}
+	backgroundUrl="/pages/home/clinic-bg.webp"
+	backgroundBlurMobile={false}
+	backgroundHover={true}
+>
+	<Fragment slot="fullContentTop">
+		<div class="text-center">
+			<div class="mb-12 flex flex-col gap-4">
+				<Typography type="h2" class="h3 text-white">Espacio único</Typography>
+				<Typography type="h4" class="text-primary-400 md:pl-10"
+					>En un ambiente profesional y familiar</Typography
+				>
+			</div>
+			<Button href="/la-clinica/instalaciones" tag="a" variant="filled" color="light">
+				<TbChevronRight slot="iconRight" />
+				Conoce la clínica
+			</Button>
+		</div>
+	</Fragment>
+</Section>

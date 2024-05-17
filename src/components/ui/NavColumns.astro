@@ -1,0 +1,37 @@
+---
+import { twMerge } from "tailwind-merge"
+import type { NavItem } from "../../constants/types"
+
+import { NAV_ITEMS } from "../../constants"
+
+import NavColumnsChildrens from "./NavColumnsChildrens.astro"
+
+const NAV_GROUP_NAME = "footer"
+const MenuWithVisibleItems = NAV_ITEMS.filter(
+	(item) => item.visible && item?.group?.includes(NAV_GROUP_NAME)
+)
+---
+
+<ul class="flex gap-10">
+	{
+		MenuWithVisibleItems?.map(({ href = "", label, children }: NavItem) => {
+			const hasChildren = Array.isArray(children)
+			const childrenWithVisibleItems = hasChildren
+				? children?.filter((child) => child?.visible && child?.group?.includes(NAV_GROUP_NAME))
+				: []
+
+			return (
+				<li class="group">
+					<a
+						href={href}
+						class:list={twMerge("text-white transition-opacity hover:opacity-60")}
+						aria-label={label}
+					>
+						<span>{label}</span>
+					</a>
+					{hasChildren && <NavColumnsChildrens children={childrenWithVisibleItems} />}
+				</li>
+			)
+		})
+	}
+</ul>

@@ -1,0 +1,34 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section
+	class="content bg-primary-200"
+	containerProps={{ class: "gap-y-8 md:gap-12" }}
+	slotProps={{
+		leftContent: {
+			class: "order-1 md:order-none",
+		},
+	}}
+>
+	<Fragment slot="rightContent">
+		<Image
+			src="/pages/tratamientos/apnea-del-sueno/educacion-cambios-estilo-vida.webp"
+			alt=""
+			width={700}
+			height={700}
+			class="rounded-2xl"
+		/>
+	</Fragment>
+	<Fragment slot="leftContent">
+		<Typography type="h3" class="text-dark">4. Educación y cambios en el estilo de vida:</Typography
+		>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Los odontólogos pueden educar a los padres y a los niños sobre la importancia de mantener
+			hábitos de sueño saludables y pueden ofrecer recomendaciones para mejorar la higiene del sueño
+			y promover un estilo de vida saludable que pueda reducir los síntomas de la apnea del sueño.</Typography
+		>
+	</Fragment>
+</Section>

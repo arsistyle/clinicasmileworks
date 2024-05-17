@@ -1,4 +1,16 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config"
+import tailwind from "@astrojs/tailwind"
+import react from "@astrojs/react"
 
 // https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+	integrations: [tailwind(), react()],
+	redirects: {
+		"casos": "/casos/testimonios",
+		"tratamientos": "/tratamientos/ortodoncia",
+		"la-clinica": "/la-clinica/el-equipo",
+	},
+	images: {
+		domains: ["pub-7c20c4f95be84fcfa35c2ca966f8fb0d.r2.dev"],
+	}
+})

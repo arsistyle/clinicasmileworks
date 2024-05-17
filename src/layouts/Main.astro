@@ -1,0 +1,63 @@
+---
+import "@fontsource-variable/plus-jakarta-sans"
+import { SEO } from "astro-seo"
+
+import "../css/styles.css"
+import Header from "../components/shared/Header.astro"
+import Footer from "../components/shared/Footer.astro"
+import FloatingButtons from "@/components/shared/FloatingButtons.astro"
+import { FLOATING_BUTTONS, SEO_DATA } from "@/constants"
+
+interface Props {
+	title: string
+	description?: string
+	og_image?: string
+	og_title?: string
+	og_type?: string
+}
+
+const { props } = Astro
+
+const {
+	title = SEO_DATA.title,
+	description = SEO_DATA.description,
+	og_image = SEO_DATA.image,
+	og_title = SEO_DATA.title,
+	og_type = "website",
+} = props
+---
+
+<!doctype html>
+<html lang="es-CL" class="scroll-pt-36 scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<SEO
+			title={title}
+			description={description}
+			openGraph={{
+				basic: {
+					title: og_title || title,
+					image: og_image,
+					type: og_type,
+				},
+				optional: {
+					description,
+				},
+			}}
+		/>
+		<slot name="head" />
+	</head>
+
+	<body class="light">
+		<main class="relative z-10 bg-secondary-950">
+			<Header />
+			<slot />
+		</main>
+		<Footer />
+		<FloatingButtons buttons={FLOATING_BUTTONS} />
+		<slot name="footer" />
+	</body>
+</html>

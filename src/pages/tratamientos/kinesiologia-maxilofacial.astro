@@ -1,0 +1,38 @@
+---
+import HeaderPage from "@/components/core/HeaderPage.astro"
+import Main from "@/layouts/Main.astro"
+
+const sections: any[] = await Astro.glob(
+	"@/content/pages/tratamientos/kinesiologia-maxilofacial/*.astro"
+)
+
+const title = "Kinesiologia Maxilofacial"
+const slug = "kinesiologia-maxilofacial"
+
+const breadcrumb = [
+	{
+		name: "Home",
+		url: "/",
+		type: "link",
+	},
+	{
+		name: "Tratamientos",
+		url: "/tratamientos",
+		type: "link",
+	},
+	{
+		name: title,
+		url: `/tratamientos/${slug}`,
+		type: "current",
+	},
+]
+---
+
+<Main title={`Clínica Smile Works | Tratamientos - ${title}`}>
+	<HeaderPage
+		title={title}
+		breadcrumbs={breadcrumb}
+		image="/pages/tratamientos/kinesiologia-maxilofacial/kinesiologia-cabeza-cuello0.webp"
+	/>
+	{sections.map((component: any) => <component.default />)}
+</Main>

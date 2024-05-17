@@ -1,0 +1,65 @@
+---
+import { TbCalendarTime, TbCheck } from "react-icons/tb"
+
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+import Button from "@/components/core/Button/index.astro"
+import { DATING_URL } from "@/constants"
+
+const itemList: string[] = [
+	"Te hacemos un scanner 3D intraoral.",
+	"Te mostramos el antes/después de tu sonrisa.",
+	"Un doctor te hace un pronóstico.",
+	"Te damos un presupuesto sin compromiso.",
+]
+---
+
+<Section
+	class="bg-secondary-100"
+	containerProps={{ class: "gap-y-8 lg:gap-12 items-center min-h-96" }}
+	slotProps={{
+		leftContent: {
+			class: "hidden md:block",
+		},
+	}}
+	backgroundUrl="/pages/home/smile-man.webp"
+>
+	<Fragment slot="leftContent"></Fragment>
+
+	<Fragment slot="rightContent">
+		<Image
+			src="/pages/home/section--first-visit-m.webp"
+			class="mb-12 block rounded-2xl md:hidden"
+			alt="Team"
+			width={700}
+			height={467}
+		/>
+		<div class="mb-12 flex flex-col gap-4">
+			<Typography type="h2" class="h3">¿Cómo será mi primera visita?</Typography>
+			<!-- <Typography type="h4" class="text-primary-400 md:pl-10"> Totalmente gratuita</Typography> -->
+		</div>
+
+		<div class="mb-12 flex flex-col gap-2">
+			{
+				itemList.map((item) => (
+					<div class="flex items-center gap-4">
+						<TbCheck className="text-primary-400 w-6 h-6" />
+						<Typography type="p">{item}</Typography>
+					</div>
+				))
+			}
+		</div>
+		<Button
+			href={DATING_URL}
+			tag="a"
+			variant="filled"
+			color="primary"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<TbCalendarTime slot="iconLeft" />
+			Pide cita ahora
+		</Button>
+	</Fragment>
+</Section>

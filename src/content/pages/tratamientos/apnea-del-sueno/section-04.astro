@@ -1,0 +1,29 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section class="content bg-secondary-100" containerProps={{ class: "gap-y-8 md:gap-12" }}>
+	<Fragment slot="leftContent">
+		<Image
+			src="/pages/tratamientos/apnea-del-sueno/coordinacion-profesionales.webp"
+			alt=""
+			width={700}
+			height={700}
+			class="rounded-2xl"
+		/>
+	</Fragment>
+	<Fragment slot="rightContent">
+		<Typography type="h3" class="text-dark"
+			>3. Coordinación con otros profesionales de la salud:</Typography
+		>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>El tratamiento de la apnea del sueño en niños a menudo requiere un enfoque multidisciplinario
+			que involucre a varios profesionales de la salud, como pediatras, otorrinolaringólogos,
+			fonoaudiólogos y especialistas en medicina del sueño. Los odontólogos pueden colaborar
+			estrechamente con estos profesionales para desarrollar un plan de tratamiento integral y
+			personalizado para cada niño.</Typography
+		>
+	</Fragment>
+</Section>

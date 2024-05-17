@@ -1,0 +1,149 @@
+---
+import { TbCalendarStats, TbChevronRight } from "react-icons/tb"
+
+import { twMerge } from "tailwind-merge"
+import Image from "@/components/core/Image/index.astro"
+import Button from "@/components/core/Button/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+import { DATING_URL } from "@/constants"
+import type { ButtonProps } from "@/components/core/Button/types"
+
+interface HeroButtons {
+	iconLeft?: any
+	iconRight?: any
+	label: string
+	external?: boolean
+	props: ButtonProps
+}
+
+interface DataProps {
+	title: string
+	description: string
+	buttons: HeroButtons[]
+	images: {
+		left: string[]
+		right: string[]
+	}
+}
+
+const data: DataProps = {
+	title: "Tratamientos odontológicos multidisciplinarios de excelencia",
+	description: "Primera visita con scanner 3D y simulación de sonrisa",
+	buttons: [
+		{
+			label: "Pide Cita",
+			iconLeft: TbCalendarStats,
+			external: true,
+			props: {
+				color: "primary",
+				variant: "filled",
+				href: DATING_URL,
+			},
+		},
+		{
+			label: "Ver tratamientos",
+			iconRight: TbChevronRight,
+			external: false,
+			props: {
+				color: "light",
+				variant: "outlined",
+				href: "/tratamientos/ortodoncia",
+			},
+		},
+	],
+	images: {
+		left: ["/pages/home/hero-6.webp", "/pages/home/hero-3.webp", "/pages/home/hero-2.webp"],
+		right: ["/pages/home/hero-1.webp", "/pages/home/hero-4.webp", "/pages/home/hero-5.webp"],
+	},
+}
+
+const { title, description, buttons, images } = data
+---
+
+<Section
+	class="overflow-x-clip bg-dark"
+	containerProps={{ class: "gap-y-8 lg:gap-12 items-center" }}
+	slotProps={{
+		leftContent: { class: "relative py-6 sm:py-10 md:py-20 z-[1]" },
+		rightContent: {
+			class: "relative h-full pointer-events-none user-select-none",
+			child: { class: "relative h-full" },
+		},
+	}}
+>
+	<Fragment slot="leftContent">
+		<Typography type="h1" class="mb-6 text-white">{title}</Typography>
+		<Typography type="p" class="highlight mb-12 text-white">{description}</Typography>
+		<div class="flex flex-wrap gap-4">
+			{
+				buttons.map(
+					({
+						label,
+						props: { color, variant, href },
+						iconLeft: IconLeft,
+						iconRight: IconRight,
+						external,
+					}) => (
+						<Button
+							color={color as ButtonProps["color"]}
+							size="lg"
+							variant={variant as ButtonProps["variant"]}
+							href={href}
+							tag="a"
+							{...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+						>
+							{IconLeft && <IconLeft slot="iconLeft" />}
+							{label}
+							{IconRight && <IconRight slot="iconRight" />}
+						</Button>
+					)
+				)
+			}
+		</div>
+	</Fragment>
+	<Fragment slot="rightContent">
+		<div
+			class="absolute -bottom-full left-0 right-0 grid w-[150vw] rotate-[18deg] grid-cols-2 gap-4 opacity-20 sm:w-screen md:-bottom-1/2 md:left-[10%] md:w-[800px] md:opacity-100"
+		>
+			<div class="hero__images--left col-span-1 grid gap-4">
+				{
+					images.left.map((image, index) => {
+						const aspect = index === 0 ? "aspect-[3/2]" : "aspect-[5/6]"
+						return (
+							<div class:list={twMerge("overflow-clip rounded-2xl bg-secondary-400", aspect)}>
+								<Image
+									src={image}
+									alt=""
+									class="h-full w-full object-cover"
+									loading={"eager"}
+									width={500}
+									height={500}
+								/>
+							</div>
+						)
+					})
+				}
+			</div>
+			<div class="hero__images--right col-span-1 grid gap-4">
+				{
+					images.right.map((image, index) => {
+						const aspect = index === images.right.length - 1 ? "aspect-[3/2]" : "aspect-[5/6]"
+						return (
+							<div class:list={twMerge("overflow-clip rounded-2xl bg-secondary-400", aspect)}>
+								<Image
+									src={image}
+									alt=""
+									class="h-full w-full object-cover"
+									loading={"eager"}
+									width={500}
+									height={500}
+								/>
+							</div>
+						)
+					})
+				}
+			</div>
+		</div>
+	</Fragment>
+</Section>

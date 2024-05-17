@@ -1,0 +1,38 @@
+---
+import { TbChevronRight } from "react-icons/tb"
+
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+import Button from "@/components/core/Button/index.astro"
+---
+
+<Section
+	class="bg-white"
+	containerProps={{ class: "gap-y-8 lg:gap-12 items-center min-h-96" }}
+	backgroundUrl="/pages/home/section--relapse-free.webp"
+>
+	<Fragment slot="leftContent"></Fragment>
+	<Fragment slot="rightContent">
+		<Image
+			src="/pages/home/section--relapse-free-m.webp"
+			class="mb-12 block rounded-2xl md:hidden"
+			alt="Team"
+			width={700}
+			height={467}
+		/>
+		<div class="mb-12 flex flex-col gap-4">
+			<Typography type="h2" class="h3 text-white">Ortodoncia sin Recidivas</Typography>
+			<Typography type="h4" class="text-white">Ex cum volutpat sea duo</Typography>
+			<Typography type="p" class="text-white"
+				>Vulputate ipsum vel takimata rebum amet ut eos ipsum. Invidunt dolor velit rebum ut sit.
+				Erat lorem volutpat. Ea est suscipit amet illum autem vulputate duo in hendrerit et sit
+				lorem hendrerit in amet sanctus.</Typography
+			>
+		</div>
+		<Button href="/" tag="a" variant="filled" color="primary">
+			<TbChevronRight slot="iconRight" />
+			Saber más
+		</Button>
+	</Fragment>
+</Section>

@@ -1,0 +1,36 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section
+	class="content bg-white"
+	containerProps={{ class: "gap-y-8 md:gap-12" }}
+	slotProps={{
+		leftContent: {
+			class: "order-1 md:order-none",
+		},
+	}}
+>
+	<Fragment slot="rightContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image
+				src="/pages/tratamientos/tratamientos-multidisciplinarios/fase-ortodoncia1.webp"
+				alt="Fase de Ortodoncia"
+				width={700}
+				height={700}
+			/>
+		</div>
+	</Fragment>
+	<Fragment slot="leftContent">
+		<Typography type="h3" class="text-dark">4. Fase de Ortodoncia:</Typography>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Es importante destacar la relación entre la ortodoncia y la rehabilitación oral. La
+			ortodoncia se utiliza para corregir la alineación de los dientes y la mordida antes de
+			proceder con la rehabilitación oral. Esto puede ser necesario para garantizar que los dientes
+			estén en la posición adecuada antes de colocar las restauraciones dentales, lo que asegura un
+			resultado final óptimo y duradero.</Typography
+		>
+	</Fragment>
+</Section>

@@ -1,0 +1,44 @@
+---
+import { twMerge } from "tailwind-merge"
+import Nav from "./Nav.astro"
+
+const activeClass = "[.active&]:opacity-100 [.active&]:translate-x-0 [.active&]:pointer-events-auto"
+---
+
+<div
+	class:list={twMerge(
+		"touch-scroll pointer-events-none fixed right-0 top-20 z-50 h-[calc(100vh-80px)] w-full max-w-96 translate-x-full overflow-y-auto bg-secondary-950/80 pb-10 opacity-0 backdrop-blur-2xl transition lg:hidden",
+		activeClass
+	)}
+	id="menu"
+>
+	<Nav />
+</div>
+
+<script>
+	const html = document.querySelector("html")
+	const menu = document.querySelector("#menu")
+	const buttonsMenu = document.querySelectorAll(".button-menu")
+	const buttonIcons = document.querySelectorAll(".button-menu__icon")
+
+	menu?.classList.remove("active")
+	html?.classList.remove("menu-active")
+
+	buttonsMenu.forEach((button) => {
+		button.classList.remove("active")
+		button.addEventListener("click", () => {
+			if (button.role === "button") {
+				button.classList.toggle("active")
+			}
+
+			buttonIcons.forEach((icon) => {
+				icon.classList.toggle("hidden")
+			})
+
+			menu?.classList.toggle("active")
+			html?.classList.toggle("menu-active")
+		})
+	})
+	// document.addEventListener("astro:page-load", () => {
+	// });
+</script>

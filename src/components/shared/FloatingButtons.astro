@@ -1,0 +1,29 @@
+---
+import type { ButtonProps } from "../core/Button/types"
+import Button from "@/components/core/Button/index.astro"
+
+interface ButtonsProps {
+	iconLeft?: any
+	iconRight?: any
+	label: string
+	name: string
+	props?: ButtonProps
+}
+
+export interface Props {
+	buttons: ButtonsProps[]
+}
+
+const { buttons } = Astro.props
+---
+
+<div class="fixed bottom-0 right-0 z-50 flex flex-col gap-2 p-4">
+	{
+		buttons.map(({ iconLeft: Left, iconRight: Right, label, props }) => (
+			<Button {...props} shape="circle" title={label} aria-label={label}>
+				{Left && <Left slot="iconLeft" className="w-7 h-7" />}
+				{Right && <Right slot="iconRight" className="w-7 h-7" />}
+			</Button>
+		))
+	}
+</div>

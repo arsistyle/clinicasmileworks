@@ -1,0 +1,26 @@
+---
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+import Image from "@/components/core/Image/index.astro"
+---
+
+<Section class="content bg-secondary-100" containerProps={{ class: "gap-y-8 md:gap-12" }}>
+	<Fragment slot="leftContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image
+				src="/pages/tratamientos/odontopediatria/odontopediatria2.webp"
+				alt="Atención Preventiva"
+				width={700}
+				height={700}
+			/>
+		</div>
+	</Fragment>
+	<Fragment slot="rightContent">
+		<Typography type="h3" class="text-dark">1. Atención Preventiva:</Typography>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Los odontopediatras enfatizan la atención dental preventiva para mantener una salud oral
+			óptima. Esto incluye revisiones dentales regulares, limpiezas, tratamientos con fluor y
+			sellantes dentales para proteger los dientes de los niños y evitar las caries.</Typography
+		>
+	</Fragment>
+</Section>

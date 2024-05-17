@@ -1,0 +1,32 @@
+---
+import HeaderPage from "@/components/core/HeaderPage.astro"
+import Main from "@/layouts/Main.astro"
+
+const sections: any[] = await Astro.glob("@/content/pages/la-clinica/el-equipo/*.astro")
+
+const title = "El equipo"
+const slug = "el-equipo"
+
+const breadcrumb = [
+	{
+		name: "Home",
+		url: "/",
+		type: "link",
+	},
+	{
+		name: "La clínica",
+		url: "/la-clinica",
+		type: "link",
+	},
+	{
+		name: title,
+		url: `/el-equipo/${slug}`,
+		type: "current",
+	},
+]
+---
+
+<Main title={`Clínica Smile Works | La clinica - ${title}`}>
+	<HeaderPage title={title} breadcrumbs={breadcrumb} />
+	{sections.map((component: any) => <component.default />)}
+</Main>

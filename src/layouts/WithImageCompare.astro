@@ -1,0 +1,38 @@
+---
+import Main from "@/layouts/Main.astro"
+---
+
+<Main title="Clínica Smile Works">
+	<link
+		href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css"
+		rel="stylesheet"
+	/>
+	<style>
+		body {
+			overflow: initial !important;
+			padding: 0 !important;
+		}
+	</style>
+	<slot />
+
+	<script>
+		import ImageCompare from "image-compare-viewer"
+
+		const viewers = document.querySelectorAll(".image-compare")
+
+		const options = {
+			showLabels: true,
+			labelOptions: {
+				before: "Antes",
+				after: "Después",
+				onHover: false,
+			},
+			smoothing: false,
+			hoverStart: true,
+		}
+
+		viewers.forEach((element) => {
+			new ImageCompare(element, options).mount()
+		})
+	</script>
+</Main>

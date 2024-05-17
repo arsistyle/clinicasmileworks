@@ -1,0 +1,26 @@
+---
+import Typography from "../core/Typography/index.astro"
+import Button from "../core/Button/index.astro"
+import { FLOATING_BUTTONS } from "@/constants"
+---
+
+<div class="rounded-2xl bg-white p-8">
+	<div class="flex flex-col gap-4">
+		<Typography type="h4" class="text-primary-400">Cita clínica dental</Typography>
+		<Typography type="p" class="leading-5 text-secondary-400">
+			En la clínica dental de Smile Works, ubicada en Av. las Condes 11380, Vitacura, te atenderá un
+			equipo con los mejores profesionales en odontología y ortodoncia.
+		</Typography>
+		<div class="flex flex-wrap gap-4">
+			{
+				FLOATING_BUTTONS.map(({ label, iconLeft: Left, iconRight: Right, props }) => (
+					<Button {...props}>
+						{Left && <Left slot="iconLeft" className="w-5 h-5" />}
+						{label}
+						{Right && <Right slot="iconRight" className="w-5 h-5" />}
+					</Button>
+				))
+			}
+		</div>
+	</div>
+</div>

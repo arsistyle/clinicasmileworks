@@ -1,0 +1,97 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section
+	class="content bg-secondary-50"
+	containerProps={{ class: "gap-y-8 md:gap-12", id: "tu-primera-visita" }}
+>
+	<Fragment slot="leftContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image
+				src="/pages/ortodoncia-invisible/primera-visita-examenes-radiograficos.webp"
+				alt=""
+				width={700}
+				height={700}
+			/>
+		</div>
+	</Fragment>
+	<Fragment slot="rightContent">
+		<Typography type="h3" class="text-dark">Tu Primera Visita</Typography>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>La primera visita al ortodoncista es un paso crucial en el proceso de evaluación y
+			planificación del tratamiento ortodóncico. Aquí te detallamos qué puedes esperar durante esa
+			primera consulta:</Typography
+		>
+		<ol class="list-decimal pl-6 leading-6 text-secondary-800">
+			<li class="mb-2">
+				<strong>Historial médico y dental:</strong> El ortodoncista comenzará por revisar tu historial
+				médico y dental. Es importante informarle sobre cualquier condición médica relevante, medicamentos
+				que estés tomando y cualquier tratamiento dental anterior que hayas recibido.
+			</li>
+			<li class="mb-2">
+				<strong>Examen clínico:</strong> El ortodoncista realizará un examen completo de tu boca, dientes
+				y mandíbula para evaluar tu estructura dental y determinar la naturaleza de cualquier problema
+				de alineación o mordida.
+			</li>
+			<li class="mb-2">
+				<strong>Evaluación de la mordida y la alineación dental:</strong> El ortodoncista evaluará la
+				forma en que tus dientes superiores e inferiores se alinean entre sí, así como la forma en que
+				se cierra tu mandíbula. Esto puede incluir la observación de la presencia de apiñamiento, espacios
+				entre los dientes, mordida cruzada, sobremordida, mordida abierta u otros problemas de mordida.
+			</li>
+			<li class="mb-2">
+				<strong>Registros fotográficos y radiológicos:</strong> al realizar el estudio de ortodoncia,
+				se tomarán fotografías extraorales e intraorales y se solicitarán examenes radiológicos para
+				complementar el diagnóstico.
+			</li>
+			<li class="mb-2">
+				<strong>Scanner intraoral:</strong> donde podrás evaluar un posible antes/después de la ortodoncia
+				en pocos minutos, de manera virtual con tus dientes en formato 3D.
+			</li>
+			<li class="mb-2">
+				<strong>Discusión de objetivos y expectativas:</strong> Durante la consulta inicial, tendrás
+				la oportunidad de discutir tus objetivos y expectativas con respecto al tratamiento ortodóncico.
+				Esto puede incluir tus preocupaciones estéticas y funcionales.
+			</li>
+			<li class="mb-2">
+				<strong>Discusión de objetivos y expectativas:</strong> Durante la consulta inicial, tendrás
+				la oportunidad de discutir tus objetivos y expectativas con respecto al tratamiento ortodóncico.
+				Esto puede incluir tus preocupaciones estéticas y funcionales.
+			</li>
+		</ol>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Una vez que se obtiene toda esta información, evaluamos tu caso y te citamos nuevamente para
+			explicarte lo siguiente:</Typography
+		>
+		<ol class="list-decimal pl-6 leading-6 text-secondary-800">
+			<li class="mb-2">
+				<strong>Plan de tratamiento y opciones de tratamiento:</strong> Basándose en la evaluación realizada,
+				y una vez que se analiza toda la información clínica y de examenes complementarios, el ortodoncista
+				te explicará cuál es el mejor plan de tratamiento para tus necesidades específicas. Discutirán
+				las diferentes opciones de tratamiento disponibles, como brackets metálicos, brackets estéticos,
+				ortodoncia invisible u otros dispositivos ortodóncicos, y te proporcionarán información sobre
+				los beneficios y limitaciones de cada opción.
+			</li>
+			<li class="mb-2">
+				<strong>Presupuesto y consideraciones financieras:</strong> Se te proporcionará información sobre
+				el costo estimado del tratamiento, así como opciones de financiamiento y seguros dentales que
+				puedan cubrir parte del costo.
+			</li>
+			<li class="mb-2">
+				<strong>Planificación de citas de seguimiento:</strong> Si decides seguir adelante con el tratamiento,
+				se programarán citas de seguimiento para realizar mediciones adicionales, discutir los detalles
+				del plan de tratamiento y comenzar el proceso de colocación de los aparatos ortodóncicos.
+			</li>
+		</ol>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>En resumen, la primera visita al ortodoncista es una oportunidad para que el ortodoncista
+			evalúe tu situación dental, discuta tus objetivos y expectativas, y te proporcione información
+			sobre las opciones de tratamiento disponibles. Es importante aprovechar esta consulta para
+			hacer todas las preguntas que puedas tener y asegurarte de entender completamente el proceso y
+			las expectativas del tratamiento ortodóncico.</Typography
+		>
+	</Fragment>
+</Section>

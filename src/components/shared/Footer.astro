@@ -1,0 +1,47 @@
+---
+import { TbBrandInstagram } from "react-icons/tb"
+
+import InforCard from "../ui/InfoCard.astro"
+import NavColumns from "../ui/NavColumns.astro"
+import Typography from "../core/Typography/index.astro"
+import Logo from "../ui/Logo.astro"
+import FooterBadges from "./FooterBadges.astro"
+---
+
+<footer class="sticky bottom-0 z-0 bg-secondary-950 px-8">
+	<div class="container mx-auto flex gap-y-4 py-10 lg:gap-10 lg:py-16">
+		<div class="mx-auto max-w-[450px]">
+			<InforCard />
+		</div>
+
+		<nav class="hidden lg:block">
+			<NavColumns />
+		</nav>
+	</div>
+	<div
+		class="container mx-auto flex flex-col items-center gap-y-4 py-4 lg:flex-row lg:justify-between lg:gap-10"
+	>
+		<Logo class="justify-center text-lg text-white lg:justify-start" />
+
+		<FooterBadges class="justify-center lg:ml-auto" />
+
+		<div class="flex items-center gap-3">
+			<a
+				href="https://www.instagram.com/sw.ortodoncia/"
+				class="aspect-square w-8 text-secondary-400 transition-opacity hover:opacity-60"
+				target="_blank"
+				rel="noreferrer"
+			>
+				<TbBrandInstagram className="h-full w-full" />
+			</a>
+		</div>
+	</div>
+
+	<div
+		class="container mx-auto border-t border-t-secondary-900 py-2 text-center text-secondary-400"
+	>
+		<Typography type="p" class="small"
+			>© Clínica Smile Works. <br class="block sm:hidden" /> Todos los derechos reservados.</Typography
+		>
+	</div>
+</footer>

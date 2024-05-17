@@ -1,0 +1,251 @@
+---
+import { TbBrandWhatsapp, TbCalendarStats, TbChevronRight } from "react-icons/tb"
+
+import HeaderPage from "@/components/core/HeaderPage.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+import Main from "@/layouts/Main.astro"
+import Button from "@/components/core/Button/index.astro"
+import Video from "@/components/core/Video.astro"
+import Blockquote from "@/components/core/Blockquote.astro"
+import SimpleCard from "@/components/core/Cards/SimpleCard.astro"
+
+// import Main from "../layouts/Main.astro"
+---
+
+<Main title="Clínica Smile Works">
+	<HeaderPage title="Default page" />
+	<Section class="content bg-white" containerProps={{ class: "gap-y-8 md:gap-12" }}>
+		<Fragment slot="fullContentTop">
+			<Typography type="h1">h1- Im a title on this website</Typography>
+			<Typography type="h2">h2- Im a title on this website</Typography>
+			<Typography type="h3">h3- Im a title on this website</Typography>
+			<Typography type="h4">h4- Im a title on this website</Typography>
+			<Typography type="h5">h5- Im a title on this website</Typography>
+			<Typography type="p" class="highlight"
+				>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto libero reprehenderit
+				maiores non assumenda neque exercitationem quod corporis mollitia repellendus!</Typography
+			>
+			<Typography
+				>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto libero reprehenderit
+				maiores non assumenda neque exercitationem quod corporis mollitia repellendus!</Typography
+			>
+			<div class="flex flex-wrap gap-4 py-2">
+				<Button>Default</Button>
+				<Button color="primary">Primary</Button>
+				<Button color="secondary">Secondary</Button>
+				<Button color="dark">Dark</Button>
+			</div>
+			<div class="flex flex-wrap gap-4 py-2">
+				<Button variant="outlined">Default</Button>
+				<Button color="primary" variant="outlined">Primary</Button>
+				<Button color="secondary" variant="outlined">Secondary</Button>
+				<Button color="dark" variant="outlined">Dark</Button>
+			</div>
+			<div class="flex flex-wrap gap-4 py-2">
+				<Button variant="filled">Default</Button>
+				<Button color="primary" variant="filled">Primary</Button>
+				<Button color="secondary" variant="filled">Secondary</Button>
+				<Button color="dark" variant="filled">Dark</Button>
+			</div>
+			<div class="flex flex-wrap gap-4 py-2">
+				<Button variant="filled" disabled>Default</Button>
+				<Button color="primary" variant="filled" disabled>Primary</Button>
+				<Button color="secondary" variant="filled" disabled>Secondary</Button>
+				<Button color="dark" variant="filled" disabled>Dark</Button>
+			</div>
+			<div class="flex flex-wrap gap-4 py-2">
+				<Button variant="filled" size="xs">Default</Button>
+				<Button color="primary" variant="filled" size="xs">Primary</Button>
+				<Button color="secondary" variant="filled" size="xs">Secondary</Button>
+				<Button color="dark" variant="filled" size="xs">Dark</Button>
+			</div>
+			<div class="flex flex-wrap gap-4 py-2">
+				<Button variant="filled" size="sm">Default</Button>
+				<Button color="primary" variant="filled" size="sm">Primary</Button>
+				<Button color="secondary" variant="filled" size="sm">Secondary</Button>
+				<Button color="dark" variant="filled" size="sm">Dark</Button>
+			</div>
+			<div class="flex flex-wrap gap-4 py-2">
+				<Button variant="filled" size="lg">Default</Button>
+				<Button color="primary" variant="filled" size="lg">Primary</Button>
+				<Button color="secondary" variant="filled" size="lg">Secondary</Button>
+				<Button color="dark" variant="filled" size="lg">Dark</Button>
+			</div>
+			<div class="flex flex-wrap gap-4 py-2">
+				<Button variant="filled" size="xl">Default</Button>
+				<Button color="primary" variant="filled" size="xl">Primary</Button>
+				<Button color="secondary" variant="filled" size="xl">Secondary</Button>
+				<Button color="dark" variant="filled" size="xl">Dark</Button>
+			</div>
+			<div class="flex flex-wrap gap-4 py-2">
+				<Button color="dark" variant="filled"
+					>Conoce al equipo <TbChevronRight slot="iconRight" /></Button
+				>
+				<Button color="whatsapp" variant="filled"
+					><TbBrandWhatsapp slot="iconLeft" />Cita telefónica</Button
+				>
+				<Button color="primary" variant="filled"
+					><TbCalendarStats slot="iconLeft" /> Cita online</Button
+				>
+			</div>
+		</Fragment>
+		<Fragment slot="leftContent">
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+		</Fragment>
+		<Fragment slot="rightContent">
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+		</Fragment>
+	</Section>
+	<Section class="bg-white" containerProps={{ class: "gap-y-8 lg:gap-4" }}>
+		<Fragment slot="leftContent">
+			<div class="flex flex-col gap-6">
+				<SimpleCard title="Simple Card" url="#" seeMore={false} class="text-center" titleTag="h5" />
+				<SimpleCard
+					title="Invisible"
+					description="Prácticamente no se ve."
+					icon={TbCalendarStats}
+					seeMore={false}
+				/>
+				<SimpleCard url="#" image="/assets/img/demo/treatment.png" imageAsCover={false}>
+					<Fragment slot="title">
+						<div>Ortodoncia</div>
+						<div>(niños y adultos)</div>
+					</Fragment>
+				</SimpleCard>
+				<SimpleCard
+					title="Odontopediatría"
+					url="#"
+					image="/assets/img/demo/treatment2.png"
+					imageAsCover={false}
+				/>
+				<SimpleCard
+					title="Simple Card"
+					description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+					url="#"
+					direction="column"
+					image="/assets/img/demo/treatment.png"
+				/>
+			</div>
+		</Fragment>
+		<Fragment slot="rightContent"> </Fragment>
+	</Section>
+	<Section class="bg-white" containerProps={{ class: "items-center gap-y-8 md:gap-12 lg:gap-24" }}>
+		<Fragment slot="leftContent">
+			<Video
+				url="https://www.youtube.com/watch?v=kIgbWzKQH_o"
+				image="/assets/img/demo/testimonials.png"
+			/>
+		</Fragment>
+		<Fragment slot="rightContent">
+			<Blockquote
+				text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto libero reprehenderit"
+				author="John Doe"
+			/>
+		</Fragment>
+	</Section>
+	<Section
+		class="bg-white"
+		containerProps={{ class: "items-center gap-y-8 md:gap-12 lg:gap-24" }}
+		slotProps={{ leftContent: { class: "order-1" }, rightContent: { class: "order-0 md:order-2" } }}
+	>
+		<Fragment slot="rightContent">
+			<Video
+				url="https://www.youtube.com/watch?v=kIgbWzKQH_o"
+				image="/assets/img/demo/testimonials.png"
+			/>
+		</Fragment>
+		<Fragment slot="leftContent">
+			<Blockquote
+				text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto libero reprehenderit"
+				author="John Doe"
+			/>
+		</Fragment>
+	</Section>
+	<Section
+		class="content bg-secondary-50"
+		containerProps={{ class: "gap-y-8 md:gap-12" }}
+		slotProps={{
+			leftContent: {
+				class: "hidden md:block",
+			},
+		}}
+		backgroundUrl="/assets/img/smile-man.jpg"
+	>
+		<Fragment slot="leftContent"></Fragment>
+
+		<Fragment slot="rightContent">
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+		</Fragment>
+	</Section>
+	<Section
+		class="content bg-primary-100"
+		containerProps={{ class: "gap-y-8 md:gap-12" }}
+		backgroundUrl="/assets/img/irene-miriam.png"
+	>
+		<Fragment slot="leftContent">
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum harum iure nemo velit
+				exercitationem debitis aliquid quidem facilis saepe, sequi suscipit, consequuntur minus qui
+				recusandae, est commodi quo hic! Saepe!
+			</p>
+		</Fragment>
+	</Section>
+	<Fragment slot="header">
+		<script>
+			// console.log("hola, este script se carga despues del Header en el mainLayout")
+		</script>
+	</Fragment>
+	<Fragment slot="footer">
+		<script>
+			// console.log("hola, este script se carga despues del footer en el mainLayout")
+		</script>
+	</Fragment>
+</Main>

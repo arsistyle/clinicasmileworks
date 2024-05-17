@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets"
+import { twMerge } from "tailwind-merge"
+
+import { CDN_URL } from "@/constants"
+
+interface Props {
+	alt?: string
+	class?: string
+	customSrc?: string
+	height: number
+	imageClass?: string
+	loading?: "lazy" | "eager"
+	rounded?: boolean
+	src: string
+	width: number
+}
+
+const {
+	alt = "",
+	class: className,
+	customSrc,
+	height,
+	imageClass,
+	loading = "lazy",
+	rounded,
+	src,
+	width,
+} = Astro.props
+
+const srcCDN = `${CDN_URL}${src}`
+---
+
+<div class:list={twMerge("overflow-hidden", rounded && "rounded-2xl", className)}>
+	<Image
+		alt={alt}
+		class:list={twMerge("h-full w-full object-cover", imageClass)}
+		height={height}
+		loading={loading}
+		src={customSrc || srcCDN}
+		width={width}
+	/>
+</div>

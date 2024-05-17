@@ -1,0 +1,58 @@
+---
+import { TbChevronDown } from "react-icons/tb"
+
+import { twMerge } from "tailwind-merge"
+import type { NavItem } from "../../constants/types"
+
+import { NAV_ITEMS } from "../../constants"
+
+import NavChildrens from "./NavChildrens.astro"
+
+const { pathname } = Astro.url
+
+const MENU_GROUP_NAME = "header"
+const MenuWithVisibleItems = NAV_ITEMS.filter(
+	(item) => item.visible && item?.group?.includes(MENU_GROUP_NAME)
+)
+
+const isThisPage = (pageUrl = "", currentPath = "") => {
+	const paths = currentPath.replace("/", "").split("/")
+	const [current] = paths
+	return pageUrl === `/${current}`
+}
+---
+
+<ul class="flex h-full flex-col lg:flex-row">
+	{
+		MenuWithVisibleItems?.map(({ href = "", label, children }: NavItem) => {
+			const isActive = isThisPage(href, pathname)
+			const hasChildren = Array.isArray(children)
+
+			const childrenWithVisibleItems = hasChildren
+				? children?.filter((child) => child?.visible && child?.group?.includes(MENU_GROUP_NAME))
+				: []
+
+			return (
+				<li class="group relative lg:flex lg:h-full lg:items-center">
+					<a
+						href={href}
+						class:list={twMerge(
+							"flex items-center justify-between gap-2 bg-transparent px-6 py-3 text-center transition-colors group-hover:bg-primary-900/20 group-hover:text-primary-300 lg:h-full lg:justify-start lg:px-3 lg:py-0",
+							isActive ? "text-primary-400" : "text-white"
+						)}
+						aria-current={isActive ? "page" : undefined}
+						aria-label={label}
+					>
+						<span>{label}</span>
+						{hasChildren && (
+							<div class="h-3 w-3">
+								<TbChevronDown />
+							</div>
+						)}
+					</a>
+					{hasChildren && <NavChildrens children={childrenWithVisibleItems} />}
+				</li>
+			)
+		})
+	}
+</ul>

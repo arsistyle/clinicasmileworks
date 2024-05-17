@@ -1,0 +1,26 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section class="content bg-secondary-100" containerProps={{ class: "gap-y-8 md:gap-12" }}>
+	<Fragment slot="leftContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image
+				src="/pages/tratamientos/tratamientos-multidisciplinarios/fase-kinesiologia.webp"
+				alt="Fase de Kinesiología"
+				width={700}
+				height={700}
+			/>
+		</div>
+	</Fragment>
+	<Fragment slot="rightContent">
+		<Typography type="h3" class="text-dark">3. Fase de Kinesiología:</Typography>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>De forma paralela, mientras se va ajustando el plano todas las semanas, el paciente debe
+			asistir a una sesión de kinesiología semanal donde se le proporcionará la terapia e indicación
+			de ejercicios individualizados para cada caso.</Typography
+		>
+	</Fragment>
+</Section>

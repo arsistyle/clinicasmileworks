@@ -1,0 +1,31 @@
+---
+import HeaderPage from "@/components/core/HeaderPage.astro"
+import Main from "@/layouts/Main.astro"
+
+const sections: any[] = await Astro.glob("@/content/pages/ortodoncia-invisible/*.astro")
+
+const title = "Ortodoncia Invisible"
+const slug = "ortodoncia-invisible"
+
+const breadcrumb = [
+	{
+		name: "Home",
+		url: "/",
+		type: "link",
+	},
+	{
+		name: title,
+		url: `/tratamientos/${slug}`,
+		type: "current",
+	},
+]
+---
+
+<Main title={`Clínica Smile Works | ${title}`}>
+	<HeaderPage
+		title={title}
+		breadcrumbs={breadcrumb}
+		image="/pages/ortodoncia-invisible/ortodoncia-invisible.webp"
+	/>
+	{sections.map((component: any) => <component.default />)}
+</Main>

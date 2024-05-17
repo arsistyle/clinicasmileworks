@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from "astro:content"
+
+import { getCollection } from "astro:content"
+
+import TeamCard from "../core/Cards/TeamCard.astro"
+import Section from "../core/Section.astro"
+
+type TeamProps = CollectionEntry<"team">["data"]
+
+const teamData = await getCollection("team", ({ data }: { data: TeamProps }) => {
+	return data.visible
+})
+---
+
+<Section class="bg-secondary-50">
+	<Fragment slot="fullContentTop">
+		<div class="flex flex-wrap justify-center gap-4">
+			{
+				teamData.map(({ data: { name, position, description, image } }: { data: TeamProps }) => (
+					<div class="w-full md:w-[calc(100%/2-16px)] lg:w-[calc(100%/3-16px)]">
+						<TeamCard name={name} position={position} description={description} image={image} />
+					</div>
+				))
+			}
+		</div>
+	</Fragment>
+</Section>

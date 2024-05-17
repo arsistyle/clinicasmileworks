@@ -1,0 +1,27 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section class="content bg-secondary-100" containerProps={{ class: "gap-y-8 md:gap-12" }}>
+	<Fragment slot="leftContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image
+				src="/pages/tratamientos/implantologia/Implantes-carga-Inmediata-3.webp"
+				alt=""
+				width={700}
+				height={700}
+			/>
+		</div>
+	</Fragment>
+	<Fragment slot="rightContent">
+		<Typography type="h3" class="text-dark"
+			>3. Menor necesidad de prótesis removibles temporales:</Typography
+		>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Los pacientes no tienen que depender de prótesis removibles temporales, lo que puede mejorar
+			su comodidad y autoestima durante el período de cicatrización.</Typography
+		>
+	</Fragment>
+</Section>

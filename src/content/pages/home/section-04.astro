@@ -1,0 +1,36 @@
+---
+import { TbChevronRight } from "react-icons/tb"
+
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+import Button from "@/components/core/Button/index.astro"
+---
+
+<Section
+	class="bg-primary-100"
+	containerProps={{ class: "gap-y-8 lg:gap-12 items-center min-h-96" }}
+	backgroundUrl="/pages/home/section--team.webp"
+>
+	<Fragment slot="leftContent">
+		<Image
+			src="/pages/home/section--team-m.webp"
+			class="mb-12 block rounded-2xl md:hidden"
+			alt="Team"
+			width={700}
+			height={467}
+		/>
+		<div class="mb-12 flex flex-col gap-4">
+			<Typography type="h2" class="h3">Solo grandes profesionales</Typography>
+			<Typography type="h4" class="text-primary-400">A tu entera disposición</Typography>
+			<Typography type="p"
+				>Contamos con un equipo de profesionales formados, cada uno en su ámbito para dar un
+				servicio integral en una clínica multidisciplinar con todos los tratamientos.</Typography
+			>
+		</div>
+		<Button href="/la-clinica/el-equipo" tag="a" variant="filled" color="dark">
+			<TbChevronRight slot="iconRight" />
+			Conoce al equipo
+		</Button>
+	</Fragment>
+</Section>

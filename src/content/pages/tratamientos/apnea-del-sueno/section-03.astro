@@ -1,0 +1,35 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section
+	class="content bg-white"
+	containerProps={{ class: "gap-y-8 md:gap-12" }}
+	slotProps={{
+		leftContent: {
+			class: "order-1 md:order-none",
+		},
+	}}
+>
+	<Fragment slot="rightContent">
+		<Image
+			src="/pages/tratamientos/apnea-del-sueno/tratamiento-dispositivos-intraorales.webp"
+			alt=""
+			width={700}
+			height={700}
+			class="aspect-[5/7] rounded-2xl"
+		/>
+	</Fragment>
+	<Fragment slot="leftContent">
+		<Typography type="h3" class="text-dark">2. Tratamiento con dispositivos intraorales:</Typography
+		>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Los dispositivos intraorales, como los dispositivos de avance mandibular (DAM), pueden ser
+			utilizados en niños para ayudar a mantener abiertas las vías respiratorias superiores durante
+			el sueño. Estos dispositivos trabajan ajustando la posición de la mandíbula y la lengua para
+			prevenir la obstrucción.</Typography
+		>
+	</Fragment>
+</Section>

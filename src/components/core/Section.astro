@@ -1,0 +1,100 @@
+---
+import { twMerge } from "tailwind-merge"
+import Image from "@/components/core/Image/index.astro"
+
+const { fullContentTop, fullContentBottom, leftContent, rightContent } = Astro.slots
+
+const {
+	class: className = "",
+	slotProps = {},
+	containerProps = {},
+	backgroundUrl = "",
+	backgroundBlurMobile = true,
+	backgroundHover = false,
+	...attrs
+} = Astro.props
+
+const {
+	fullContentTop: fullContentTopProps,
+	fullContentBottom: fullContentBottomProps,
+	leftContent: leftContentProps,
+	rightContent: rightContentProps,
+} = slotProps
+---
+
+<section
+	class:list={twMerge(className, "relative p-6 py-12 lg:py-24", backgroundHover && "group")}
+	{...attrs}
+>
+	{
+		backgroundUrl && (
+			<div
+				class:list={twMerge(
+					"user-select-none pointer-events-none absolute inset-0 -z-0 h-full  w-full overflow-hidden opacity-40 md:opacity-100 ",
+					backgroundBlurMobile && "blur-md md:blur-none"
+				)}
+			>
+				<Image
+					src={backgroundUrl}
+					alt="Section Background"
+					width={1920}
+					height={1080}
+					class:list={twMerge(
+						"h-full w-full object-cover",
+						backgroundHover && "transition-transform duration-[2000ms] group-hover:scale-105"
+					)}
+				/>
+			</div>
+		)
+	}
+	<div
+		class:list={twMerge("container relative mx-auto grid grid-cols-12", containerProps?.class)}
+		{...containerProps}
+	>
+		{
+			fullContentTop && (
+				<div
+					class:list={twMerge("col-span-12", fullContentTopProps?.class)}
+					{...fullContentTopProps}
+				>
+					<slot name="fullContentTop" />
+				</div>
+			)
+		}
+		{
+			leftContent && (
+				<div
+					class:list={twMerge("relative col-span-12 md:col-span-6", leftContentProps?.class)}
+					{...leftContentProps}
+				>
+					<div class:list={twMerge("sticky top-24", leftContentProps?.child?.class)}>
+						<slot name="leftContent" />
+					</div>
+				</div>
+			)
+		}
+		{
+			rightContent && (
+				<div
+					class:list={twMerge("relative col-span-12 md:col-span-6", rightContentProps?.class)}
+					{...rightContentProps}
+				>
+					<div class:list={twMerge("sticky top-24", rightContentProps?.child?.class)}>
+						<slot name="rightContent" />
+					</div>
+				</div>
+			)
+		}
+		{
+			fullContentBottom && (
+				<div
+					class:list={twMerge("relative col-span-12", fullContentBottomProps?.class)}
+					{...fullContentBottomProps}
+				>
+					<slot name="fullContentBottom" />
+				</div>
+			)
+		}
+		<slot />
+	</div>
+</section>

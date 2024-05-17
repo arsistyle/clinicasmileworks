@@ -1,0 +1,78 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section
+	class="content bg-white"
+	containerProps={{
+		class: "gap-y-8 md:gap-12",
+		id: "ortodoncia-interceptiva-y-ortopedia-maxilofacial",
+	}}
+	slotProps={{
+		leftContent: {
+			class: "order-1 md:order-none",
+		},
+	}}
+>
+	<Fragment slot="rightContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image
+				src="/pages/ortodoncia-invisible/brackets-metalicos.webp"
+				alt=""
+				width={700}
+				height={700}
+			/>
+		</div>
+	</Fragment>
+	<Fragment slot="leftContent">
+		<Typography type="h3" class="text-dark"
+			>Ortodoncia Interceptiva y Ortopedia Maxilofacial</Typography
+		>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Es una rama de la ortodoncia que se enfoca en tratar problemas de maloclusión y desarrollo
+			óseo en niños en crecimiento, generalmente antes de que todas sus piezas dentales permanentes
+			hayan erupcionado. El objetivo principal es corregir anomalías dentales y esqueléticas en una
+			etapa temprana, aprovechando el crecimiento natural del niño para guiar el desarrollo de los
+			maxilares y huesos faciales hacia una posición más favorable. Este enfoque temprano puede
+			ayudar a evitar problemas más graves en el futuro y, en algunos casos, incluso puede reducir
+			la necesidad de tratamientos ortodónticos más invasivos una vez finalizado el crecimiento,
+			como extracciones de dientes o cirugía ortognática.</Typography
+		>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Algunos de los tratamientos comunes son:</Typography
+		>
+		<ol class="list-decimal pl-6 leading-6 text-secondary-800">
+			<li class="mb-2">
+				<strong>Expansión maxilar:</strong> Se utiliza para corregir problemas de mordida cruzada y estrechamiento
+				del arco dental superior. Consiste en ensanchar el paladar para redirigir el crecimiento a uno
+				más equilibrado, crear más espacio para los dientes, mejorar la mordida y proporcionar un espacio
+				adecuado para el correcto posicionamiento de la lengua.
+			</li>
+			<li class="mb-2">
+				<strong>Mantención de espacio:</strong> Cuando se pierde un diente temporal prematuramente, puede
+				ser necesario mantener el espacio para el diente permanente que lo reemplazará.
+			</li>
+			<li class="mb-2">
+				<strong>Corrección de malos hábitos orales:</strong> Algunos malos hábitos como chuparse el pulgar
+				o empujar la lengua contra los dientes, pueden provocar crecimiento desequilibrado y con esto,
+				maloclusiones.
+			</li>
+			<li class="mb-2">
+				<strong>Control de la erupción dental:</strong> A veces, los dientes permanentes pueden erupcionar
+				en una posición desfavorable. Se puede guiar la erupción de los dientes permanentes para lograr
+				una alineación adecuada.
+			</li>
+			<li class="mb-2">
+				<strong>Aplicación de frenillos tempranos:</strong> En algunos casos, se pueden utilizar aparatos
+				ortopédicos o brackets tempranos para corregir problemas de alineación dental en niños.
+			</li>
+		</ol>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Estos son solo algunos ejemplos de los tratamientos que pueden formar parte de la ortodoncia
+			interceptiva y ortopedia maxilofacial. La selección de tratamientos específicos dependerá de
+			las necesidades individuales de cada niño y de la evaluación realizada por el ortodoncista.</Typography
+		>
+	</Fragment>
+</Section>

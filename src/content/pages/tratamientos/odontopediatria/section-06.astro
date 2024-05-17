@@ -1,0 +1,27 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section class="content bg-secondary-100" containerProps={{ class: "gap-y-8 md:gap-12" }}>
+	<Fragment slot="leftContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image
+				src="/pages/tratamientos/odontopediatria/tratamiento-problemas-dentales.webp"
+				alt="Blanqueamiento dental"
+				width={700}
+				height={700}
+			/>
+		</div>
+	</Fragment>
+	<Fragment slot="rightContent">
+		<Typography type="h3" class="text-dark">5. Tratamiento de Problemas Dentales:</Typography>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Los odontopediatras diagnostican y tratan diversas afecciones dentales específicas en niños,
+			incluida la caries dental, enfermedad de las encías, anomalías del desarrollo y lesiones
+			dentales. Pueden realizar procedimientos como obturaciones, coronas, extracciones y
+			mantenimiento del espacio para preservar la salud y la función dentales.</Typography
+		>
+	</Fragment>
+</Section>

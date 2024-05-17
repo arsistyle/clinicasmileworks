@@ -1,0 +1,37 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+html {
+	scroll-timeline-name: --mainTimeline;
+	overflow-x: hidden;
+	scrollbar-gutter: stable;
+}
+
+html.menu-active {
+	overflow: hidden;
+}
+
+body {
+	scrollbar-gutter: stable;
+	min-height: 100dvh;
+}
+
+.content .h2,
+.content .h3,
+.content .h4,
+.content .h5,
+.content .h6,
+.content .p {
+	@apply my-[.75em];
+}
+
+.swiper .swiper-pagination--custom {
+	@apply relative pt-4;
+}
+
+.swiper .swiper-pagination--custom .swiper-pagination-bullet-active {
+	@apply bg-primary-400;
+}

@@ -1,0 +1,38 @@
+---
+import Image from "./Image/index.astro"
+import Typography from "./Typography/index.astro"
+
+interface Props {
+	title?: string
+	description?: string
+	images: {
+		before: string
+		after: string
+	}
+}
+
+const { title, description, images } = Astro.props
+---
+
+<div class="flex h-full flex-col text-center">
+	<div class="content">
+		{
+			title && (
+				<Typography type="h5" class="text-primary-400">
+					{title}
+				</Typography>
+			)
+		}
+		{description && <Typography type="p">{description}</Typography>}
+	</div>
+	{
+		images && (
+			<div class="mt-auto px-8">
+				<div class="image-compare rounded-2xl">
+					<Image src={images.before} alt="" width={900} height={600} />
+					<Image src={images.after} alt="" width={900} height={600} />
+				</div>
+			</div>
+		)
+	}
+</div>

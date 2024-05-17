@@ -1,0 +1,138 @@
+---
+import { twMerge } from "tailwind-merge"
+import type { IconType } from "react-icons"
+import Typography from "../Typography/index.astro"
+import Image from "@/components/core/Image/index.astro"
+
+interface Props {
+	size?: "md" | "lg"
+	image?: string
+	title?: string
+	titleTag?: string
+	seeMore?: boolean
+	icon?: IconType
+	description?: string
+	url?: string
+	direction?: "row" | "column"
+	class?: string
+	imageAsCover?: boolean
+	externalUrl?: boolean
+}
+
+const {
+	size = "md",
+	image,
+	title = "",
+	seeMore = true,
+	icon,
+	description,
+	url,
+	direction = "row",
+	class: className = "",
+	titleTag = "h4",
+	imageAsCover = true,
+	externalUrl = false,
+} = Astro.props
+
+const { title: slotTile } = Astro.slots
+
+const Tag = url ? "a" : "div"
+const Icon = icon
+
+const _title = typeof title === "string" ? title : ""
+
+const classes = {
+	root: {
+		main: "bg-white rounded-2xl flex transition-colors hover:bg-white/60 overflow-hidden",
+		direction: {
+			column: "flex-col",
+			row: "",
+		},
+	},
+	info: {
+		main: "flex flex-col gap-4 flex-1 p-4",
+		direction: {
+			column: "order-1",
+			row: "order-0",
+		},
+		size: {
+			md: "p-4",
+			lg: "p-6",
+		},
+	},
+	graphic: {
+		main: "aspect-[3/2]",
+		direction: {
+			column: "",
+			row: "w-2/5",
+		},
+	},
+	image: {
+		main: "w-full h-full",
+		asCover: (bool: boolean) => (bool ? "object-cover" : "object-contain"),
+	},
+	icon: {
+		main: "flex h-full w-full items-center justify-center p-6 text-primary-400",
+	},
+}
+
+const { root: _root, info: _info, graphic: _graphic, image: _image, icon: _icon } = classes
+---
+
+<Tag
+	href={url}
+	class:list={twMerge(_root.main, _root.direction[direction], className)}
+	{...externalUrl && url && { target: "_blank", rel: "noreferrer" }}
+>
+	<div class:list={twMerge(_info.main, _info.direction[direction], _info.size[size])}>
+		{
+			title && (
+				<Typography type={titleTag}>
+					{title}
+					<slot name="title" />
+				</Typography>
+			)
+		}
+		{
+			slotTile && (
+				<Typography type={titleTag}>
+					<slot name="title" />
+				</Typography>
+			)
+		}
+		{
+			description && (
+				<Typography type="p" class="mb-6">
+					{description}
+				</Typography>
+			)
+		}
+		{
+			seeMore && (
+				<Typography type="p" class="mt-auto">
+					Ver más
+				</Typography>
+			)
+		}
+	</div>
+	{
+		(image || Icon) && (
+			<div class:list={twMerge(_graphic.main, _graphic.direction[direction])}>
+				{image ? (
+					<Image
+						src={image}
+						alt={_title}
+						width={300}
+						height={300}
+						class:list={twMerge(_image.main, _image.asCover(imageAsCover))}
+					/>
+				) : null}
+				{Icon && (
+					<div class:list={twMerge(_icon.main)}>
+						<Icon className="h-20 w-20" />
+					</div>
+				)}
+			</div>
+		)
+	}
+</Tag>

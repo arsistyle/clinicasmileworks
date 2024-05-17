@@ -1,0 +1,34 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section
+	class="content bg-white"
+	containerProps={{ class: "gap-y-8 md:gap-12" }}
+	slotProps={{
+		leftContent: {
+			class: "order-1 md:order-none",
+		},
+	}}
+>
+	<Fragment slot="rightContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image
+				src="/pages/tratamientos/implantologia/colocacion-protesis.webp"
+				alt="Blanqueamiento dental"
+				width={700}
+				height={700}
+			/>
+		</div>
+	</Fragment>
+	<Fragment slot="leftContent">
+		<Typography type="h3" class="text-dark">4. Colocación de las prótesis dentales:</Typography>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Después de que los implantes se hayan integrado con el hueso (osteointegración), los
+			implantólogos colocan las prótesis dentales sobre los implantes para restaurar la función y la
+			estética dental del paciente.</Typography
+		>
+	</Fragment>
+</Section>

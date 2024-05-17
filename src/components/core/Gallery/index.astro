@@ -1,0 +1,48 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import { CDN_URL } from "@/constants"
+import "photoswipe/style.css"
+
+interface Props {
+	images: {
+		src: string
+		width: number
+		height: number
+		alt: string
+	}[]
+}
+
+const { images } = Astro.props
+---
+
+<div class="gallery grid grid-cols-6 gap-4">
+	{
+		images.map(({ src, alt, width, height }) => (
+			<a
+				href={`${CDN_URL}${src}`}
+				data-pswp-width={width}
+				data-pswp-height={height}
+				class="col-span-3 aspect-[3/2] overflow-hidden rounded-2xl transition-opacity hover:opacity-75 md:col-span-2"
+			>
+				<Image
+					alt={alt}
+					width={width}
+					height={height}
+					src={src}
+					class="h-full w-full object-cover"
+				/>
+			</a>
+		))
+	}
+</div>
+
+<script>
+	import PhotoSwipeLightbox from "photoswipe/lightbox"
+
+	const lightbox = new PhotoSwipeLightbox({
+		gallery: ".gallery",
+		children: "a",
+		pswpModule: () => import("photoswipe"),
+	})
+	lightbox.init()
+</script>

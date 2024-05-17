@@ -1,0 +1,34 @@
+---
+import HeaderPage from "@/components/core/HeaderPage.astro"
+import Main from "@/layouts/Main.astro"
+
+const sections: any[] = await Astro.glob("../../content/pages/tratamientos/estetica-facial/*.astro")
+
+const title = "Estética Facial"
+
+const breadcrumb = [
+	{
+		name: "Home",
+		url: "/",
+		type: "link",
+	},
+	{
+		name: "Tratamientos",
+		url: "/tratamientos",
+		type: "link",
+	},
+	{
+		name: title,
+		type: "current",
+	},
+]
+---
+
+<Main title={`Clínica Smile Works | Tratamientos - ${title}`}>
+	<HeaderPage
+		title={title}
+		breadcrumbs={breadcrumb}
+		image="/pages/tratamientos/estetica-facial/estetica-facial0.webp"
+	/>
+	{sections.map((component: any) => <component.default />)}
+</Main>

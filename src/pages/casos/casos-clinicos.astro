@@ -1,0 +1,32 @@
+---
+import HeaderPage from "@/components/core/HeaderPage.astro"
+import WithImageCompare from "@/layouts/WithImageCompare.astro"
+
+const sections: any[] = await Astro.glob("@/content/pages/casos/casos-clinicos/*.astro")
+
+const title = "Casos clínicos"
+const slug = "casos-clinicos"
+
+const breadcrumb = [
+	{
+		name: "Home",
+		url: "/",
+		type: "link",
+	},
+	{
+		name: "Casos",
+		url: "/casos",
+		type: "link",
+	},
+	{
+		name: title,
+		url: `/casos/${slug}`,
+		type: "current",
+	},
+]
+---
+
+<WithImageCompare title={`Clínica Smile Works | Casos - ${title}`}>
+	<HeaderPage title={title} breadcrumbs={breadcrumb} />
+	{sections.map((component: any) => <component.default />)}
+</WithImageCompare>

@@ -1,0 +1,71 @@
+---
+import type { CollectionEntry } from "astro:content"
+import { getCollection } from "astro:content"
+
+import { TbChevronRight } from "react-icons/tb"
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+import Button from "@/components/core/Button/index.astro"
+import Blockquote from "@/components/core/Blockquote.astro"
+
+import "swiper/css"
+import "swiper/css/pagination"
+
+type TestimonialsProps = CollectionEntry<"testimonials">["data"]
+
+const testimonials = await getCollection(
+	"testimonials",
+	({ data }: { data: TestimonialsProps }) => {
+		return data.visible
+	}
+)
+
+const testimonialsData = testimonials.slice(0, 3)
+---
+
+<Section class="bg-primary-50">
+	<Fragment slot="fullContentTop">
+		<div class="mb-12 flex flex-col gap-4 text-center">
+			<Typography type="h2" class="h3">Nuestra mejor garantía</Typography>
+			<Typography type="h4" class="text-primary-400">Nuestros pacientes</Typography>
+		</div>
+		<div class="swiper">
+			<div class="swiper-wrapper">
+				{
+					testimonialsData.map(
+						({ data: { name, quote, image, slug } }: { data: TestimonialsProps }) => (
+							<div class="swiper-slide">
+								<div class="grid grid-cols-12 items-center gap-5">
+									<div class="col-span-1 hidden lg:block" />
+									<div class="col-span-12 sm:col-span-6 lg:col-span-4">
+										<div class="overflow-hidden rounded-2xl">
+											<Image src={image} alt={name} width={800} height={800} />
+										</div>
+									</div>
+									<div class="col-span-1 sm:hidden lg:block" />
+									<div class="col-span-12 sm:col-span-6 lg:col-span-4">
+										<Blockquote text={quote} author={name} />
+										<div class="mt-12 text-right">
+											<Button tag="a" href={`/casos/testimonios#${slug}`} class="text-primary-800">
+												Ver video <TbChevronRight slot="iconRight" />{" "}
+											</Button>
+										</div>
+									</div>
+									<div class="col-span-1 hidden lg:block" />
+								</div>
+							</div>
+						)
+					)
+				}
+			</div>
+			<div class="swiper-pagination swiper-pagination--custom"></div>
+		</div>
+	</Fragment>
+</Section>
+
+<script>
+	import { initSliderTestimonials } from "@/scripts"
+
+	initSliderTestimonials()
+</script>

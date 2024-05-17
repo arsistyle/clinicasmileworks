@@ -1,0 +1,10 @@
+{
+  "id": "case-01",
+  "title": "",
+  "description": "",
+  "images": {
+    "before": "/pages/casos/casos-clinicos/1.1.webp",
+    "after": "/pages/casos/casos-clinicos/1.2.webp"
+  },
+  "visible": true
+}

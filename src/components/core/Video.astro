@@ -1,0 +1,44 @@
+---
+import { TbBrandYoutubeFilled } from "react-icons/tb"
+import { twMerge } from "tailwind-merge"
+import Image from "@/components/core/Image/index.astro"
+
+const { image, url, direction = "horizontal" } = Astro.props
+
+const directions: Record<string, string> = {
+	vertical: "aspect-[5/7]",
+	horizontal: "aspect-[16/9]",
+}
+---
+
+<a
+	href={url}
+	class:list={twMerge(
+		"group relative block overflow-hidden rounded-2xl bg-secondary-900",
+		directions[direction]
+	)}
+	target="_blank"
+	rel="noreferrer"
+>
+	{
+		image && (
+			<Image
+				src={image}
+				alt="Demo"
+				class:list={twMerge(
+					"h-full w-full object-cover transition-opacity group-hover:opacity-60",
+					directions[direction]
+				)}
+				loading="lazy"
+				width={1920}
+				height={1080}
+			/>
+		)
+	}
+	<div class="absolute inset-0 z-0 grid place-items-center object-cover">
+		<div class="relative h-16 w-16 transition-transform group-hover:scale-125">
+			<TbBrandYoutubeFilled className="h-full w-full text-red-500" />
+			<div class="absolute inset-0 -z-10 m-auto h-10 w-10 rounded-full bg-white"></div>
+		</div>
+	</div>
+</a>

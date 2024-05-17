@@ -1,0 +1,35 @@
+---
+import Image from "@/components/core/Image/index.astro"
+import Section from "@/components/core/Section.astro"
+import Typography from "@/components/core/Typography/index.astro"
+---
+
+<Section
+	class="content bg-white"
+	containerProps={{ class: "gap-y-8 md:gap-12" }}
+	slotProps={{
+		leftContent: {
+			class: "order-1 md:order-none",
+		},
+	}}
+>
+	<Fragment slot="rightContent">
+		<div class="aspect-video overflow-hidden rounded-2xl">
+			<Image
+				src="/pages/tratamientos/periodoncia/tratamiento-salud-periodontal.webp"
+				alt="Tratamiento salud periodontal"
+				width={700}
+				height={700}
+			/>
+		</div>
+	</Fragment>
+	<Fragment slot="leftContent">
+		<Typography type="h3" class="text-dark">2. Tratamiento de la enfermedad periodontal:</Typography
+		>
+		<Typography type="p" class="leading-6 text-secondary-800"
+			>Esto puede incluir la limpieza profunda de las raíces de los dientes (raspado y alisado
+			radicular), la eliminación de cálculos dentales (tártaro) y el tratamiento de bolsas
+			periodontales profundas mediante técnicas quirúrgicas como la cirugía de colgajo.</Typography
+		>
+	</Fragment>
+</Section>
