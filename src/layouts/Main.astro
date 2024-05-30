@@ -14,6 +14,7 @@ interface Props {
 	og_image?: string
 	og_title?: string
 	og_type?: string
+	canonical?: string
 }
 
 const { props } = Astro
@@ -24,6 +25,7 @@ const {
 	og_image = SEO_DATA.image,
 	og_title = SEO_DATA.title,
 	og_type = "website",
+	canonical = SEO_DATA.canonical_url,
 } = props
 ---
 
@@ -37,6 +39,7 @@ const {
 		<SEO
 			title={title}
 			description={description}
+			canonical={canonical}
 			openGraph={{
 				basic: {
 					title: og_title || title,
