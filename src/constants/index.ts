@@ -11,6 +11,7 @@ export const SEO_DATA = {
 	image: `${CDN_URL}/og-image.png`,
 	description:
 		"Tratamientos odontológicos multidisciplinarios de excelencia, Primera visita con scanner 3D y simulación de sonrisa",
+	canonical_url: "https://clinicasmileworks.cl",
 }
 
 interface ButtonsProps {
