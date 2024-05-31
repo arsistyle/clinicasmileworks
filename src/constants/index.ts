@@ -6,12 +6,14 @@ export const DATING_NUMBER = "56950413044"
 
 export const CDN_URL = "https://pub-7c20c4f95be84fcfa35c2ca966f8fb0d.r2.dev/clinica-smile-works"
 
+export const MAIN_URL = "https://clinicasmileworks.cl"
+
 export const SEO_DATA = {
 	title: "Clínica Smile Works - Odontología Integral",
-	image: `${CDN_URL}/og-image.png`,
+	image: `${MAIN_URL}/og-image.png`,
 	description:
 		"Tratamientos odontológicos multidisciplinarios de excelencia, Primera visita con scanner 3D y simulación de sonrisa",
-	canonical_url: "https://clinicasmileworks.cl",
+	canonical_url: MAIN_URL,
 }
 
 interface ButtonsProps {
